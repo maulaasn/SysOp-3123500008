@@ -91,4 +91,5 @@ Umumnya, motherboard dilengkapi dengan beberapa konektivitas interface input/out
 ## Referensi
 
 - [Motherboard](https://kumparan.com/berita-update/mengenal-pengertian-dan-fungsi-motherboard-pada-komputer-1xPnkyxIiQc)
-- [Komponen dan Fungsi Motherboard](https://www.ilmupengetahuan.co.id/pengertian-dan-fungsi-komponen-motherboard/)
+- [Komponen Motherboard](https://www.ilmupengetahuan.co.id/pengertian-dan-fungsi-komponen-motherboard/)
+- [Fungsi Komponen Motherboard](https://www.ilmupengetahuan.co.id/pengertian-dan-fungsi-komponen-motherboard/)
