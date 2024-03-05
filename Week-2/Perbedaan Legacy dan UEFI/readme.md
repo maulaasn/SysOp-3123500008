@@ -58,7 +58,6 @@ Dengan mode boot UEFI, Anda dimungkinkan melakukan pengontrolan antarmuka menggu
 | Keramahan Pengguna | Kurang ramah pengguna | UEFI lebih ramah pengguna daripada Legacy Boot. |
 | Nama partisi | Tersimpan pada partisi | ID GUID unik disertai dengan nama 36 karakter. |
 | Dukungan multi boot | Kurang mumpuni | Bagus, dengan entri boot loader dalam partisi terpisah. |
-<br>
 </div>
 
 ## Referensi
