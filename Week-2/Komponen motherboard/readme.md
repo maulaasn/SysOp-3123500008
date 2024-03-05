@@ -15,19 +15,22 @@
 <h3 style="text-align: center;line-height: 1.5">Politeknik Elektronika Negeri Surabaya<br>Departemen Teknik Informatika Dan Komputer<br>Program Studi Teknik Informatika<br>2024/2025</h3>
   <hr><hr>
 </div>
-<h2 align="center">Mengenal Motherboard</h2>
 
-## Definisi Motherboard
+## Daftar Isi
 
-Motherboard adalah saraf pusat atau otak didalam sistem komputer. Motherboard juga bisa dideskripsikan sebagai dual prosesor ataupun single prosesor. Motherboard dengan single prosesor tunggal (single processor) tidaklah selalu bisa memenuhi kebutuhan tersebut, terutama didalam lingkungan jaringan perusahaan.
+1. [Pendahuluan](#pendahuluan)
+2. [Komponen Motherboard](#komponen-motherboard)
+3. [Referensi](#referensi)
 
-<h1>Bagian Motherboard</h1>
-<div align="center">
+## Pendahuluan
+
+Motherboard adalah papan sirkuit yang ada di dalam sebuah casing komputer dimana semua komponen komputer terhubung. Motherboard menyediakan konektivitas antara komponen perangkat keras komputer, seperti prosesor (CPU), memori (RAM), hard drive, dan kartu video. Lebih tepatnya, motherboard adalah perangkat keras komputer yang berfungsi sebagai “tulang punggung” atau “ibu” yang menyatukan semua bagian. Motherboard sendiri juga datang dalam berbagai jenis dan ukuran yang berbeda. Tujuannya agar sesuai dengan berbagai jenis dan ukuran perangkat keras.
+
+<h1>Komponen - komponen dalam Motherboard</h1>
 
 ![App Screenshot](https://raw.githubusercontent.com/daffaerfiansyah/System-Operation-3123500006/6dd34569840f627cd5d348a7ae3764b57b74fcc4/Minggu%202/Assets/komponen-motherboard.jpg)
 
 </div>
-
 
 <div>
   <h3><b>Keterangan</b></h3>
@@ -49,14 +52,11 @@ Motherboard adalah saraf pusat atau otak didalam sistem komputer. Motherboard ju
   <p>15. <b>Chipset</b>, yaitu ntuk mengontrol penggunaan daya dan transfer bisa pada socket maupun port yang terpasang pada motherboard.</p>
   <p>16. <b>CMOS Baterai</b>, yaitu untuk mempertahankan memori dari chip CMOS yang berisi hal-hal seperti waktu, tanggal, jenis perangkat keras dan juga pengaturan lainnya khusus untuk komputer.</p>
 </div>
-<div align="center">
 
 ![App Screenshot](https://raw.githubusercontent.com/daffaerfiansyah/System-Operation-3123500006/6dd34569840f627cd5d348a7ae3764b57b74fcc4/Minggu%202/Assets/motherboard.jpg)
 
 ![App Screenshot](https://raw.githubusercontent.com/daffaerfiansyah/System-Operation-3123500006/6dd34569840f627cd5d348a7ae3764b57b74fcc4/Minggu%202/Assets/back-panel.jpg)
 </div>
-
-
 
 <div>
   <h3><b>Keterangan</b></h3>
@@ -85,3 +85,8 @@ Motherboard adalah saraf pusat atau otak didalam sistem komputer. Motherboard ju
   <p>23. <b>Port USB</b>, yaitu untuk antarmuka dengan perifelar atau peralatan eksternal generasi baru menggantikan port paralel dan juga port serial.</p>
   <p>24. <b>Port Audio</b>, yaitu untuk menghubungkan komputer dengan sistem audio seperti mikrofon, speaker, line-in dan line-out.</p>
 </div>
+
+## Referensi
+
+- [Motherboard](https://kumparan.com/berita-update/mengenal-pengertian-dan-fungsi-motherboard-pada-komputer-1xPnkyxIiQc)
+- [Komponen Motherboard](https://www.ilmupengetahuan.co.id/pengertian-dan-fungsi-komponen-motherboard/)
