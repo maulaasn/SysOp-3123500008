@@ -24,25 +24,38 @@
 
 ## Pengertian BIOS
 
-BIOS merupakan singkatan dari Basic Input Output System. merupakan suatu software (ditulis dalam bahasa assembly) yang mengatur fungsi dasar dari perangkat keras (hardware) komputer. BIOS tertanam dalam sebuah chip memory (ROM ataupun Flash Memory) berbahan Comlpimentari Metal Oxide Semiconductor (CMOS) yang terdapat pada motherboard. Sebuah baterai yang biasa disebut sebagai baterai CMOS berfungsi untuk menjaga agar tanggal dan settingan lainnya yang telah kita set pada BIOS tidak hilang atau kembali ke konfigurasi awal meskipun komputer dimatikan.
+<h3>Legacy Bios</h3>
+
+<p><b>Legacy Bios</b> adalah proses boot yang digunakan oleh firmware BIOS. Legacy ini akan menyimpan daftar perangkat penyimpanan yang dapat di boot meliputi Floopy Disk Drives, Hard Disk Drives, Optical Disk Drives, dan sebagainya. Ketika Anda menyalakan komputer, BIOS akan melakukan Power On Self-Test (POST), kemudian sebuah speaker dari sistem internal mengeluarkan bunyi bip pendek sekali untuk menunjukkan bahwa booting berjalan normal. Bunyi bip ini membantu untuk mengidentifikasi kode dan dapat bertindak untuk memecahkan masalah lanjutan.
+
+Setelah proses POST selesai, firmware akan memuat sektor pertama dari setiap target perangkat penyimpanan ke dalam memori. Firmware di sini juga memindai MBR (Master Boot Record) yang valid. Setelah ditemukan MBR yang valid, maka firmware akan melanjutkan eksekusi ke bootloader untuk pemilihan partisi tempat booting. Ketika salah satu bagian valid tidak ditemukan, firmware akan meneruskan ke perangkat berikutnya sesuai prioritas urutan yang dapat di boot.</p>
+
+<h3>UEFI</h3>
+
+<p><b>UEFI (Unified Extensible Firmware Interface)</b> adalah proses boot yang digunakan oleh firmware UEFI. Firmware UEFI akan menyimpan daftar volume boot yang valid atau disebut dengan Partisi Layanan EFI. Firmware UEFI merupakan penerus dari BIOS. UEFI menggunakan GUID Partition Table (GPT) sedangkan BIOS menggunakan skema partisi Master BOOT Record (MBR). Kedua format MBR dan GPT ini akan menentukan informasi partisi fisik pada Hard Disk.
+
+Adapun saat prosedur POST (Power On Self-Test), firmware UEFI akan memindai semua perangkat penyimpanan yang dapat di boot dan terhubung ke sistem untuk menemukan GUID Partition Table (GPT) yang valid. Berbeda dengan MBR di Legacy, GPT di sini tidak berisi bootloader, firmware ini sendiri akan memeriksa GPT untuk menemukan Partisi Layanan EFI untuk boot.
+
+Dengan mode boot UEFI, Anda dimungkinkan melakukan pengontrolan antarmuka menggunakan perangkat mouse, sedangkan di BIOS biasanya menggunakan keyboard untuk mengontrol opsi. UEFI termasuk mode boot yang modern dan dijamin aman, ini juga dapat mencegah perangkat lunak berbahaya.</p>
+<br>
 
 ## Perbedaan Legacy dan UEFI
 
 ![App Screenshot](img/legacy%20uefi.png)
 
-**1. Definisi**
-Unified Extensible Firmware Interface (UEFI) adalah proses booting pada komputer modern dengan kemampuan lebih canggih dibanding sistem Legacy. UEFI menggunakan firmware URFI untuk menyimpan EFI Service Partitions saat proses booting berlangsung.
-Sementara, Legacy adalah proses booting komputer dengan firmware BIOS yang lebih lama dan tradisional.
-
-**2. Antarmuka**
-UEFI mendukung penggunaan mouse bahkan touchscreen atau layar sentuh sedangkan Legacy hanya support keyboard saja.
-
-**3. Kapasitas**
-UEFI mendukung kapasitas hardisk bisa lebih dari 2 TB sedangkan bios Legacy hanya 2 TB adalah kapasitas maksimal , artinya tidak bisa lebih dari 2 TB.
-
-**4. Keamanan**
-UEFI dapat mencegah pemuatan aplikasi yang tak sah atau dicurigai. Selain itu juga dapat menghambat adanya kerja dua boot karena UEFI menganggap sistem operasi adalah aplikasi.
-Namun, pada Legacy, tak ada keamanan yang disediakan saat booting berlangsung, sehingga ada kemungkinan aplikasi tak sah dimuat serta terjadi dual-boot.
+| <p align="center">Spesifikasi</p>   | <p align="center">Legacy</p>  | <p align="center">UEFI</p>  |
+| ----------- | ---------- | --------- |
+| Skema Pemeriksaan Partisi | Master Boot Record (MBR) | GUID Partition Table (GPT) |
+| Proses Booting | Proses booting komputer menggunakan firmware BIOS. | Proses booting pada komputer modern yang menyediakan kemampuan lebih canggih daripada BIOS. |
+| Jumlah maksimum partisi primer | 4 partisi | Tidak terbatas (tergantung pada sistem operasi; pada Windows dapat digunakan hingga 128 partisi). |
+| Ukuran partisi maksimum | 2 terabyte (2.000 Gigabyte) | 18 exabyte (18 miliar Gigabyte) |
+| Ukuran hard drive maksimum | 2 terabyte (2.000 Gigabyte) | 18 exabyte (18 miliar Gigabyte) |
+| Keamanan | Sektor data tidak menggunakan checksum | Sektor data menggunakan checksum CRC32 dan tabel partisi GUID cadangan. |
+| Keramahan Pengguna | Kurang ramah pengguna | UEFI lebih ramah pengguna daripada Legacy Boot. |
+| Nama partisi | Tersimpan pada partisi | ID GUID unik disertai dengan nama 36 karakter. |
+| Dukungan multi boot | Kurang mumpuni | Bagus, dengan entri boot loader dalam partisi terpisah. |
+<br>
+</div>
 
 ## Referensi
 
