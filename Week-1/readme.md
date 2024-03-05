@@ -53,7 +53,6 @@ Jika ada masalah dengan perangkat keras, komputer akan memberikan pesan kesalaha
 3. <b>Inisialisasi Perangkat Keras</b>
 ![App Screenshot](img/Inisialisasi.jpg)
 Setelah POST selesai, komputer akan menginisialisasi perangkat keras seperti hard drive, keyboard, mouse, dan perangkat lainnya. 
-Proses ini melibatkan tahap mengenali perangkat keras, memuat driver yang diperlukan, dan menyiapkan perangkat untuk digunakan.
 
 4. <b>Membaca Sektor Boot</b>
 ![App Screenshot](img/Boot%20loader.jpg)
