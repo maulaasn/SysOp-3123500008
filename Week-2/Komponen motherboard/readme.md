@@ -30,12 +30,12 @@ Umumnya, motherboard dilengkapi dengan beberapa konektivitas interface input/out
 
 <h1>Komponen Motherboard</h1>
 
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Komponen%20motherboard/img/komponen-motherboard.jpg?raw=true)
+![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Komponen%20motherboard/img/motherboard.jpg?raw=true)
 
 </div>
 
 <div>
-  <h3><b>Keterangan</b></h3>
+  <h3><b>Keterangan : </b></h3>
 
   <p>1. <b>Port Firewire</b>, yaitu untuk mendukung 800MB/s untuk transfer kecepatan tinggi, untuk kamera video eksternal dan juga disk drive eksternal.</p>
   <p>2. <b>PCI x1</b>, yaitu untuk menempatkan aksesoris seperti halnya adapter nirkabel, TV tunner dan lain sebagainya.</p>
@@ -55,13 +55,13 @@ Umumnya, motherboard dilengkapi dengan beberapa konektivitas interface input/out
   <p>16. <b>CMOS Baterai</b>, yaitu untuk mempertahankan memori dari chip CMOS yang berisi hal-hal seperti waktu, tanggal, jenis perangkat keras dan juga pengaturan lainnya khusus untuk komputer.</p>
 </div>
 
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Komponen%20motherboard/img/motherboard.jpg?raw=true)
+![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Komponen%20motherboard/img/komponen-motherboard.jpg?raw=true)
 
 ![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Komponen%20motherboard/img/back-panel.jpg?raw=true)
 </div>
 
 <div>
-  <h3><b>Keterangan</b></h3>
+  <h3><b>Keterangan : </b></h3>
   <p>1. <b>Socket Processor</b>, yaitu tempat terpasangnya processor atau CPU (Central Processing Unit) yang sering disebut otak dari komputer.</p>
   <p>2. <b>Socket RAM atau Slot Memori</b>, yaitu untuk menempatkan RAM atau Memasang RAM.</p>
   <p>3. <b>Northbridge</b>, yaitu sebutan bagi komponen utama yang mengatur lalu lintas data diantara processor dengan sistem memori dan juga saluran utama motherboard.</p>
