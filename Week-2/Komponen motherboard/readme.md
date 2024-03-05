@@ -24,11 +24,13 @@
 
 ## Pendahuluan
 
-Motherboard adalah papan sirkuit yang ada di dalam sebuah casing komputer dimana semua komponen komputer terhubung. Motherboard menyediakan konektivitas antara komponen perangkat keras komputer, seperti prosesor (CPU), memori (RAM), hard drive, dan kartu video. Lebih tepatnya, motherboard adalah perangkat keras komputer yang berfungsi sebagai “tulang punggung” atau “ibu” yang menyatukan semua bagian. Motherboard sendiri juga datang dalam berbagai jenis dan ukuran yang berbeda. Tujuannya agar sesuai dengan berbagai jenis dan ukuran perangkat keras.
+<p>Motherboard adalah papan sirkuit yang ada di dalam sebuah casing komputer dimana semua komponen komputer terhubung. Motherboard menyediakan konektivitas antara komponen perangkat keras komputer, seperti prosesor (CPU), memori (RAM), hard drive, dan kartu video. Lebih tepatnya, motherboard adalah perangkat keras komputer yang berfungsi sebagai “tulang punggung” atau “ibu” yang menyatukan semua bagian. Motherboard sendiri juga datang dalam berbagai jenis dan ukuran yang berbeda. Tujuannya agar sesuai dengan berbagai jenis dan ukuran perangkat keras.
 
-<h1>Komponen - komponen dalam Motherboard</h1>
+Umumnya, motherboard dilengkapi dengan beberapa konektivitas interface input/output yang terletak pada panel input/output di belakang perangkat tersebut. Interface paling umum pada motherboard adalah port USB. Umumnya, motherboard memiliki beberapa port USB karena banyaknya jenis konektivitas USB yang ada.</p>
 
-![App Screenshot](https://raw.githubusercontent.com/daffaerfiansyah/System-Operation-3123500006/6dd34569840f627cd5d348a7ae3764b57b74fcc4/Minggu%202/Assets/komponen-motherboard.jpg)
+<h1>Komponen Motherboard</h1>
+
+![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Komponen%20motherboard/img/komponen-motherboard.jpg?raw=true)
 
 </div>
 
@@ -53,9 +55,9 @@ Motherboard adalah papan sirkuit yang ada di dalam sebuah casing komputer dimana
   <p>16. <b>CMOS Baterai</b>, yaitu untuk mempertahankan memori dari chip CMOS yang berisi hal-hal seperti waktu, tanggal, jenis perangkat keras dan juga pengaturan lainnya khusus untuk komputer.</p>
 </div>
 
-![App Screenshot](https://raw.githubusercontent.com/daffaerfiansyah/System-Operation-3123500006/6dd34569840f627cd5d348a7ae3764b57b74fcc4/Minggu%202/Assets/motherboard.jpg)
+![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Komponen%20motherboard/img/motherboard.jpg?raw=true)
 
-![App Screenshot](https://raw.githubusercontent.com/daffaerfiansyah/System-Operation-3123500006/6dd34569840f627cd5d348a7ae3764b57b74fcc4/Minggu%202/Assets/back-panel.jpg)
+![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Komponen%20motherboard/img/back-panel.jpg?raw=true)
 </div>
 
 <div>
