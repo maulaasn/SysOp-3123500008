@@ -414,3 +414,4 @@ Debian GNU/Linux is ready to be used
 - [Debian 12 Download](https://www.debian.org/download)
 - [Sistem Operasi](https://id.wikipedia.org/wiki/Sistem_operasi)
 - [Debian](https://id.wikipedia.org/wiki/Debian)
+- [Proses Booting](https://asani.co.id/blog/booting-adalah/)
