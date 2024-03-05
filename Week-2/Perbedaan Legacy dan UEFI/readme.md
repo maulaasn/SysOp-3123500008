@@ -41,11 +41,10 @@ Setelah proses POST selesai, firmware akan memuat sektor pertama dari setiap tar
 Adapun saat prosedur POST (Power On Self-Test), firmware UEFI akan memindai semua perangkat penyimpanan yang dapat di boot dan terhubung ke sistem untuk menemukan GUID Partition Table (GPT) yang valid. Berbeda dengan MBR di Legacy, GPT di sini tidak berisi bootloader, firmware ini sendiri akan memeriksa GPT untuk menemukan Partisi Layanan EFI untuk boot.
 
 Dengan mode boot UEFI, Anda dimungkinkan melakukan pengontrolan antarmuka menggunakan perangkat mouse, sedangkan di BIOS biasanya menggunakan keyboard untuk mengontrol opsi. UEFI termasuk mode boot yang modern dan dijamin aman, ini juga dapat mencegah perangkat lunak berbahaya.</p>
-<br>
 
 ## Perbedaan Legacy dan UEFI
 
-![App Screenshot](img/legacy%20uefi.png)
+![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Perbedaan%20Legacy%20dan%20UEFI/img/legacy%20uefi.png?raw=true)
 
 | <p align="center">Spesifikasi</p>   | <p align="center">Legacy</p>  | <p align="center">UEFI</p>  |
 | ----------- | ---------- | --------- |
