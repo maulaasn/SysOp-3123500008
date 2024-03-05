@@ -5,11 +5,11 @@
 <br />
 <div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/id/4/44/Logo_PENS.png" alt="Logo PENS">
-  <h3 style="text-align: center;">Disusun Oleh : </h3>
+  <h3 style="text-align: center;">Disusun Oleh : <br>Kelompok 4</h3>
   <p style="text-align: center;">
-    <strong>Dewangga Wahyu Putera Wangsa (3123500007)</strong><br>
-    <strong>Hawa Kharisma Zahara (3123500010)</strong><br>
-    <strong>Bayu Ariyo Vonda Wicaksono (3122500017)</strong>
+    <strong>Muhammad Yafi Rifdah Zayyan (3123500001)</strong><br>
+    <strong>Muhammad Daffa Erfiansyah (3123500006)</strong><br>
+    <strong>Maula Shahihah Nur Sa'adah (3123500008)</strong>
   </p>
 
 <h3 style="text-align: center;line-height: 1.5">Politeknik Elektronika Negeri Surabaya<br>Departemen Teknik Informatika Dan Komputer<br>Program Studi Teknik Informatika<br>2023/2024</h3>
