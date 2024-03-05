@@ -44,7 +44,7 @@ Dengan mode boot UEFI, Anda dimungkinkan melakukan pengontrolan antarmuka menggu
 
 ## Perbedaan Legacy dan UEFI
 
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/Week-2/Perbedaan%20Legacy%20dan%20UEFI/img/legacy%20uefi.png?raw=true)
+![App Screenshot](img/perbedaan%20legacy%20uefi.jpg)
 
 | <p align="center">Spesifikasi</p>   | <p align="center">Legacy</p>  | <p align="center">UEFI</p>  |
 | ----------- | ---------- | --------- |
