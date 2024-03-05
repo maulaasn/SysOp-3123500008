@@ -24,6 +24,10 @@
 
 ## Pengertian BIOS
 
+<p>BIOS atau Basic Input Output System adalah perangkat lunak atau program antarmuka tingkat dasar sebagai pengatur proses input output data pada sebuah komputer. Sederhananya, BIOS diartikan sebagai suatu perangkat instruksi elektronik yang digunakan komputer untuk memulai sistem operasi.
+
+BIOS ini terletak di dalam chip komputer dan dirancang sedemikian rupa untuk melindunginya dari kerusakan disk. Pembeda BIOS dengan program komputer yang lainnya adalah terletak pada bagian penyimpanan.</p>
+
 <h3>Legacy Bios</h3>
 
 <p><b>Legacy Bios</b> adalah proses boot yang digunakan oleh firmware BIOS. Legacy ini akan menyimpan daftar perangkat penyimpanan yang dapat di boot meliputi Floopy Disk Drives, Hard Disk Drives, Optical Disk Drives, dan sebagainya. Ketika Anda menyalakan komputer, BIOS akan melakukan Power On Self-Test (POST), kemudian sebuah speaker dari sistem internal mengeluarkan bunyi bip pendek sekali untuk menunjukkan bahwa booting berjalan normal. Bunyi bip ini membantu untuk mengidentifikasi kode dan dapat bertindak untuk memecahkan masalah lanjutan.
@@ -59,5 +63,5 @@ Dengan mode boot UEFI, Anda dimungkinkan melakukan pengontrolan antarmuka menggu
 
 ## Referensi
 
-- [Apa itu BIOS?](https://inspirasiituindaharie.wordpress.com/2021/04/02/perbedaan-antara-bios-uefi-dan-bios-legacy/)
-- [Perbedaan Legacy dan UEFI](https://kumparan.com/how-to-tekno/perbedaan-uefi-dan-legacy-simak-penjelasannya-di-sini-20b8sBrgRs4/4)
+- [BIOS](https://www.acerid.com/berita-teknologi/fungsi-bios-pada-sistem-komputasi)
+- [Perbedaan Legacy dan UEFI](https://dianisa.com/perbedaan-legacy-bios-dan-uefi/)
