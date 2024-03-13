@@ -18,10 +18,11 @@
 
 ## Daftar Isi
 
-1. [IOPS dan FLOPS](#iops-flops)
-2. [Benchmarking](#benchmarking)
-3. [Analisa Hasil Benchmarking](#analisa-hasil-benchmarking)
-4. [Referensi](#referensi)
+1. [PPT](#ppt)
+2. [IOPS dan FLOPS](#iops-flops)
+   - [Benchmarking](#benchmarking)
+   - [Analisa Hasil Benchmarking](#analisa-hasil-benchmarking)
+3. [Referensi](#referensi)
 
 ## IOPS dan FLOPS
 
@@ -32,6 +33,7 @@
 <h3>FLOPS</h3>
 
 <p>Dalam komputasi, floating point operations per second (FLOPS, flops or flop/s) adalah ukuran kinerja komputer, berguna dalam bidang perhitungan ilmiah yang memerlukan perhitungan floating-point. Untuk kasus seperti itu, ini adalah ukuran yang lebih akurat daripada mengukur instruksi per detik.</p>
+</br>
 
 <h2>Melakukan Benchmarking pada PC</h2>
 
@@ -54,6 +56,7 @@
 <p>Untuk benchmarking menggunakan iops ketik pada terminal "$ iops32 $(nproc)" atau iops64 sesuaikan dengan spesifikasi laptop yang dipakai</p>
 <img src="img/flops64.png"
 <p>Untuk benchmarking pada flops sama seperti iops hanya saja mengganti dari iops menjadi flops "$ flops32 $(nproc)" atau $ flops64 $(nproc)</p>
+</br>
 
 <h2>Analisa Hasil Benchmarking</h2>
 
@@ -71,5 +74,8 @@
 
 ## Referensi
 
+- [Siklus CPU](https://arifchairulanam.blogspot.com/2018/01/pengertian-dari-fetchingdecoding-dan.html)
+- [Video Siklus CPU](https://www.youtube.com/watch?v=jFDMZpkUWCw)
+- [Siklus Instruksi](https://saddamzakkir25.blogspot.com/2016/04/siklus-intruksi-fetch-cycle-dan-execute.html)
 - [IOPS](https://en.wikipedia.org/wiki/IOPS)
 - [FLOPS](https://en.wikipedia.org/wiki/FLOPS)
