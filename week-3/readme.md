@@ -52,7 +52,6 @@
 <p align-items="center">
 <p justify-content="center">
 
-|                      | IOPS (Integer)         | FLOPS (Floating Point)    |
 |                      | IOPS64 (Integer)         | FLOPS64 (Floating Point)    |
 |----------------------|------------------------|---------------------------|
 | Total Throughput     | 6.339286 Gigaiops     | 5.637343 Gigaflops       |
