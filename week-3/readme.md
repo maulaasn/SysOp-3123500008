@@ -22,7 +22,14 @@
 2. [IOPS dan FLOPS](#iops-flops)
    - [Benchmarking](#benchmarking)
    - [Analisa Hasil Benchmarking](#analisa-hasil-benchmarking)
+   - [Pengujian IOPS dan FLOPS](#pengujian-iops-flops)
+   - [Tabel Perbandingan Pengujian](#tabel-perbandingan-pengujian)
+     - [Analisa](#analisa-pengujian)
 3. [Referensi](#referensi)
+
+## PPT
+[Link PPT Siklus CPU](https://www.canva.com/design/DAF_RTHy4wk/7QWlAIIeue3ksGOfXBmg9Q/edit?utm_content=DAF_RTHy4wk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+</br>
 
 ## IOPS dan FLOPS
 
@@ -35,42 +42,81 @@
 <p>Dalam komputasi, floating point operations per second (FLOPS, flops or flop/s) adalah ukuran kinerja komputer, berguna dalam bidang perhitungan ilmiah yang memerlukan perhitungan floating-point. Untuk kasus seperti itu, ini adalah ukuran yang lebih akurat daripada mengukur instruksi per detik.</p>
 </br>
 
-<h2>Melakukan Benchmarking pada PC</h2>
+## Melakukan Benchmarking pada PC
 
-<p>1. Melakukan Instalasi Package GCC,Make dan Git pada Debian 12 yang sudah terinstall</p>
+<p>1.  <strong>Melakukan Instalasi Package GCC,Make dan Git pada Debian 12</strong></p>
 <img src="img/sudo-apt-update.png"
 <p>Lakukan perintah "$ sudo apt update" pada terminal kemudian ketik "$ sudo apt install gcc" untuk menginstall compile dan "$ sudo apt install git" untuk menginstall git pada debian</p>
 
-<p>2. Melakukan Git clone pada Debian 12</p>
+<p>2. <strong>Melakukan Git clone pada Debian 12</strong></p>
 <img src="img/git-clone.png"
 <p>Arahkan direktori pada terminal yang ingin dituju lalu ketik "$ git init" kemudian "$ git clone (paste link github) lalu tekan enter</p>
 
-<p>3. Melakukan Build Binaries,Cleaning, dan Install Binaries</p>
+<p>3. <strong>Melakukan Build Binaries, Cleaning dan Install Binaries</strong></p>
 <img src="img/make.png"
 <p>Arahkan direktori pada folder flops/iops yang telah dilakukan git clone pada langkah sebelumnya kemudian buka terminal dan ketik "$ make"</p>
 <img src="img/make-clean.png"
 <p>Kemudian lakukan perintah "$ make clean" lalu ketik "$ sudo make install" untuk menginstall binaries pada debian.</p>
 
-<p>4. Melakukan Proses Benchmarking menggunakan Iops dan Flops</p>
+<p>4. <strong>Melakukan Proses Benchmarking menggunakan Iops dan Flops</strong></p>
 <img src="img/iops64.png"
 <p>Untuk benchmarking menggunakan iops ketik pada terminal "$ iops32 $(nproc)" atau iops64 sesuaikan dengan spesifikasi laptop yang dipakai</p>
 <img src="img/flops64.png"
 <p>Untuk benchmarking pada flops sama seperti iops hanya saja mengganti dari iops menjadi flops "$ flops32 $(nproc)" atau $ flops64 $(nproc)</p>
 </br>
 
-<h2>Analisa Hasil Benchmarking</h2>
+## Analisa Hasil Benchmarking
 
 <p align-items="center">
 <p justify-content="center">
 
-|                      | IOPS64 (Integer)         | FLOPS64 (Floating Point)    |
-|----------------------|------------------------|---------------------------|
+|                      | IOPS64 (Integer)      | FLOPS64 (Floating Point) |
+|----------------------|-----------------------|--------------------------|
 | Total Throughput     | 6.339286 Gigaiops     | 5.637343 Gigaflops       |
 | Single Core Throughput | 3.185454 Gigaiops   | 2.821573 Gigaflops       |
 
 </p>
 <p>Dengan melihat tabel di atas, dapat dilihat bahwa IOPS memiliki total throughput dan throughput single core yang lebih tinggi dibandingkan dengan FLOPS. Namun demikian, perbedaan antara total throughput dan throughput single core juga penting untuk diperhatikan karena menunjukkan seberapa baik CPU dapat mengalokasikan dan memanfaatkan sumber daya secara efisien antara inti tunggal dan total throughput.</p>
 </div>
+</br>
+
+## Pengujian IOPS dan FLOPS
+
+<p>1.  <strong>Muhammad Yaffi Rifdah Zayyan</strong></p>
+
+<p>Iops64 sebanyak 5 kali</p>
+<img src="img/yaffi-iops64.jpeg"
+
+<p>Flops64 sebanyak 5 kali</p>
+<img src="img/yaffi-flops64.jpeg"
+
+<p>2.  <strong>Muhammad Daffa Erfiansyah</strong></p>
+
+<p>Iops64 sebanyak 5 kali</p>
+<img src="img/daffa-iops64.jpeg"
+
+<p>Flops64 sebanyak 5 kali</p>
+<img src="img/daffa-flops64.jpeg"
+
+<p>3.  <strong>Maula Shahihah Nur Sa'adah</strong></p>
+
+<p>Iops64 sebanyak 5 kali</p>
+<img src="img/daffa-iops64.jpeg"
+
+<p>Flops64 sebanyak 5 kali</p>
+<img src="img/daffa-flops64.jpeg"
+
+</br>
+
+## Tabel Perbandingan Pengujian
+
+| Nama  | Max Single Core FLOPS | Max Single Core IOPS | Max CPU FLOPS | Max CPU IOPS |
+| ----- | --------------------- | -------------------- | ------------- | ------------ |
+| Yaffi | 5.6                   | 3.9                  | 11.1          | 7.7          |
+| Daffa | 3.4                   | 3.5                  | 6.5           | 6.7          |
+| Maula |                       |                      |               |              |
+
+## Analisa
 
 ## Referensi
 
