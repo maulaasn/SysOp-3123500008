@@ -21,10 +21,10 @@
 1. [PPT](#ppt)
 2. [IOPS dan FLOPS](#iops-flops)
    - [Benchmarking](#benchmarking)
-   - [Analisa Hasil Benchmarking](#analisa-hasil-benchmarking)
    - [Pengujian IOPS dan FLOPS](#pengujian-iops-flops)
    - [Tabel Perbandingan Pengujian](#tabel-perbandingan-pengujian)
      - [Analisa](#analisa-pengujian)
+     - [Kesimpulan](#kesimpulan)
 3. [Referensi](#referensi)
 
 ## PPT
@@ -65,21 +65,6 @@
 <p>Untuk benchmarking pada flops sama seperti iops hanya saja mengganti dari iops menjadi flops "$ flops32 $(nproc)" atau $ flops64 $(nproc)</p>
 </br>
 
-## Analisa Hasil Benchmarking
-
-<p align-items="center">
-<p justify-content="center">
-
-|                      | IOPS64 (Integer)      | FLOPS64 (Floating Point) |
-|----------------------|-----------------------|--------------------------|
-| Total Throughput     | 6.339286 Gigaiops     | 5.637343 Gigaflops       |
-| Single Core Throughput | 3.185454 Gigaiops   | 2.821573 Gigaflops       |
-
-</p>
-<p>Dengan melihat tabel di atas, dapat dilihat bahwa IOPS memiliki total throughput dan throughput single core yang lebih tinggi dibandingkan dengan FLOPS. Namun demikian, perbedaan antara total throughput dan throughput single core juga penting untuk diperhatikan karena menunjukkan seberapa baik CPU dapat mengalokasikan dan memanfaatkan sumber daya secara efisien antara inti tunggal dan total throughput.</p>
-</div>
-</br>
-
 ## Pengujian IOPS dan FLOPS
 
 <p>1.  <strong>Muhammad Yaffi Rifdah Zayyan</strong></p>
@@ -117,6 +102,10 @@
 | Maula |                       |                      |               |              |
 
 ## Analisa
+
+## Kesimpulan
+
+<p>Kesimpulannya, IOPS dan FLOPS adalah dua metrik yang berbeda untuk mengukur kinerja komputer dalam konteks yang berbeda pula. IOPS penting untuk memahami seberapa cepat sistem dapat mengakses dan memanipulasi data, sementara FLOPS penting untuk memahami kemampuan komputer dalam menyelesaikan tugas komputasi numerik. Kedua metrik ini memiliki peran yang penting dalam menilai kinerja dan efisiensi sistem komputer sesuai dengan kebutuhan aplikasi yang beragam.</p>
 
 ## Referensi
 
