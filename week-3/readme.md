@@ -16,38 +16,46 @@
   <hr><hr>
 </div>
 
-<div>
-<h2 align="center">Iops Dan Flops</h2>
-<h2>Definisi</h2>
+## Daftar Isi
+
+1. [IOPS dan FLOPS](#iops-flops)
+2. [Benchmarking](#benchmarking)
+3. [Analisa Hasil Benchmarking](#analisa-hasil-benchmarking)
+4. [Referensi](#referensi)
+
+## IOPS dan FLOPS
+
 <h3>IOPS</h3>
+
 <p>Input/output operations per second(IOPS) adalah pengukuran kinerja input/output yang digunakan untuk mengkarakterisasi perangkat penyimpanan komputer seperti hard disk drive (HDD), solid state drive (SSD), dan jaringan area penyimpanan (SAN). Seperti tolak ukur, angka IOPS yang diterbitkan oleh produsen perangkat penyimpanan tidak secara langsung berhubungan dengan kinerja aplikasi dunia nyata.</p>
+
 <h3>FLOPS</h3>
+
 <p>Dalam komputasi, floating point operations per second (FLOPS, flops or flop/s) adalah ukuran kinerja komputer, berguna dalam bidang perhitungan ilmiah yang memerlukan perhitungan floating-point. Untuk kasus seperti itu, ini adalah ukuran yang lebih akurat daripada mengukur instruksi per detik.</p>
-<br>
-<h2 align="center">Melakukan Benchmarking pada PC</h2>
+
+<h2>Melakukan Benchmarking pada PC</h2>
+
 <p>1. Melakukan Instalasi Package GCC,Make dan Git pada Debian 12 yang sudah terinstall</p>
 <img src="img/sudo-apt-update.png"
 <p>Lakukan perintah "$ sudo apt update" pada terminal kemudian ketik "$ sudo apt install gcc" untuk menginstall compile dan "$ sudo apt install git" untuk menginstall git pada debian</p>
-</div>
+
 <p>2. Melakukan Git clone pada Debian 12</p>
 <img src="img/git-clone.png"
 <p>Arahkan direktori pada terminal yang ingin dituju lalu ketik "$ git init" kemudian "$ git clone (paste link github) lalu tekan enter</p>
-</div>
+
 <p>3. Melakukan Build Binaries,Cleaning, dan Install Binaries</p>
 <img src="img/make.png"
 <p>Arahkan direktori pada folder flops/iops yang telah dilakukan git clone pada langkah sebelumnya kemudian buka terminal dan ketik "$ make"</p>
 <img src="img/make-clean.png"
 <p>Kemudian lakukan perintah "$ make clean" lalu ketik "$ sudo make install" untuk menginstall binaries pada debian.</p>
-</div>
+
 <p>4. Melakukan Proses Benchmarking menggunakan Iops dan Flops</p>
 <img src="img/iops64.png"
 <p>Untuk benchmarking menggunakan iops ketik pada terminal "$ iops32 $(nproc)" atau iops64 sesuaikan dengan spesifikasi laptop yang dipakai</p>
 <img src="img/flops64.png"
 <p>Untuk benchmarking pada flops sama seperti iops hanya saja mengganti dari iops menjadi flops "$ flops32 $(nproc)" atau $ flops64 $(nproc)</p>
 
-</div>
-<br>
-<h2 align="center">Analisa Hasil Benchmarking</h2>
+<h2>Analisa Hasil Benchmarking</h2>
 
 <p align-items="center">
 <p justify-content="center">
@@ -56,9 +64,9 @@
 |----------------------|------------------------|---------------------------|
 | Total Throughput     | 6.339286 Gigaiops     | 5.637343 Gigaflops       |
 | Single Core Throughput | 3.185454 Gigaiops   | 2.821573 Gigaflops       |
+
 </p>
 <p>Dengan melihat tabel di atas, dapat dilihat bahwa IOPS memiliki total throughput dan throughput single core yang lebih tinggi dibandingkan dengan FLOPS. Namun demikian, perbedaan antara total throughput dan throughput single core juga penting untuk diperhatikan karena menunjukkan seberapa baik CPU dapat mengalokasikan dan memanfaatkan sumber daya secara efisien antara inti tunggal dan total throughput.</p>
-<br>
 </div>
 
 ## Referensi
