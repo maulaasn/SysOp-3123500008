@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 style="text-align: center;font-weight: bold">Pratikum Minggu 3<br>Sistem Operasi</h1>
+  <h1 style="text-align: center;font-weight: bold">Pratikum 3<br>Sistem Operasi</h1>
   <h4 style="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
 </div>
 <br/>
@@ -11,7 +11,7 @@
     <strong>Muhammad Daffa Erfiansyah (3123500006)</strong><br>
     <strong>Maula Shahihah Nur Sa'adah (3123500008)</strong>
   </p>
-<h3 style="text-align: center;line-height: 1.5">Politeknik Elektronika Negeri Surabaya<br>Departemen Teknik Informatika Dan Komputer<br>Program Studi Teknik Informatika<br>2024/2025</h3>
+<h3 style="text-align: center;line-height: 1.5">Politeknik Elektronika Negeri Surabaya<br>Departemen Teknik Informatika Dan Komputer<br>Program Studi Teknik Informatika<br>2023/2024</h3>
   <hr><hr>
 </div>
 <div>
@@ -63,5 +63,5 @@
 <br>
 </div>
 ## Referensi
-[Wikipedia IOPS](https://en.wikipedia.org/wiki/IOPS)
-[Wikipedia FLOPS](https://en.wikipedia.org/wiki/FLOPS)
+[IOPS](https://en.wikipedia.org/wiki/IOPS)
+[FLOPS](https://en.wikipedia.org/wiki/FLOPS)
