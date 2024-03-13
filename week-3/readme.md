@@ -27,26 +27,26 @@
 <h2 align="center">Melakukan Benchmarking pada PC</h2>
 <p>1. Melakukan Instalasi Package GCC,Make dan Git pada Debian 12 yang sudah terinstall</p>
 <div align="center">
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/week-3/img/sudo%20apt%20update.png?raw=true)
+![App Screenshot](img/sudo-apt-update.png)
 <p>Lakukan perintah "$ sudo apt update" pada terminal kemudian ketik "$ sudo apt install gcc" untuk menginstall compile dan "$ sudo apt install git" untuk menginstall git pada debian</p>
 </div>
 <p>2. Melakukan Git clone pada Debian 12</p>
 <div align="center">
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/week-3/img/git%20clone.png?raw=true)
+![App Screenshot](img/git-clone.png)
 <p>Arahkan direktori pada terminal yang ingin dituju lalu ketik "$ git init" kemudian "$ git clone (paste link github) lalu tekan enter</p>
 </div>
 <p>3. Melakukan Build Binaries,Cleaning, dan Install Binaries</p>
 <div align="center">
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/week-3/img/make.png?raw=true)
+![App Screenshot](img/make.png)
 <p>Arahkan direktori pada folder flops/iops yang telah dilakukan git clone pada langkah sebelumnya kemudian buka terminal dan ketik "$ make"</p>
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/week-3/img/make%20clean.png?raw=true)
+![App Screenshot](img/make-clean.png)
 <p>Kemudian lakukan perintah "$ make clean" lalu ketik "$ sudo make install" untuk menginstall binaries pada debian.</p>
 </div>
 <p>4. Melakukan Proses Benchmarking menggunakan Iops dan Flops</p>
 <div align="center">
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/week-3/img/iops64.png?raw=true)
+![App Screenshot](img/iops64.png)
 <p>Untuk benchmarking menggunakan iops ketik pada terminal "$ iops32 $(nproc)" atau iops64 sesuaikan dengan spesifikasi laptop yang dipakai</p>
-![App Screenshot](https://github.com/maulaasn/SysOp-3123500008/blob/main/week-3/img/flops64.png?raw=true)
+![App Screenshot](img/flops64.png)
 <p>Untuk benchmarking pada flops sama seperti iops hanya saja mengganti dari iops menjadi flops "$ flops32 $(nproc)" atau $ flops64 $(nproc)</p>
 </div>
 <br>
