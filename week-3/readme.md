@@ -86,10 +86,10 @@
 <p>3.  <strong>Maula Shahihah Nur Sa'adah</strong></p>
 
 <p>Iops64 sebanyak 5 kali</p>
-<img src="img/daffa-iops64.jpeg"
+<img src="img/maula-iops64.png"
 
 <p>Flops64 sebanyak 5 kali</p>
-<img src="img/daffa-flops64.jpeg"
+<img src="img/maula-flops64.png"
 
 </br>
 
@@ -99,9 +99,13 @@
 | ----- | --------------------- | -------------------- | ------------- | ------------ |
 | Yaffi | 5.6                   | 3.9                  | 11.1          | 7.7          |
 | Daffa | 3.4                   | 3.5                  | 6.5           | 6.7          |
-| Maula |                       |                      |               |              |
+| Maula | 4.5                   | 4.1                  | 8.2           | 7.5          |
 
 ## Analisa
+
+<p>Program yang dijalankan merupakan program benchmark untuk mengukur IOPS (Input Output Operations per Second) dan FLOPS (Floating-point Operations Per Second) pada CPU. Program dijalankan lima kali. Hasilnya menunjukkan bahwa CPU memiliki peringkat IOPS FLOPS yang lebih tinggi ketika lebih banyak inti yang digunakan.
+Secara keseluruhan, program benchmark menunjukkan bahwa peringkat IOPS FLOPS CPU meningkat seiring dengan meningkatnya jumlah inti CPU yang digunakan. Hal ini karena program ini mampu mendistribusikan beban kerja ke beberapa inti, sehingga memungkinkannya melakukan lebih banyak operasi secara bersamaan.
+</p>
 
 ## Kesimpulan
 
