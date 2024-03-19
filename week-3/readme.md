@@ -95,11 +95,11 @@
 
 ## Tabel Perbandingan Pengujian
 
-| Nama  | Max Single Core FLOPS | Max Single Core IOPS | Max CPU FLOPS | Max CPU IOPS |
-| ----- | --------------------- | -------------------- | ------------- | ------------ |
-| Yaffi | 5.6                   | 3.9                  | 11.1          | 7.7          |
-| Daffa | 3.4                   | 3.5                  | 6.5           | 6.7          |
-| Maula | 4.5                   | 4.1                  | 8.2           | 7.5          |
+| Nama  | Max Single Core FLOPS | Max Single Core IOPS | Max CPU FLOPS    | Max CPU IOPS   |
+| ----- | --------------------- | -------------------- | ---------------- | ---------------|
+| Yaffi | 5.6 Gigaflops         | 3.9 Gigaiops         | 11.1 Gigaflops   | 7.7 Gigaiops   |
+| Daffa | 3.4 Gigaflops         | 3.5 Gigaiops         | 6.5  Gigaflops   | 6.7 Gigaiops   |
+| Maula | 4.5 Gigaflops         | 4.1 Gigaiops         | 8.2  Gigaflops   | 7.5 Gigaiops   |
 
 ## Analisa
 
