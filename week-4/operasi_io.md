@@ -332,21 +332,43 @@ Proses 1 menghasilkan output yang selanjutnya digunakan sebagai input oleh Prose
 
    ![App Screenshot](img/latihan_1.png)
 
+   Analisis 
+   <p>Perintah $ ls adalah perintah yang digunakan untuk melihat direktori pada linux. Perintah ini digunakan untuk melihat atau menampilkan/list isi dari folder/direktori di linux. Jika diketikan langsung maka akan menampilkan isi dari direktori Anda berada saat ini. Sedangkan untuk
+   membelokkan tampilan standard output ke file baru, menggunakan ‘>’.</p>   
+
 2. Lihat daftar secara lengkap pada direktori /etc/passwd, belokkan tampilan standard output ke file baru tanpa menghapus file baru sebelumnya.
 
    ![App Screenshot](img/latihan_2.png)
+
+   Analisis 
+   <p>Untuk melihat daftar lengkap dari direktori /etc/passwd menggunakan perintah $ ls, sedangkan
+   untuk membelokkan tampilan standard output ke file baru tanpa menghapus file baru
+   sebelumnya, menggunakan ‘>>’.</p>
 
 3. Urutkan file baru dengan cara membelokkan standard input.
 
    ![App Screenshot](img/latihan_3.png)
 
+   Analisis
+   <p>Perintah $ sort digunakan untuk mengurutkan file, sedangkan untuk membelokkan
+   standard input menggunakan ‘<’.</p>
+
+
 4. Urutkan file baru dengan cara membelokkan standard input dan standard output ke file baru.urut.
 
    ![App Screenshot](img/latihan_4.png)
 
+   Analisis
+   <p>Untuk mengurutkan file menggunakan perintah $ sort, membelokkan standard input menggunakan ‘<’, sedangkan untuk membelokkan standard output ke file menggunakan ‘>’. Pembelokan standart input dan standart output dapat dikombinasikan, asalkan tidak boleh menggunakan nama file yang sama sebagai standart input dan standart output.</p>
+
 5. Buatlah direktori latihan 2 sebanyak 2 kali dan belokkan standard error ke file rmdirerror.txt.
 
    ![App Screenshot](img/latihan_5.png)
+
+   Analisis
+   <p>Perintah $ mkdir digunakan untuk membuat direktori baru, Saat membuat direktori yang
+   sama sebanyak dua kali, akan muncul pesan error. Pesan error itu kemudian dibelokkan
+   ke file rmdierror.txt dengan menggunakan ‘2>’.</p>
 
 6. Urutkan kalimat berikut :
    ```
@@ -361,9 +383,18 @@ Proses 1 menghasilkan output yang selanjutnya digunakan sebagai input oleh Prose
 
    ![App Screenshot](img/latihan_6.png)
 
+   Analisis
+   <p>Pertama, buat notasi here document yang akan dibelokkan ke sebuah file kemudian isi
+   document tersebut. Setelah diisi dan diakhiri, isi dokumen akan tersimpan ke file yang
+   dibelokkan. File tersebut kemudian diurutkan menggunakan perintah $ sort.</p>
+
 7. Hitung jumlah baris, kata dan karakter dari file baru.urut dengan menggunakan filter dan tambahkan data tersebut ke file baru.
 
    ![App Screenshot](img/latihan_7.png)
+
+   Analisis
+   <p>Untuk mendapatkan jumlah baris, kata, dan karakter (secara berurutan) dari sebuah file,
+   menggunakan perintah wc yang dipipakan dengan perintah cat. Hasilnya kemudian ditambahkan ke file menggunakan ‘>>’.</p>
 
 8. Gunakan perintah di bawah ini dan perhatikan hasilnya.
    ```
@@ -380,6 +411,13 @@ Proses 1 menghasilkan output yang selanjutnya digunakan sebagai input oleh Prose
    ```
 
    ![App Screenshot](img/latihan_8.png)
+
+   Analisis
+   <p>Uniq digunakan untuk menghilangkan baris-baris berurutan yang mengalami duplikat,
+   grep digunakan untuk menyaring masukannya dan menampilkan baris-baris yang hanya
+   mengandung pola yang ditentukan. Pola ini disebut regular expression. Salah satu regular
+   expression dari grep adalah -v (invert0match), yang akan menampilkan baris yang
+   tidak mengandung pola yang ditentukan.</p>
 
 ## LAPORAN RESMI:
 
