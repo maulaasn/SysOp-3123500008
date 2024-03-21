@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 style="text-align: center;font-weight: bold">Pratikum 4<br>Sistem Operasi</h1>
+  <h1 style="text-align: center;font-weight: bold">Praktikum 4<br>Sistem Operasi</h1
   <h4 style="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
 </div>
 <br/>
@@ -468,7 +468,7 @@ Proses 1 menghasilkan output yang selanjutnya digunakan sebagai input oleh Prose
 
 ## KESIMPULAN
    <p>Proses I/O, file descriptor, redirection, dan pipeline adalah konsep-konsep fundamental dalam sistem operasi dan pengelolaan aliran data di dalamnya.<br>
-   <strong>Proses I/O (Input/Output): </strong>
+   <strong>Proses I/O (Input/Output) : </strong>
    <br>
    Sebuah proses memerlukan Input dan Output. Instruksi (command) yang diberikan pada Linux melalui Shell disebut sebagai eksekusi program yang selanjutnya disebut proses. Setiap kali instruksi diberikan, maka Linux kernel akan menciptakan sebuah proses dengan memberikan nomor PID (Process Identity). Proses dalam Linux selalu membutuhkan Input dan menghasilkan suatu Output.
    <br>
