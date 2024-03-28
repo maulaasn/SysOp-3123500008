@@ -92,7 +92,7 @@ Beberapa versi UNIX mempunyai utilitas sistem yang disebut top yang menyediakan 
 
 Utilitas untuk melakukan pengontrolan proses dapat ditemukan pada sistem UNIX adalah perintah killall. Perintah ini akan menghentikan proses sesuai PID atau job number proses.
 
-## TUGAS PENDAHULUAN
+### TUGAS PENDAHULUAN
 Jawablah pertanyaan-pertanyaan di bawah ini :
 1. Apa yang dimaksud dengan proses ?
 
@@ -123,13 +123,15 @@ Jawablah pertanyaan-pertanyaan di bawah ini :
 
 4. Apa yang dimaksud dengan sinyal ? Apa perintah untuk mengirim sinyal ?
 
-   Sinyal adalah cara yang digunakan oleh sistem operasi untuk mengirim pesan ke proses. Signal ini bisa digunakan untuk berbagai hal, seperti memberhentikan proses, memberi tahu proses untuk memuat kembali konfigurasi, dan lain-lain.
+   Sinyal adalah cara yang digunakan oleh sistem operasi untuk mengirim pesan ke proses. Sinyal ini bisa digunakan untuk berbagai hal, seperti memberhentikan proses, memberi tahu proses untuk memuat kembali konfigurasi, dan lain-lain.
 
    Proses mengirim sinyal melalui instruksi `kill` dengan format `kill [-nomor sinyal] PID`.
 
 5. Apa yang dimaksud dengan proses foreground dan background pada job control ?
 
    Pada foreground hanya diperuntukkan untuk satu job pada satu waktu. Job pada foreground akan mengontrol shell - menerima input dari keyboard dan mengirim output ke layar. Job pada background tidak menerima input dari terminal, biasanya berjalan tanpa memerlukan interaksi.
+
+   Job pada foreground kemungkinan dihentikan sementara (suspend), dengan menekan [Ctrl-Z]. Job yang dihentikan sementara dapat dijalankan kembali pada foreground atau background sesuai keperluan dengan menekan ”fg” atau ”bg ”. Sebagai catatan, menghentikan job sementara sangat berbeda dengan melakuakan interrupt job(biasanya menggunakan [Ctrl-C]), dimana job yang diinterrup akan dimatikan secarapermanen dan tidak dapat dijalankan lagi.
 
 6. Apa yang dimaksud perintah-perintah penjadwalan prioritas :
     `top`, `nice`, `renice`
@@ -138,188 +140,252 @@ Jawablah pertanyaan-pertanyaan di bawah ini :
     `nice`: Mengubah prioritas eksekusi proses yang sudah berjalan</br>
     `renice`: mengurangi prioritas pada proses.
 
-## PERCOBAAN
+### PERCOBAAN
 1. Login sebagai user.
+
+    ![App Screenshot](img/1.png)
+
 2. Download program C++ untuk menampilkan bilangan prima yang bernama
 primes.
+
+    ![App Screenshot](img/primes.png)
+
 3. Lakukan percobaan-percobaan di bawah ini kemudian analisa hasil percobaan.
 4. Selesaikan soal-soal latihan.
 
-### Percobaan 1 : Status Proses
+#### Percobaan 1 : Status Proses
 
 1. Pindah ke command line terminal (tty2) dengan menekan Ctrl+Alt+F2 
 dan login ke terminal sebagai user
 
     ![App Screenshot](img/command%20line(1).png)
 
-2. Instruksi `ps`
+2. Instruksi ps (process status) digunakan untuk melihat kondisi proses yang ada. PID adalah Nomor Identitas Proses, TTY adalah nama terminal dimana proses tersebut aktif, STAT berisi S (Sleepin g) dan R (Running), COMMAND merupakan instruksi yang digunakan.
+
+    `$ ps`
 
     ![App Screenshot](img/percobaan1_1.png)
 
     Analisa : 
     Instruksi `ps` digunakan untuk melihat kondisi proses yang ada 
 
-3. Instruksi `ps -u`
+3. Untuk melihat faktor/elemen lainnya, gunakan option –u (user). %CPU adalah presentasi CPU time yang digunakan oleh proses tersebut, %MEM adalah presentasi system memori yang digunakan proses, SIZE adalah jumlah memori yang digunakan, RSS (Real System Storage) adalah jumlah memori yang digunakan, START adalah kapan proses tersebut diaktifkan
+
+    `$ ps -u`
 
     ![App Screenshot](img/percobaan1_2.png)
 
     Analisa : 
     Instruksi `ps -u` (user), digunakan untuk melihat elemen/faktor lain dari kondisi proses yang ada serta menampilkan nama user
 
-4. Instruksi `ps -u <user>`
+4. Mencari proses yang spesifik pemakai. Proses diatas hanya terbatas pada proses milik pemakai, dimana pemakai teresbut melakukan login
+
+    `$ ps –u < user >`
 
     ![App Screenshot](img/percobaan1_3.png)
 
     Analisa :
-    Mencari proses yang spesifik pemakai. Proses diatas hanya terbatas pada proses milik pemakai. Perintah tersebut digunakan untuk menampilkan proses pada user yang kita inginkan.
+    Instruksi `ps -u < user >` digunakan untuk melihat semua proses yang dimiliki oleh pengguna atau user
 
-5. Instruksi `ps -a`
+5. Mencari proses lainnya gunakan opsi a (all) dan au (all user)
+
+    `$ ps –a`
 
     ![App Screenshot](img/percobaan1_4.png)
 
     Analisa :
-    Perintah tersebut digunakan untuk menampilkan daftar dari semua proses yang sedang berjalan
+    Perintah tersebut digunakan untuk menampilkan proses pada user sekarang
 
-6. Instruksi `ps -au`
+    `ps -au`
 
     ![App Screenshot](img/percobaan1_5.png)
 
     Analisa :
-    Perintah ps -au digunakan untuk menampilkan informasi yang lebih rinci tentang semua proses yang sedang berjalan, termasuk proses yang dimiliki oleh pengguna (termasuk proses terminal yang sedang dijalankan) dan proses sistem.
+    Perintah tersebut digunakan untuk menampilkan informasi yang lebih rinci tentang semua proses yang sedang berjalan, termasuk proses yang dimiliki oleh user (termasuk proses terminal yang sedang dijalankan) dan proses sistem.
 
-7. Logout dan tekan Alt+F7 untuk kembali ke mode grafis
+6. Logout dan tekan Alt+F7 untuk kembali ke mode grafis
 
 
-### Percobaan 2 : Menampilkan Hubungan Proses Parent and Child
+#### Percobaan 2 : Menampilkan Hubungan Proses Parent and Child
 
 1. Pindah ke command line terminal (tty2) dengan menekan Ctrl+Alt+F2 
 dan login ke terminal sebagai user
 
     ![App Screenshot](img/command%20line(1).png)
 
-2. Instruksi `ps -eH`
+2. Ketik ps –eH dan tekan Enter. Opsi e memilih semua proses dan opsi H menghasilkan tampilan proses secara hierarki. Proses child muncul dibawah proses parent. Proses child ditandai dengan awalan beberapa spasi.
+
+    `$ ps -eH`
 
     ![App Screenshot](img/percobaan2_1.png)
 
     Analisa : 
-    Perintah tersebut digunakan untuk menampilkan seluruh proses secara hierarki. Dimana opsi *e* digunakan untuk memilih semua proses dan opsi *H* untuk menghasilkan tampilan proses secara hierarki. 
+    Perintah diatas digunakan untuk menampilkan seluruh proses secara hierarki. Dimana opsi *e* berfungsi memilih semua proses dan opsi *H* berfungsi menghasilkan tampilan proses secara hierarki 
 
-3. Instruksi `ps -e f`
+3. Ketik ps –e f dan tekan Enter. Tampilan serupa dengan langkah 2. Opsi –f akan menampilkan status proses dengan karakter grafis (\ dan \_)
+
+    `$ ps –e f`
 
     ![App Screenshot](img/percobaan2_2.png)
 
     Analisa : 
-    Menghasilkan tampilan serupa dengan langkah 2. Opsi *f* disini berfungsi untuk menampilkan STAT dari sebuah proses dan menampilkan status proses dengan karakter grafis ( \ dan _ ) 
+    Perintah diatas serupa dengan tampilan pada percobaan kedua, yang hanya berbeda pada opsi yang ditambahkan. Dimana pada perintah ini ditambahkan opsi *f* yang berfungsi untuk mengetahui STAT (keadaan) dari sebuah proses dan menampilkan status proses dengan karakter grafis ( \ dan _ ) 
 
-4. Instruksi `pstree`
+4. Ketik pstree dan tekan Enter. Akan ditampilkan semua proses pada sistem dalam bentuk hirarki parent/child. Proses parent di sebelah kiri proses child. Sebagai contoh proses init sebagai parent (ancestor) dari semua proses pada sistem. Beberapa child dari init mempunyai child. Proses login mempunyai proses bash sebagai child. Proses bash mempunyai proses child startx. Proses startx mempunyai child xinit dan seterusnya.
+
+    `$ pstree`
 
     ![App Screenshot](img/percobaan2_3.png)
 
     Analisa : 
-    Gambar diatas tampak seperti pohon atau diagram. Perintah tersebut berfungsi untuk menampilkan struktur proses yang berjalan di sistem secara hirarkis parent/child.
+    Gambar diatas tampak seperti pohon atau diagram. Yang menyatakan system ditampilkan dalam bentuk hirarki parent/child
 
-5. Instruksi `pstree | grep mingetty`
+5. Ketik pstree | grep mingetty dan tekan Enter. Akan menampilkan semua proses mingetty yang berjalan pada system yang berupa console virtual. Selain menampikan semua proses, proses dikelompokkan dalam satu baris dengan suatu angka sebagai jumlah proses yang berjalan.
+
+    `$ pstree | grep mingetty`
 
     ![App Screenshot](img/percobaan2_4.png)
 
     Analisa : 
-    Perintah ini berfungsi untuk menampilkan semua proses mingetty yang berjalan pada sistem yang berupa console virtual. Pada gambar diatas tidak ada output yang keluar dikarenakan tidak ada proses mingetty yang sedang berjalan
+    Perintah diatas digunakan untuk menampilkan semua proses mingetty yang berjalan pada sistem yang berupa console virtual
 
-6. Instruksi `pstree -p`
+6. Untuk melihat semua PID untuk proses gunakan opsi –p.
+
+    `$ pstree –p`
 
     ![App Screenshot](img/percobaan2_5.png)
 
     Analisa : 
-    Perintah `pstree` -p dalam sistem operasi Linux adalah varian dari perintah pstree yang menampilkan struktur proses dalam bentuk pohon, namun dengan tambahan informasi tentang ID proses (PID) untuk setiap proses yang ditampilkan.
+    Perintah tersebut adalah varian dari perintah pstree yang menampilkan struktur proses dalam bentuk diagram atau pohon, yang pada proses ini ditambahkan dengan informasi mengenai PID dari proses yang digunakan dengan menambahkan Opsi –p
 
-7. Instruksi `pstree -h`
+7. Untuk menampilkan proses dan ancestor yang tercetak tebal gunakan opsi –h.
+
+    `$ pstree –h`
 
     ![App Screenshot](img/percobaan2_6.png)
 
     Analisa : 
-    Dalam sistem Linux, perintah `pstree -h` digunakan untuk menampilkan struktur proses dalam bentuk pohon dengan opsi "human-readable" yang menyederhanakan ukuran angka yang besar ke format yang lebih mudah dipahami manusia.
+    Perintah `$ pstree` yang kemudian ditambahkan opsi –h berfungsi Untuk menampilkan proses dan ancestor dengan cara ditampilkan atau dicetak tebal
 
-### Percobaan 3 : Menampilkan Status Proses dengan Berbagai Format
+#### Percobaan 3 : Menampilkan Status Proses dengan Berbagai Format
 
 1. Pindah ke command line terminal (tty2) dengan menekan Ctrl+Alt+F2 
 dan login ke terminal sebagai user
 
     ![App Screenshot](img/command%20line(3).png)
 
-2. Instruksi `ps -e | more`
+2. Ketik ps –e | more dan tekan Enter. Opsi -e menampilkan semua proses dalam bentuk 4 kolom : PID, TTY, TIME dan CMD.
+
+    `$ ps –e | more`
 
     ![App Screenshot](img/percobaan3_1.png)
 
-    Analisa : 
-    Perintah `ps -e | more` berfungsi untuk menampilkan daftar semua proses yang sedang berjalan di sistem secara berurutan, dan outputnya akan ditampilkan secara bertahap menggunakan perintah `more`
+    Jika halaman penuh terlihat prompt --More-- di bagian bawah screen, tekan q untuk kembali ke prompt perintah.
 
-3. Instruksi `ps ax | more`
+    Analisa : 
+    Perintah `ps -e | more` berfungsi untuk menampilkan daftar semua proses yang sedang berjalan di sistem secara berurutan dalam bentuk 4 kolom, dan outputnya akan ditampilkan secara bertahap menggunakan perintah `more`
+
+3.  Ketik ps ax | more dan tekan Enter. Opsi a akan menampilkan semua proses yang dihasilkan terminal (TTY). Opsi x menampilkan semua proses yang tidak dihasilkan terminal. Secara logika opsi ini sama dengan opsi –e . Terdapat 5 kolom : PID, TTY, STAT, TIME dan COMMAND.
+
+    `$ ps ax | more`
+
+    Jika halaman penuh terlihat prompt --More-- di bagian bawah screen, tekan q untuk kembali ke prompt perintah.
 
     ![App Screenshot](img/percobaan3_2.png)
 
     Analisa : 
-    Opsi a akan menampilkan semua proses yang dihasilkan terminal (TTY). Opsi x menampilkan semua proses yang tidak dihasilkan terminal. Yang kemudian outputnya ditampilkan secara bertahap menggunakan perintah `more`
+    Opsi *a* berfungsi menampilkan semua proses yang dihasilkan terminal, setelah itu dilanjutkan dengan membaca opsi x yang berfungsi menampilkan semua proses yang tidak dihasilkan terminal. Yang kemudian outputnya ditampilkan secara bertahap menggunakan perintah `more`
 
-4. Instruksi `ps ef | more`
+4. Ketik ps –e f | more dan tekan Enter. Opsi –e f akan menampilkan semua proses dalam format daftar penuh.
+
+    `$ ps ef | more`
 
     ![App Screenshot](img/percobaan3_3.png)
+
+    Jika halaman penuh terlihat prompt --More-- di bagian bawah screen, tekan q untuk kembali ke prompt perintah.
 
     Analisa : 
     Ketika perintah `ps – ef | more` dieksekusi maka opsi *-ef* akan menampilkan semua proses dalam format daftar penuh. Yang kemudian outputnya ditampilkan secara bertahap menggunakan perintah `more`
 
-5. Instruksi `ps -eo pid,cmd | more`
+5. Ketik ps –eo pid, cmd | more dan tekan Enter. Opsi –eo akan menampilkan semua proses dalam format sesuai definisi user yaitu terdiri dari kolom PID dan CMD.
+
+    `$ ps –eo pid,cmd | more`
 
     ![App Screenshot](img/percobaan3_4.png)
 
-    Analisa : 
-    Opsi `–eo` akan menampilkan semua proses dalam format sesuai definisi user yaitu terdiri dari kolom PID dan CMD. Yang kemudian outputnya akan ditampilkan secara bertahap menggunakan perintah `more`
+    Jika halaman penuh terlihat prompt --More-- di bagian bawah screen, tekan q untuk kembali ke prompt perintah.
 
-6. Instruksi `ps -eo pid,ppid,%mem,cmd | more`
+    Analisa : 
+    Opsi `–eo pid,cmd` berfungsi untuk menampilkan semua proses dalam format sesuai definisi user yaitu terdiri dari kolom PID dan CMD. Yang kemudian outputnya akan ditampilkan secara bertahap menggunakan perintah `more`
+
+6. Ketik ps –eo pid,ppid,%mem,cmd | more dan tekan Enter. Akan menampilkan kolom PID, PPID dan %MEM. PPID adalah proses ID dari proses parent. %MEM menampilkan persentasi memory system yang digunakan proses. Jika proses hanya menggunakan sedikit memory system akan ditampilkan 0.
+
+    `$ ps –eo pid,ppid,%mem,cmd | more`
 
     ![App Screenshot](img/percobaan3_5.png)
 
     Analisa : 
-    Perintah `ps -eo pid,ppid,%mem,cmd | more` akan menampilkan kolom PID, PPID dan %MEM. Dimana PPID adalah proses ID dari proses parent. %MEM menampilkan persentasi memory system yang digunakan proses. Jika proses hanya menggunakan sedikit memory system akan ditampilkan 0.
+    Opsi `-eo pid,ppid,%mem,cmd` berfungsi untuk menampilkan kolom PID, PPID dan %MEM. Dimana PPID adalah proses ID dari proses parent, sedangkan %MEM menampilkan persentasi memory system yang digunakan proses. Jika proses hanya menggunakan sedikit memory system akan ditampilkan 0
 
 7. Logout dan tekan Alt+F7 untuk kembali ke mode grafis
     
-### Percobaan 4 : Mengontrol Proses pada Shell
+#### Percobaan 4 : Mengontrol Proses pada Shell
 
 1. Pindah ke command line terminal (tty2) dengan menekan Ctrl+Alt+F2 dan login ke terminal sebagai user.
 
     ![App Screenshot](img/command%20line(4).png)
 
-2. Instruksi `yes`
+2. Gunakan perintah yes yang mengirim output y yang tidak pernah berhenti
+
+    `$ yes`
+
+    Untuk menghentikannya gunakan Ctrl-C.
 
     ![App Screenshot](img/percobaan4_1.png)
 
     Analisa : 
     Perintah `yes` akan memberikan output huruf y yang tidak pernah berhenti. Untuk menghentikannya harus menggunakan *Ctrl + C*
 
-3. Instruksi `yes > /dev/null`
+3. Belokkan standart output ke /dev/null
+
+    `$ yes > /dev/null`
+
+    Untuk menghentikannya gunakan Ctrl-C.
 
     ![App Screenshot](img/percobaan4_2.png)
 
     Analisa : 
-    Membelokkan standard output dari perintah `yes` ke `/dev/null`. Untuk menghentikannya harus menggunakan *Ctrl + C*.
+    Perintah ini digunakan membelokkan standard output dari `yes` ke `/dev/null`. Untuk menghentikannya harus menggunakan *Ctrl + C*
 
-4. Instruksi `yes > /dev/null &`
+4. Salah satu cara agar perintah yes tetap dijalankan tetapi shell tetap digunakan untuk hal yang lain dengan meletakkan proses pada background dengan menambahkan karakter & pada akhir perintah.
+
+    `$ yes > /dev/null &`
 
     ![App Screenshot](img/percobaan4_3.png)
 
     Analisa : 
-    Salah satu cara agar perintah `yes` tetap dijalankan tetapi shell tetap digunakan untuk hal yang lain dengan meletakkan proses pada background dengan menambahkan karakter `&` pada akhir perintah. `[1]` merupakan job number PID.
+    Perintah `yes` tetap dijalankan tetapi shell tetap digunakan untuk hal yang lain dengan meletakkan proses pada background dengan menambahkan karakter `&` pada akhir perintah.`[1]` merupakan job number PID
 
-5. Instruksi `jobs`
+5. Untuk melihat status proses gunakan perintah jobs.
+
+    `$ jobs`
 
     ![App Screenshot](img/percobaan4_4.png)
 
     Analisa : 
-    Perintah di atas digunakan untuk melihat status proses yang telah digunakan.
+    Perintah di atas digunakan untuk melihat status proses yang telah digunakan
 
-6. Instruksi `kill %<nomor jobs>` dan Instruksi `jobs`
+6. Untuk menghentikan job, gunakan perintah kill diikuti job number atau PID proses. Untuk identifikasi job number, diikuti prefix dengan karakter ”%”. Lihat status job setelah diterminasi
+
+    `$ kill %<nomor job> contoh : kill %1`
+
+     `$ jobs`
 
     ![App Screenshot](img/percobaan4_5.png)
 
     Analisa : 
-    Perintah `kill` digunakan untuk menghentikan job diikuti oleh *job number* atau PID Proses. Untuk identifikasi job number, penulisan perintah diikuti prefix dengan karakter `%`. Perintah `jobs` untuk melihat status job setelah diterminasi.
+    Perintah `kill` digunakan untuk menghentikan job diikuti oleh *job number* atau PID Proses. Untuk identifikasi job number, penulisan perintah diikuti prefix dengan karakter `%`. Sedangkan perintah `jobs` untuk melihat status job setelah diterminasi.
+
+### KESIMPULAN
+
+Proses dan manajemen proses dalam Debian Linux sangat penting untuk memastikan sistem berjalan dengan efisien dan stabil. Mengelola proses dengan benar akan mempengaruhi performa sistem, penggunaan sumber daya, dan kestabilan sistem secara keseluruhan. Konsep proses dalam sistem operasi Linux mencakup pengelompokan program yang sedang berjalan ke dalam unit-unit yang dapat dikelola, dengan masing-masing memiliki identitas unik yang disebut PID (Process ID). Ini memungkinkan sistem untuk melacak dan mengontrol proses secara efisien.
