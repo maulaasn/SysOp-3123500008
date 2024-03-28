@@ -289,9 +289,9 @@ dan login ke terminal sebagai user
 
     `$ ps ax | more`
 
-    Jika halaman penuh terlihat prompt --More-- di bagian bawah screen, tekan q untuk kembali ke prompt perintah.
-
     ![App Screenshot](img/percobaan3_2.png)
+
+    Jika halaman penuh terlihat prompt --More-- di bagian bawah screen, tekan q untuk kembali ke prompt perintah.
 
     Analisa : 
     Opsi *a* berfungsi menampilkan semua proses yang dihasilkan terminal, setelah itu dilanjutkan dengan membaca opsi x yang berfungsi menampilkan semua proses yang tidak dihasilkan terminal. Yang kemudian outputnya ditampilkan secara bertahap menggunakan perintah `more`
