@@ -399,6 +399,18 @@ Utilitas untuk melakukan pengontrolan proses dapat ditemukan pada sistem UNIX ad
 
         Analisa : Proses sleep yang berjalan di latar belakang dan kemudian log out dan log in kembali, proses sleep akan tetap berjalan tanpa terpengaruh. 
 
+### Apa bedanya interrupt dengan system call dalam diagram state
+
+Dalam konteks sistem operasi, baik interrupt maupun system call adalah mekanisme penting yang digunakan oleh sistem operasi untuk berinteraksi dengan perangkat keras. Meskipun keduanya memiliki tujuan yang berbeda, keduanya dapat direpresentasikan dalam diagram state untuk mengilustrasikan peran dan fungsinya dalam siklus hidup sebuah proses.
+
+1. Interrupt :
+
+    Dalam diagram state untuk interrupt, proses normal yang sedang berjalan dapat diinterupsi oleh sebuah sinyal eksternal, seperti interupsi perangkat keras atau timer. Ketika interupsi terjadi, proses yang sedang berjalan dihentikan dan kontrol diberikan kepada rutin penanganan interupsi (interrupt handler). Setelah interupsi ditangani, proses normal dapat dilanjutkan dari titik terakhir sebelum diinterupsi atau bisa melanjutkan dengan tugas yang berbeda.
+
+2. System Call :
+
+    Dalam diagram state untuk system call, proses user space memerlukan layanan atau akses ke sumber daya yang terbatas di kernel space. Proses user space akan memanggil fungsi sistem yang dikenal sebagai system call. Ketika system call dipanggil, proses beralih dari mode user ke mode kernel. Di dalam mode kernel, sistem operasi akan memproses permintaan dan mengembalikan hasilnya ke proses user space. Setelah system call selesai dieksekusi, proses kembali ke mode user dan melanjutkan eksekusi dari titik terakhir sebelum system call dipanggil.
+
 ### KESIMPULAN
 
 Proses dan manajemen proses dalam Debian Linux sangat penting untuk memastikan sistem berjalan dengan efisien dan stabil. Mengelola proses dengan benar akan mempengaruhi performa sistem, penggunaan sumber daya, dan kestabilan sistem secara keseluruhan. Konsep proses dalam sistem operasi Linux mencakup pengelompokan program yang sedang berjalan ke dalam unit-unit yang dapat dikelola, dengan masing-masing memiliki identitas unik yang disebut PID (Process ID). Ini memungkinkan sistem untuk melacak dan mengontrol proses secara efisien.
