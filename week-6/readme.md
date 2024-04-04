@@ -90,7 +90,7 @@ Beberapa versi UNIX mempunyai utilitas sistem yang disebut top yang menyediakan 
 
 Utilitas untuk melakukan pengontrolan proses dapat ditemukan pada sistem UNIX adalah perintah killall. Perintah ini akan menghentikan proses sesuai PID atau job number proses.
 
-### Percobaan 5 : Menghentikan dan Memulai Kembali Job
+### PERCOBAAN 5 : Menghentikan dan Memulai Kembali Job
 
 1. Perintah `yes > /dev/null`
 
@@ -139,7 +139,6 @@ Utilitas untuk melakukan pengontrolan proses dapat ditemukan pada sistem UNIX ad
 7. Perintah `ps -fae`
 
    ![App Screenshot](img/percobaan5_7.png)
-
    ![App Screenshot](img/percobaan5_7(2).png)
 
    ![App Screenshot](img/percobaan5_7(3).png)
@@ -150,7 +149,7 @@ Utilitas untuk melakukan pengontrolan proses dapat ditemukan pada sistem UNIX ad
 
 8. Logout dan tekan Alt+F7 untuk kembali ke mode grafis
 
-### Percobaan 6 : Percobaan dengan Penjadwalan Prioritas
+### PERCOBAAN 6 : Percobaan dengan Penjadwalan Prioritas
 
 1. Login sebagai root.
 2. Buka 3 terminal, tampilkan pada screen yang sama.
@@ -223,7 +222,7 @@ Utilitas untuk melakukan pengontrolan proses dapat ditemukan pada sistem UNIX ad
 16. Tutup semua terminal window.
 17. Logout dan login kembali sebagai user.
 
-### Latihan 
+### LATIHAN 
 
 1. Masuk ke tty2 dengan *Ctrl+Alt+F2*. Ketik `ps –au` dan tekan Enter. Kemudian perhatikan keluaran sebagai berikut :
 
