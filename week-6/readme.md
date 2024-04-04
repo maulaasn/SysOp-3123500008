@@ -15,11 +15,80 @@
   <hr><hr>
 </div>
 
-## Daftar Isi
+### POKOK BAHASAN
 
-1. [Laporan Hasil Percobaan 5](#percobaan-5--menghentikan-dan-memulai-kembali-job)
-2. [Laporan Hasil Percobaan 6](#percobaan-6--percobaan-dengan-penjadwalan-prioritas)
-3. [Laporan Hasil Latihan](#latihan)
+- Proses pada Sistem Operasi Linux
+- Manajemen Proses pada Sistem Operasi Linux
+
+### TUJUAN BELAJAR
+
+Setelah mempelajari materi dalam bab ini, mahasiswa diharapkan mampu:
+
+- Memahami konsep proses pada sis tem operasi Linux.
+- Menampilkan beberapa cara menampilkan hubungan proses parent dan child.
+- Menampilkan status proses dengan beberapa format berbeda.
+- Melakukan pengontrolan proses pada shell.
+- Memahami penjadwalan prioritas.
+
+### DASAR TEORI
+
+#### 1. KONSEP PROSES PADA SISTEM OPERASI LINUX
+
+Proses adalah program yang sedang dieksekusi. Setiap kali menggunakan utilitas sistem atau program aplikasi dari shell, satu atau lebih proses ”child” akan dibuat oleh shell sesuai perintah yang diberikan. Setiap kali instruksi dibe rikan pada Linux shell, maka kernel akan menciptakan sebuah proses-id. Proses ini disebut juga dengan terminology Unix sebagai sebuah Job. Proses Id (PID) dimulai dari 0, yaitu proses INIT, kemudian diikuti oleh proses berikutnya (terdaftar pada /etc/inittab).
+Beberapa tipe proses :
+
+- Foreground </br>
+  Proses yang diciptakan oleh pemakai langsung pada terminal (interaktif, dialog)
+- Batch </br>
+  Proses yang dikumpulkan dan dijalankan secara sekuensial (satu persatu). Prose Batch tidak diasosiasikan (berinteraksi) dengan terminal.
+- Daemon </br>
+  Proses yang menunggu permintaan (request) dari proses lainnya dan menjalankan tugas sesuai dengan permintaan tersebut. Bila tidak ada request, maka program ini akan berada dalam kondisi “idle” dan tidak menggunakan waktu hitung CPU. Umumnya nama proses daemon di UNIX berakhiran d, misalnya inetd, named, popd dll
+
+#### 2. SINYAL
+
+Proses dapat mengirim dan menerima sinyal dari dan ke proses lainnya. Proses mengirim sinyal melalui instruksi “kill” dengan format </br>
+
+    kill [-nomor sinyal] PID
+
+Nomor sinyal : 1 s/d maksimum nomor sinyal yang didefinisikan system Standar nomor sinyal yang terpenting adalah :
+
+| No Sinyal | Nama    | Deskripsi                                                                             |
+| --------- | ------- | ------------------------------------------------------------------------------------- |
+| 1         | SIGHUP  | Hangup, sinyal dikirim bila proses terputus, misalnya melalui putusnya hubungan modem |
+| 2         | SIGINT  | Sinyal interrupt, melalui ^C                                                          |
+| 3         | SIGQUIT | Sinyal Quit, melalui ^\|                                                              |
+| 9         | SIGKILL | Sinyal Kill, menghentikan proses                                                      |
+| 15        | SIGTERM | Sinyal terminasi software                                                             |
+
+#### 3. MENGIRIM SINYAL
+
+Mengirim sinyal adalah satu alat komunikasi antar proses, yaitu memberitahukan proses yang sedang berjalan bahwa ada sesuatu yang harus dikendalikan. Berdasarkan sinyal yang dikirim ini maka proses dapat bereaksi dan administrator/programmer dapat menentukan reaksi tersebut. Mengirim sinyal menggunakan instruksi
+
+    kill [-nomor sinyal] PID
+
+Sebelum mengirim sinyal PID proses yang akan dikirim harus diketahui terlebih dahulu.
+
+#### 4. MENGONTROL PROSES PADA SHELL
+
+Shell menyediakan fasilitas job control yang memungkinkan mengontrol beberapa job atau proses yang sedang berjalan pada waktu yang sama. Misalnya bila melakukan pengeditan file teks dan ingin melakukan interrupt pengeditan untuk mengerjakan hal lainnya. Bila selesai, dapat kembali (switch) ke editor dan melakukan pengeditan file teks kembali.</br>
+Job bekerja pada <strong>foreground</strong> atau <strong>background</strong>. Pada foreground hanya diper untukkan untuk satu job pada satu waktu. Job pada foreground akan mengontrol shell - menerima input dari keyboard dan mengirim output ke layar. Job pada background tidak menerima input dari terminal, biasanya berjalan tanpa memerlukan interaksi</br>
+Job pada foreground kemungkinan dihentikan sementara (suspend), dengan menekan [Ctrl-Z]. Job yang dihentikan sementara dapat dijalankan kembali pada foreground atau background sesuai keperluan dengan menekan <strong>”fg”</strong> atau <strong>”bg”</strong>. Sebagai catatan, menghentikan job seme ntara sangat berbeda dengan melakuakan interrupt job (biasanya menggunakan [Ctrl-C]), dimana job yang diinterrup akan dimatikan secara permanen dan tidak dapat dijalankan lagi.
+
+#### 5. MENGONTROL PROSES LAIN
+
+Perintah ps dapat digunakan untuk menunjukkan semua proses yang sedang berjalan pada mesin (bukan hanya proses pada shell saat ini) dengan format :
+
+    ps –fae atau
+    ps -aux
+
+Beberapa versi UNIX mempunyai utilitas sistem yang disebut top yang menyediakan cara interaktif untuk memonitor aktifitas sistem. Statistik secara detail dengan proses yang berjalan ditampilkan dan secara terus-menerus di-refresh . Proses ditampilkan secara terurut dari utilitas CPU. Kunci yang berguna pada top adalah
+
+    s – set update frequency
+    u – display proses dari satu user
+    k – kill proses (dengan PID)
+    q – quit
+
+Utilitas untuk melakukan pengontrolan proses dapat ditemukan pada sistem UNIX adalah perintah killall. Perintah ini akan menghentikan proses sesuai PID atau job number proses.
 
 ### Percobaan 5 : Menghentikan dan Memulai Kembali Job
 
@@ -77,7 +146,7 @@
 
    ![App Screenshot](img/percobaan5_7(4).png)
 
-   Analisa : Lihat job dengan perintah ps -fae dan tekan Enter. Kemudian hentikan proses dengan perintah kill. Pada proses di atas proses yang dihentikan adalah proses dengan PID 6142, yaitu proses yes > /dev/null
+   Analisa : Lihat job dengan perintah ps -fae dan tekan Enter. Kemudian hentikan proses dengan perintah kill. Pada proses di atas proses yang dihentikan adalah proses dengan PID 3245, yaitu proses yes > /dev/null
 
 8. Logout dan tekan Alt+F7 untuk kembali ke mode grafis
 
@@ -113,25 +182,25 @@
 
    ![App Screenshot](img/percobaan6_8.png)
 
-9. Jendela Top akan menampilkan dua program `yes` sebagai proses yang berjalan. Nilai %CPU sama pada keduanya. Hal ini berarti kedua proses mengkonsumsi waktu proses yang sama dan berjalan sama cepat. PID dari kedua proses akan berbeda, misalnya 2713 dan 2715. Kemudiani gunakan terminal 3 (yang tidak menjalankan primes maupun Jendela Top) dan ketik `renice 19 <PID terminal 1>` (contoh: `renice 19 2713`) dan diikuti Enter. Hal ini berarti mengganti penjadwalan prioritas dari proses ke 19.
+9. Jendela Top akan menampilkan dua program `yes` sebagai proses yang berjalan. Nilai %CPU sama pada keduanya. Hal ini berarti kedua proses mengkonsumsi waktu proses yang sama dan berjalan sama cepat. PID dari kedua proses akan berbeda, misalnya 2628 dan 2629. Kemudiani gunakan terminal 3 (yang tidak menjalankan primes maupun Jendela Top) dan ketik `renice 19 <PID terminal 1>` (contoh: `renice 19 2628`) dan diikuti Enter. Hal ini berarti mengganti penjadwalan prioritas dari proses ke 19.
 
    ![App Screenshot](img/percobaan6_9.png)
 
-10. Tunggu beberapa saat sampai program top berubah dan terlihat pada jendela Top. Pada kolom STAT memperlihatkan N untuk proses 2713. Hal ini berarti bahwa penjadwalan prioritas untuk proses 2713 lebih besar (lebih lambat) dari 0. Proses 2715 berjalan lebih cepat.
+10. Tunggu beberapa saat sampai program top berubah dan terlihat pada jendela Top. Pada kolom STAT memperlihatkan N untuk proses 2628. Hal ini berarti bahwa penjadwalan prioritas untuk proses 2628 lebih besar (lebih lambat) dari 0. Proses 2629 berjalan lebih cepat.
 
     ![App Screenshot](img/percobaan6_10.png)
 
-11. Program top juga mempunyai fungsi yang sama dengan program `renice`. Pilih jendela Top dan tekan `r`. Program top terdapat prompt PID to renice: tekan 2713 (ingat bahwa Anda harus mengganti 2713 dengan PID Anda sendiri) dan tekan Enter. Program top memberikan prompt `Renice` PID 2713 to value: tekan -19 dan tekan Enter.
+11. Program top juga mempunyai fungsi yang sama dengan program `renice`. Pilih jendela Top dan tekan `r`. Program top terdapat prompt PID to renice: tekan 2628 (ingat bahwa Anda harus mengganti 2628 dengan PID Anda sendiri) dan tekan Enter. Program top memberikan prompt `Renice` PID 2713 to value: tekan -19 dan tekan Enter.
 
     ![App Screenshot](img/percobaan6_11.png)
 
     ![App Screenshot](img/percobaan6_11(2).png)
 
-12. Tunggu beberapa saat sampai top berubah dan lihat nilai %CPU pada kedua proses. Sekarang proses 2713 lebih cepat dari proses 2715. Kolom status menunjukkan penjadwalan prioritas lebih rendah (lebih cepat) dari nilai 0.
+12. Tunggu beberapa saat sampai top berubah dan lihat nilai %CPU pada kedua proses. Sekarang proses 2628 lebih cepat dari proses 2629. Kolom status menunjukkan penjadwalan prioritas lebih rendah (lebih cepat) dari nilai 0.
 
     ![App Screenshot](img/percobaan6_12.png)
 
-13. Pilih terminal 3 (yang sedang tidak menjalankan `yes` atau program top) dan ketik `nice -n -10 yes` dan Tekan Enter. Tunggu beberapa saat agar program top berubah dan akan terlihat proses primes ketiga. Misalnya PID nya 2714. Opsi -10 berada pada kolom NI (penjadwalan prioritas).
+13. Pilih terminal 3 (yang sedang tidak menjalankan `yes` atau program top) dan ketik `nice -n -10 yes` dan Tekan Enter. Tunggu beberapa saat agar program top berubah dan akan terlihat proses primes ketiga. Misalnya PID nya 2628. Opsi -10 berada pada kolom NI (penjadwalan prioritas).
 
     ![App Screenshot](img/percobaan6_13.png)
 
@@ -141,7 +210,7 @@
 
     ![App Screenshot](img/percobaan6_14.png)
 
-15. Pindahkan mouse sehingga kursor berubah pada screen dan lihat apa yang terjadi dengan tampilan top. Proses tambahan akan muncul dan nilai %CPU berubah sebagai bagian grafis yang bekerja. Satu alasan adalah bahwa proses 2714 berjalan pada penjadwalan prioritas tinggi. Pilih jendela Top ketik `r`. PID to reniceL muncul prompt. Ketik 2714 (ubahlah 2714 dengan PID Anda) dan tekan Enter. Renice PID 2714 to value: muncul prompt. Ketik 0 dan tekan Enter. Sekarang pindahkan mouse ke sekeliling screen. Lihat perubahannya.
+15. Pindahkan mouse sehingga kursor berubah pada screen dan lihat apa yang terjadi dengan tampilan top. Proses tambahan akan muncul dan nilai %CPU berubah sebagai bagian grafis yang bekerja. Satu alasan adalah bahwa proses 2628 berjalan pada penjadwalan prioritas tinggi. Pilih jendela Top ketik `r`. PID to reniceL muncul prompt. Ketik 2628 (ubahlah 2628 dengan PID Anda) dan tekan Enter. Renice PID 2628 to value: muncul prompt. Ketik 0 dan tekan Enter. Sekarang pindahkan mouse ke sekeliling screen. Lihat perubahannya.
 
     ![App Screenshot](img/percobaan6_15.png)
 
@@ -154,4 +223,138 @@
 16. Tutup semua terminal window.
 17. Logout dan login kembali sebagai user.
 
-### Latihan
+### Latihan 
+
+1. Masuk ke tty2 dengan *Ctrl+Alt+F2*. Ketik `ps –au` dan tekan Enter. Kemudian perhatikan keluaran sebagai berikut :
+
+    ![App Screenshot](img/latihan_1.png)
+
+    - Sebutkan nama-nama proses yang bukan root
+        - Semua proses kecuali `/bin/login -p--` adalah bukan root 
+
+    - Tulis PID dan COMMAND dari proses yang paling banyak menggunakan CPU time
+        - PID : 2282
+        - COMMAND : ps -au
+
+    - Sebutkan buyut proses dan PID dari proses tersebut
+        - `/usr/libexec/gdm-wayland-session` dengan PID 1174
+
+    - Sebutkan beberapa proses daemon
+        - Pada beberapa proses yang tampil pada gambar di atas, tidak ada proses daemon.
+
+    - Pada prompt login lakukan hal- hal sebagai berikut :
+        `$ csh`
+        `$ who`
+        `$ bash`
+        `$ ls`
+        `$ sh`
+        `$ ps`
+
+        ![App Screenshot](img/latihan_1(2).png)
+
+        perintah `$ csh` adalah sebuah shell interaktif yang menawarkan lebih banyak sintaks dibandingkan dengan Bourne Shell. 
+
+        perintah `$ bash` digunakan untuk mengkonversi instruksi yang dimasukkan ke dalam bahasa biner yang dapat dimengerti oleh kernel Linux. 
+
+        perintah `$ ls` digunakan untuk menunjukkan semua file yang terletak dalam direktori aktif.
+
+        perintah `$ sh` adalah singkatan dari Bourne Shell, yang bertindak sebagai interpreter perintah atau shell standar di unix.
+
+        perintah `$ ps` digunakan untuk menampilkan daftar proses yang sedang berlangsung dalam sistem. Tampilan dari perintah ps mencakup empat kolom utama: PID, TTY, TIME, dan CMD.
+
+        Perintah `$ who`digunakan untuk menampilkan daftar pengguna yang saat ini login ke sistem. Ini menampilkan informasi seperti nama pengguna, terminal yang mereka gunakan, waktu login, dan sebagainya. Perintah ini sering digunakan untuk memeriksa siapa yang sedang menggunakan sistem atau untuk melihat apakah ada pengguna yang login secara tidak sah.
+
+    - Sebutkan PID yang paling besar dan kemudian buat urut-urutan proses sampai ke PPID = 1.
+
+        ![App Screenshot](img/latihan_1(3).png)
+
+        - PID = 2561 -> ps
+        - PID = 2560 -> sh
+        - PID = 2557 -> bash
+        - PID = 2534 -> csh
+        - PID = 2451 -> bash
+
+2. Cobalah format tampilan ps dengan opsi berikut dan perhatikan hasil tampilannya :
+    - `-f` daftar penuh
+
+        ![App Screenshot](img/latihan_2.png)  
+
+    - `-j` format job
+
+        ![App Screenshot](img/latihan_2(2).png)  
+
+    - `j` format job control
+
+        ![App Screenshot](img/latihan_2(3).png)  
+
+    - `l` daftar memanjang
+
+        ![App Screenshot](img/latihan_2(4).png) 
+
+    - `s` format sinyal
+
+        ![App Screenshot](img/latihan_2(5).png)
+
+    - `v` format virtual memory
+
+        ![App Screenshot](img/latihan_2(6).png)
+
+    - `X` format register i386
+
+        ![App Screenshot](img/latihan_2(7).png)
+
+3. Lakukan urutan pekerjaan berikut :
+
+    - Gunakan perintah `find` ke seluruh direktory pada sistem, belokkan output sehingga daftar direktori dialihkan ke file `directories.txt` dan daftar pesan error dialihkan ke file `errors.txt`
+
+        ![App Screenshot](img/latihan_3.png)
+
+    - Gunakan perintah `sleep 5`. Apa yang terjadi dengan perintah ini ?
+
+        ![App Screenshot](img/latihan_3(2).png)
+
+    - Jalankan perintah pada background menggunakan `&`
+
+        ![App Screenshot](img/latihan_3(3).png)
+
+    - Jalankan `sleep 15` pada foreground, hentikan sementara dengan Ctrl-Z dan kemudian letakkan pada background dengan `bg`. Ketikkan `jobs`. Ketikkan `ps`. Kembalikan job ke foreground dengan perintah `fg`.
+
+        ![App Screenshot](img/latihan_3(4).png)
+
+    - Jalankan `sleep 15` pada background menggunakan `&` dan kemudian gunakan perintah `kill` untuk menghentikan proses diikuti job number.
+
+        ![App Screenshot](img/latihan_3(5).png)
+
+    - Jalankan `sleep 15` pada background menggunakan `&` dan kemudian gunakan `kill` untuk menghentikan sementara proses. Gunakan `bg` untuk melanjutkan menjalankan proses.
+
+        ![App Screenshot](img/latihan_3(6).png)
+
+    - Jalankan `sleep 60` pada background 5 kali dan terminasi semua pada dengan menggunakan perintah `killall`.
+
+        ![App Screenshot](img/latihan_3(7).png)
+
+    - Gunakan perintah `ps`, `w` dan `top` untuk menunjukkan semua proses yang sedang dieksekusi.
+
+        ![App Screenshot](img/latihan_3(8).png)
+
+        ![App Screenshot](img/latihan_3(9).png)
+
+    - Gunakan perintah `ps –aeH` untuk menampilkan hierarki proses. Carilah init proses. Apakah Anda bisa identifikasi sistem daemon yang penting ? Dapatkan Anda identifikasi shell dan subproses ?
+
+        ![App Screenshot](img/latihan_3(10).png)
+
+        ![App Screenshot](img/latihan3_3(11).png)
+
+        ![App Screenshot](img/latihan_3(12).png)
+
+    - Kombinasikan `ps –fae` dan grep, apa yang Anda lihat ?
+
+        ![App Screenshot](img/latihan_3(13).png)
+
+    - Jalankan proses `sleep 300` pada background. Log off komputer dan log in kembali. Lihat daftar semua proses yang berjalan. Apa yang terjadi pada proses sleep ?
+
+        ![App Screenshot](img/latihan_3(14).png)
+
+### KESIMPULAN
+
+Proses dan manajemen proses dalam Debian Linux sangat penting untuk memastikan sistem berjalan dengan efisien dan stabil. Mengelola proses dengan benar akan mempengaruhi performa sistem, penggunaan sumber daya, dan kestabilan sistem secara keseluruhan. Konsep proses dalam sistem operasi Linux mencakup pengelompokan program yang sedang berjalan ke dalam unit-unit yang dapat dikelola, dengan masing-masing memiliki identitas unik yang disebut PID (Process ID). Ini memungkinkan sistem untuk melacak dan mengontrol proses secara efisien.
