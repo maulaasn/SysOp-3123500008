@@ -258,7 +258,7 @@ int main() {
 Analisa
 
 Output program menampilkan ID proses (PID) mereka sendiri dan nilai variabel x dalam loop tak terbatas.
-Program menggunakan systemCall fork() untuk membuat proses saat ini, dan menciptakan child proses.
+Program menggunakan system call fork() untuk membuat proses saat ini, dan menciptakan child process.
 
 <br>
 
@@ -315,7 +315,7 @@ int main() {
 
 Analisa
 
-Output program diatas melakukan proses forking secara looping (berulang) sebanyak 5 kali, yang menghasilkan proses-proses baru dengan pesan yang mencatat ID proses (PID) masing-masing. Adanya beberapa PID yang berulang menandakan bahwa proses induk melakukan fork beberapa kali, menghasilkan proses-proses child dengan PID yang sama.
+Output program diatas melakukan proses forking secara looping (berulang) sebanyak 5 kali, yang menghasilkan proses-proses baru dengan pesan yang mencatat ID proses (PID) masing-masing. Adanya beberapa PID yang berulang menandakan bahwa parent process melakukan fork beberapa kali, menghasilkan proses-proses child dengan PID yang sama.
 
 <br>
 
