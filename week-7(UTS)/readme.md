@@ -596,7 +596,7 @@ Analisa
 
 Output program diatas adalah implementasi dari fork() dimana ada 2 proses yang memiliki hubungan parent dan child. Proses pertama memiliki PID: 5138 dan PPID yang tidak diketahui yang merupakan proses utama (parent process). Setelah program menjalankan fungsi fork() maka akan muncul child process dengan PID: 5139 dan PPID: 5138 (PID dari parent process). 
 
-Setelah parent program memberikan output yang menyebutkan nomor PID nya dan nomor PID dari child, parent program akan menunggu (wait) child program berjalan. Child program akan berjalan dan memberikan output nomor PID nya dan nomor PPID nya dan menjalankan program `execl(fork3)`, pada program ini sistem `execl()` menjalankan program fork3 yang ada di file fork3.cpp. Setelah output dari program child diberikan, program child akan langsung exit the process. Setelah child program exit the process maka parent program akan mengikuti untuk exit the process juga. Dan ini adalah end of program.
+Setelah parent program memberikan output yang menyebutkan nomor PID nya dan nomor PID dari child, parent program akan menunggu (wait) child program berjalan. Child program akan berjalan dan memberikan output nomor PID nya dan nomor PPID nya dan menjalankan program `execl(fork3)`, pada program ini sistem `execl()` menjalankan program fork3 yang ada di file fork3.cpp. Setelah output dari program child diberikan, program child akan langsung exit the process. Setelah child program exit the process, maka parent program akan ikut exit juga.
 
 <br>
 
