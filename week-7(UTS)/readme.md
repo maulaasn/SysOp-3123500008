@@ -498,7 +498,7 @@ Analisa
 
 Output program diatas adalah implementasi dari fork() dimana ada 2 proses yang memiliki hubungan parent dan child. Proses pertama memiliki PID: 2926 dan PPID yang tidak diketahui yang merupakan proses utama (parent process). Setelah program menjalankan fungsi fork() maka akan muncul child process dengan PID: 2927 dan PPID: 2926 (PID dari parent process). 
 
-Setelah parent program memberikan output yang menunjukkan nomor PID dan PID child, parent program akan menunggu (wait) child program berjalan. Child program akan berjalan dan memberikan output nomor PID nya dan nomor PPID nya dan menjalankan program `execl("/bin/ls", "ls", "-l", "/home", NULL)`, `total 4` adalah jika proses child berhasil menjalankan sistem panggilan `execl()`. Setelah output dari program child diberikan, program child akan langsung exit the process. Setelah child program exit, maka parent program akan ikut exit juga.
+Setelah parent program memberikan output yang menunjukkan nomor PID dan PID child, parent program akan menunggu (wait) child program berjalan. Child program akan berjalan dan memberikan output nomor PID nya dan nomor PPID nya dan menjalankan program `execl("/bin/ls", "ls", "-l", "/home", NULL)`, `total 4` adalah jika proses child berhasil menjalankan sistem panggilan `execl()`. Setelah output dari child program diberikan, program child akan langsung exit the process. Setelah child program exit, maka parent program akan ikut exit juga.
 
 <br>
 
@@ -596,7 +596,7 @@ Analisa
 
 Output program diatas adalah implementasi dari fork() dimana ada 2 proses yang memiliki hubungan parent dan child. Proses pertama memiliki PID: 5138 dan PPID yang tidak diketahui yang merupakan proses utama (parent process). Setelah program menjalankan fungsi fork() maka akan muncul child process dengan PID: 5139 dan PPID: 5138 (PID dari parent process). 
 
-Setelah parent program memberikan output yang menyebutkan nomor PID nya dan nomor PID dari child, parent program akan menunggu (wait) child program berjalan. Child program akan berjalan dan memberikan output nomor PID nya dan nomor PPID nya dan menjalankan program `execl(fork3)`, pada program ini sistem `execl()` menjalankan program fork3 yang ada di file fork3.cpp. Setelah output dari program child diberikan, program child akan langsung exit the process. Setelah child program exit the process, maka parent program akan ikut exit juga.
+Setelah parent program memberikan output yang menyebutkan nomor PID nya dan nomor PID dari child, parent program akan menunggu (wait) child program berjalan. Child program akan berjalan dan memberikan output nomor PID nya dan nomor PPID nya dan menjalankan program `execl(fork3)`, pada program ini sistem `execl()` menjalankan program fork3 yang ada di file fork3.cpp. Setelah output dari child program diberikan, progam child akan langsung exit the process. Setelah child program exit, maka parent program akan ikut exit juga.
 
 <br>
 
