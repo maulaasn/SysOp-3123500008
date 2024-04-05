@@ -83,7 +83,7 @@ Manual: `$ man 3 exec`
 
 2. Buatlah program perkalian 2 matriks [4 x 4] dalam bahasa C yang memanfaatkan `fork()`.
 
-## Jawab
+## Jawaban
 
 <strong>1. Konsep fork dan implementasinya</strong>
 
@@ -251,8 +251,8 @@ int main() {
                               |
                              x++
   }
+  return 0;
 }
-Anali
 ```
 
 Analisa
