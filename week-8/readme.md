@@ -186,7 +186,9 @@ Output:
 ## Bash - Arrays
 
 ### How to declare and create an array?
+
 - Declare an array
+
   ![App Screenshot](img/arrays/2.png)
 
   ![App Screenshot](img/arrays/3.png)
