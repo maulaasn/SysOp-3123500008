@@ -1005,8 +1005,6 @@ Output:
 
 Ada cara lain untuk menetapkan variabel, bukan ekspresi.
 
-dengan menggunakan mari kita dapat menetapkan variabel berdasarkan hasil ekspresi kondisi
-
 ![App Screenshot](img/ternary-operator/5.png)
 
 Output
