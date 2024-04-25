@@ -53,9 +53,9 @@ Ada berbagai jenis shell di OS Unix.
 <table>
 <thead>
 <tr>
-  <th style="background-color: blue; color: white">Tipe Cangkang</th>
+  <th style="background-color: blue; color: white">Shell Type</th>
   <th style="background-color: blue; color: white">Alias</th>
-  <th style="background-color: blue; color: white">Garis Pertama</th>
+  <th style="background-color: blue; color: white">First Line</th>
 <tr>
 </thead>
 <tbody>
@@ -762,24 +762,24 @@ Output :
 
 **Check if a Directory Exists and Print a Message**
 
-![App Screenshot](img/check-directory/1.png)
+![App Screenshot](img/check-directory/3.jpeg)
 
 Output:
 
 ![App Screenshot](img/check-directory/2.png)
 
-- **How to mkdir only if a directory does not already exist?**
+- **How to mkdir only if a directory does not already exist ?**
 
-Dalam contoh ini, menggunakan blok kondisional if-else.
+  Dalam contoh ini, menggunakan blok kondisional if-else.
 
 - Diperiksa apakah direktori tersebut ada menggunakan `-d`.
 - else blok akan memiliki kode untuk tidak ada dan membuat direktori menggunakan jalur direktori
 
-![App Screenshot](img/check-directory/)
+  ![App Screenshot](img/check-directory/1.png)
 
-Output
+  Output
 
-![App Screenshot](img/check-directory/)
+  ![App Screenshot](img/check-directory/2.png)
 
 **Check directory exists using ternary syntax**
 
