@@ -317,6 +317,7 @@ Pernyataan case mirip dengan switch case dalam bahasa pemrograman lain.
 Ini digunakan untuk membandingkan masukan yang diberikan dengan beberapa pola, dan perintah di dalam pola yang cocok dijalankan.
 
 Syntax:
+
 ![App Screenshot](img/case-statements/1.png)
 
 - expression adalah variabel atau expression yang valid untuk dievaluasi
@@ -359,6 +360,7 @@ Jika kutipan tunggal berisi quoe tunggal bersarang, Anda harus menghindarinya me
 Output:
 
 ![App Screenshot](img/special-characters/8.png)
+
 Contoh berisi ``` adalah karakter kutipan tunggal di dalam kutipan tunggal
 
 ### Double quotes
@@ -456,6 +458,7 @@ Contoh:
 Output:
 
 ![App Screenshot](img/loops/6.png)
+
 Ini mencetak angka dari 0 hingga 5
 
 ### While loop in bash
@@ -470,6 +473,7 @@ Contoh:
 Output:
 
 ![App Screenshot](img/loops/9.png)
+
 while loop mengeksekusi kode selama kondisi yang ditentukan ( `[[ i -lt 100 ]]`) benar. Blok kode menambah nilai sebesar 1 dan mencetak nilainya. Jika kondisi salah, loop keluar.
 
 ### Until loop in bash
@@ -484,15 +488,18 @@ Contoh:
 Output:
 
 ![App Screenshot](img/loops/12.png)
+
 Dalam contoh ini, blok kode dijalankan selama `[[ i -eq 100 ]]` bernilai salah. Ini menambah nilai sebesar 1 dan mencetak nilainya. Output mencetak angka dari 0 hingga 99 angka.
 
 ## Bash - Append String
 
 ### Bash Athematic expressions
 ![App Screenshot](img/append-string/1.png)
+
 Output:
 
 ![App Screenshot](img/append-string/2.png)
+
 Ekspresi artema dibuat menggunakan operator di bawah ini
 
 - Operator Artmatik
@@ -585,3 +592,640 @@ command: valid command `<<<` : is a `here string operator`
 Output:
 
 ![App Screenshot](img/append-string-2/12.png)
+
+## Bash - Operators
+
+### Bash Arithmetic Operators
+
+Operator aritmatika di Bash menyediakan operasi aritmatika seperti operator penjumlahan, pembagian, pengurangan, dan perkalian pembagian.
+
+| Operator | Judul        | Keterangan                                 | Contoh               |
+|----------|--------------|--------------------------------------------|----------------------|
+| +        | Tambahan     | penambahan dua atau lebih operan          | p + q = 50           |
+| -        | Pengurangan  | pengurangan dua atau lebih operan         | q - p = 10           |
+| *        | Perkalian    | perkalian dua atau lebih operan           | p * q = 600          |
+| /        | Membagi      | hasil bagi setelah pembagian nilai         | q / p = 1.5          |
+| %        | Modulus      | kembalikan sisanya setelah pembagian nilai| q % p = 10           |
+| -expr    | Minus Unary  | kebalikan dari suatu ekspresi             | -(10 - 7) adalah -3  |
+| ~/       | Divisi Int   | mengembalikan nilai int pembagian         | (10 ~/ 7) adalah 1   |
+| ++       | Kenaikan     | Tambahkan nilainya sebesar 1              | ++p = 21             |
+| --       | Pengurangan  | Kurangi nilainya sebesar 1                | --q = 29             |
+
+### Assignment Operators
+
+Operator penugasan digunakan untuk menetapkan nilai ke suatu variabel. Operasi dasarnya sama dengan (=)
+
+Selain itu, Ada operator penugasan lainnya.
+
+misalnya, p adalah 20
+
+| Operasi          | Simbol | Keterangan                                 | Hasil                         |
+|------------------|--------|--------------------------------------------|-------------------------------|
+| Tambahkan Tugas  | +=     | Penambahan dan penugasan ke variabel       | ((p += 3)) adalah 23          |
+| Kurangi Tugas    | -=     | Kurangi dan tugaskan ke variabel           | ((p -= 3)) adalah 17          |
+| Perkalian Tugas  | *=     | Perkalian dan penugasan ke variabel        | ((p *= 2)) adalah 40          |
+| Penugasan Divisi| /=     | Penambahan dan penugasan ke variabel       | ((p /= 5)) adalah 4           |
+
+### Bitwise Operators
+
+| Operasi               | Simbol | Keterangan                                          | Hasil                            |
+|-----------------------|--------|-----------------------------------------------------|----------------------------------|
+| DAN                   | &      | Bitwise AND dari dua operan                        | $op1 & $op2 adalah 0             |
+| DAN Setara            | &=     | Bitwise DAN Sama dengan dua operan                | $op1 & $op2 adalah 0             |
+| ATAU                  | \|     | Bitwise OR dari dua operan                         | $op1 \| $op2 adalah 7            |
+| XOR                   | ^      | XOR bitwise dari dua operan                        | $op1 ^ $op2 adalah 7             |
+| Pergeseran Kiri       | <<     | Pergeseran Kiri Bitwise dari dua operan           | $op1 & $op2 adalah 0             |
+| Persamaan Pergeseran Kiri | <<=  | Pergeseran Kiri Bitwise Sama dengan dua operan    | $op1 \| $op2 adalah 7            |
+| XOR                   | ^      | XOR bitwise dari dua operan                        | $op1 ^ $op2 adalah 7             |
+| XOR Setara            | ^=     | Bitwise XOR Sama dengan dua operan                | $op1 ^ $op2 adalah 7             |
+
+### Numerical Comparision Operator
+
+Berikut ini adalah operator Perbandingan.
+
+menggunakan operator `-eq` dalam `if fi` pernyataan kondisional
+
+![App Screenshot](img/operators/1.png)
+
+Output:
+
+![App Screenshot](img/operators/2.png)
+
+| Operation  | Nama              | Deskripsi                                                  |
+|------------|-------------------|------------------------------------------------------------|
+| -eq        | Equal             | Memeriksa apakah dua variabel sama                         |
+| -ne        | Not Equal         | Memeriksa apakah dua variabel tidak sama                   |
+| -lt        | Less Than         | Memeriksa apakah variabel pertama lebih kecil dari variabel kedua |
+| -le        | Less Than or Equal| Memeriksa apakah variabel pertama kurang dari sama dengan variabel kedua |
+| -gt        | Greater Than      | Memeriksa apakah variabel pertama lebih besar dari variabel kedua |
+| -ge        | Greater Than or Equal | Memeriksa apakah variabel pertama lebih besar dari sama dengan variabel kedua |
+
+Berikut Contohnya:
+
+![App Screenshot](img/operators/3.png)
+
+Output
+
+![App Screenshot](img/operators/4.png)
+
+## Bash - Number Comparison
+
+### How to Check if two numbers are equal or not in Bash
+
+![App Screenshot](img/numbers-comparison/1.png)
+
+Output:
+
+![App Screenshot](img/numbers-comparison/2.png)
+
+Beberapa skrip shell tidak mendukung (()), gunakan [[]] dengan operator Perbandingan
+
+Berikut ini adalah operator Perbandingan.
+
+- `-eq`: setara
+    - Periksa apakah dua variabel sama
+
+- `-ne`: Tidak sama
+    - Periksa apakah dua variabel tidak sama
+
+- `-lt`: Kurang dari
+    - Periksa apakah variabel pertama lebih kecil dari variabel kedua
+
+- `-le`: Kurang dari sama
+    - Periksa apakah variabel pertama kurang dari sama dengan variabel kedua
+
+- `-gt`: Lebih besar dari
+    - Periksa apakah variabel pertama lebih besar dari variabel kedua
+
+- `-ge`: Lebih besar dari atau sama dengan
+    - Bandingkan Periksa apakah variabel pertama lebih besar dari sama dengan variabel kedua
+
+menggunakan operator `-eq` dalam `if fi` pernyataan kondisional
+
+![App Screenshot](img/numbers-comparison/3.png)
+
+Output :
+
+![App Screenshot](img/numbers-comparison/4.png)
+
+Dapat juga dilakukan dengan operator ternary
+
+![App Screenshot](img/numbers-comparison/5.png)
+
+Output :
+
+![App Screenshot](img/numbers-comparison/6.png)
+
+## Bash - Check Directory
+
+### Bash scripting Check if the directory exists
+
+**Check if a Directory Exists and Print a Message**
+
+![App Screenshot](img/check-directory/1.png)
+
+Output:
+
+![App Screenshot](img/check-directory/2.png)
+
+- **How to mkdir only if a directory does not already exist?**
+
+Dalam contoh ini, menggunakan blok kondisional if-else.
+
+- Diperiksa apakah direktori tersebut ada menggunakan `-d`.
+- else blok akan memiliki kode untuk tidak ada dan membuat direktori menggunakan jalur direktori
+
+![App Screenshot](img/check-directory/)
+
+Output
+
+![App Screenshot](img/check-directory/)
+
+**Check directory exists using ternary syntax**
+
+Alternatifnya, ekspresi kondisional ternary digunakan sebagai pengganti ekspresi kondisional if.
+
+Berikut adalah contoh ekspresi kondisional
+
+![App Screenshot](img/check-directory/5.png)
+ 
+Output:
+
+![App Screenshot](img/check-directory/6.png)
+
+- **Check if multiple directories exist**
+
+  Kita harus menggunakan pernyataan kondisional if dengan operator logika AND(&&).
+
+  ![App Screenshot](img/check-directory/7.png)
+
+  ![App Screenshot](img/check-directory/8.png)
+
+  Output:
+
+  ![App Screenshot](img/check-directory/9.png)
+
+**Check directory exists and is writable and executable**
+
+- foldernya ada atau tidak
+- jika ada, Folder tersebut memiliki izin untuk menulis dan dieksekusi.
+- Terakhir, Cetak pesan string
+
+![App Screenshot](img/check-directory/10.png)
+
+Output:
+
+![App Screenshot](img/check-directory/11.png)
+
+**Check files or directory exists**
+
+Opsi -e memeriksa file atau direktori untuk jalur yang diberikan ada atau tidak.
+
+![App Screenshot](img/check-directory/12.png)
+
+Output:
+
+![App Screenshot](img/check-directory/13.png)
+
+## Bash - File Name
+
+### Extract file name with extension
+
+![App Screenshot](img/file-name/1.png)
+
+Output:
+
+![App Screenshot](img/file-name/2.png)
+
+### Extract filename without extension
+
+![App Screenshot](img/file-name/3.png)
+
+Output:
+
+![App Screenshot](img/file-name/4.png)
+
+### Extract extension for a file path
+
+![App Screenshot](img/file-name/5.png)
+
+Output:
+
+![App Screenshot](img/file-name/6.png)
+
+Berikut adalah contoh komprehensif yang menunjukkan cara mendapatkan nama file dengan atau tanpa ekstensi file. 
+
+- file dengan ekstensi,
+- hanya nama file tanpa ekstensi,
+- dan ekstensinya saja.
+
+![App Screenshot](img/file-name/7.png)
+
+Output
+
+![App Screenshot](img/file-name/8.png)
+
+## Bash - Split String
+
+### Split a string using the awk command in a bash shell script
+
+Perintah `awk` , sebuah utilitas Linux yang kompatibel dengan semua distribusi bash dan shell, digunakan untuk membagi string berdasarkan `delimiter` .
+
+Input diberikan menggunakan simbol pipa (|), dan contoh di bawah ini menunjukkan pemisahan string yang mengandung titik dua ( `:` )
+
+![App Screenshot](img/split-string/1.png)
+
+Output:
+
+![App Screenshot](img/split-string/2.png)
+
+### Split using IFS variable
+
+![App Screenshot](img/split-string/3.png)
+
+Output:
+
+![App Screenshot](img/split-string/4.png)
+
+### Use Parameter expansion and loop
+
+Perluasan parameter digunakan untuk mengubah nilai variabel berdasarkan opsi yang ditentukan. Dalam hal ini, variabel string diubah menjadi array. Array kemudian diiterasi menggunakan sintaks for loop, mencetak setiap elemen ke konsol:
+
+![App Screenshot](img/split-string/5.png)
+
+Output:
+
+![App Screenshot](img/split-string/6.png)
+
+## Bash - String Length
+
+Panjang string ditentukan oleh jumlah karakter yang dikandungnya, dan umumnya mudah untuk memastikan panjangnya untuk teks normal.
+
+Postingan kali ini akan membahas berbagai metode untuk menghitung jumlah karakter dalam sebuah string dengan pengkodean UTF.
+
+Menggunakan Sintaks ${#variable}
+
+Metode pertama melibatkan penggunaan `${#variable}` sintaksis untuk mendapatkan panjang variabel string.
+
+Dalam hal ini, jumlah karakter dalam variabel string.
+
+![App Screenshot](img/string-length/1.png)
+
+Output:
+
+![App Screenshot](img/string-length/2.png)
+
+Perintah wc -m
+
+Metode kedua melibatkan penggunaan perintah wc -m, baik secara langsung dengan string atau melalui variabel.
+
+![App Screenshot](img/string-length/3.png)
+
+Dalam contoh ini, `echo -n "string"` digunakan untuk mencetak string tanpa baris baru ( `-n option`). Operator `|` pipa mengarahkan output dari perintah sisi kiri ke perintah sisi kanan, dan `wc -m` menghitung jumlah karakter dalam sebuah string.
+
+Output:
+
+![App Screenshot](img/string-length/4.png)
+
+Menggunakan `expr` Perintah Metode lain melibatkan penggunaan `expr` perintah untuk mencari panjang string.
+
+![App Screenshot](img/string-length/5.png)
+
+Output:
+
+![App Screenshot](img/string-length/6.png)
+
+`${}` mewakili substitusi ekspresi, mensubstitusi nilai ekspresi ke dalam string. `expr` mengeksekusi `expressions`, dan `length` merupakan argumen yang diteruskan `expr` untuk menemukan panjang string.
+
+`$(expr length "$msg")` mengembalikan jumlah karakter dalam string, ditetapkan ke variabel, nilai variabel dicetak ke konsol
+
+- menggunakan perintah awk `Awk` menyediakan cara lain untuk menghitung panjang string menggunakan ekspresi.
+
+  ![App Screenshot](img/string-length/7.png)
+
+  Output:
+
+  ![App Screenshot](img/string-length/8.png)
+
+Dalam hal ini, `echo -n "$variable"` keluaran string tanpa baris baru, dan keluaran disalurkan `awk` menggunakan simbol pipa( `|`). Perintah `awk '{print length}'` menghitung dan mencetak panjang baris input.
+
+## Bash - bashrc
+
+File .bashrc adalah file skrip bash yang dijalankan dalam kasus berikut
+
+- menggunakan eksekusi skrip bash
+- bash shell dibuka dan dimulai secara interaktif
+
+File ini disembunyikan secara default karena file dimulai dengan . disembunyikan.
+
+![App Screenshot](img/bashrc/1.png)
+
+File .bashrc adalah skrip yang dijalankan saat pengguna login. File ini terletak di direktori home pengguna. Berisi environment variables dan user preferences untuk dikonfigurasi di dalam file ini
+
+Untuk membaca / melihat file bashrc, kita bisa menggunakan Vi atau nano editor dengan command `nano ~/.bashrc`
+
+file bashrc terletak di dua tempat
+
+- direktori home pengguna
+- Direktori sistem
+
+Dalam kasus direktori home pengguna, file ini disembunyikan secara default. Lokasinya adalah `~/.bashrc` tempat ~ pengguna saat ini login di direktori home.
+
+Dalam hal direktori Sistem, file ini terletak di `/etc/bash.bashrc`.
+
+### How to reload .bashrc settings without logging out and back in again?
+
+jika Anda membuat perubahan apa pun pada file .bashrc, Perubahan tidak akan langsung terlihat. Anda harus menutup dan memulai kembali sesi bash untuk melakukan perubahan.
+
+Bagaimana cara memuat ulang konfigurasi .bashrc tanpa login lagi? Jalankan perintah berikut di command prompt.
+
+![App Screenshot](img/bashrc/2.png)
+
+## Bash - Ternary Operator
+
+### How to use ternary Operator in Bash
+
+Cara pertama, gunakan if-else dengan expression syntax.
+
+![App Screenshot](img/ternary-operator/1.png)
+
+Output:
+
+![App Screenshot](img/ternary-operator/2.png)
+
+Cara kedua, gunakan arithmetic expression menggunakan && dan || Syntaxnya adalah
+
+![App Screenshot](img/ternary-operator/3.png)
+
+Output:
+
+![App Screenshot](img/ternary-operator/4.png)
+
+Ada cara lain untuk menetapkan variabel, bukan ekspresi.
+
+dengan menggunakan mari kita dapat menetapkan variabel berdasarkan hasil ekspresi kondisi
+
+![App Screenshot](img/ternary-operator/5.png)
+
+Output
+
+![App Screenshot](img/ternary-operator/6.png)
+
+## Bash - Lowercase
+
+**Using the tr command**
+
+Perintah tr, kependekan dari translator, adalah perintah Unix yang digunakan untuk mengonversi karakter dari satu format ke format lainnya.
+
+Contoh:
+
+![App Screenshot](img/lowercase/1.png)
+
+Output:
+
+![App Screenshot](img/lowercase/2.png)
+
+bisa juga menggunakan:
+
+![App Screenshot](img/lowercase/3.png)
+
+Output:
+
+![App Screenshot](img/lowercase/4.png)
+
+Catatan: `tr` berfungsi dengan `ASCII` dan tidak mendukung UTF karakter.
+
+**Using the awk command**
+
+Untuk mengubah string menjadi huruf kecil menggunakan perintah `awk`, `tolower` fungsinya digabungkan dengan `awk`.
+
+Hasilnya kemudian diteruskan ke perintah echo menggunakan operator pipa:
+
+![App Screenshot](img/lowercase/5.png)
+
+Output:
+
+![App Screenshot](img/lowercase/6.png)
+
+**Use Perl in Bash Script Printing lc with Perl converts a string to lowercase**
+
+![App Screenshot](img/lowercase/7.png)
+
+Output:
+
+![App Screenshot](img/lowercase/8.png)
+
+**Use Parameter expansion Bash 4.0**
+
+![App Screenshot](img/lowercase/9.png)
+
+Output:
+
+![App Screenshot](img/lowercase/10.png)
+
+Atau
+
+![App Screenshot](img/lowercase/11.png)
+
+Output:
+
+![App Screenshot](img/lowercase/12.png)
+
+Di sini, `${msg,,}` menggunakan `,,` opsi untuk mengonversi variabel menjadi huruf kecil.
+
+## Bash - Uppercase
+
+**Using the tr command**
+
+Perintah tr, kependekan dari translator, adalah perintah Unix yang digunakan untuk mengonversi karakter dari satu format ke format lainnya.
+
+Contoh:
+
+![App Screenshot](img/uppercase/1.png)
+
+Output:
+
+![App Screenshot](img/uppercase/2.png)
+
+bisa juga menggunakan:
+
+![App Screenshot](img/uppercase/3.png)
+
+Output:
+
+![App Screenshot](img/uppercase/4.png)
+
+**Using the awk command**
+
+Untuk mengubah string menjadi huruf besar menggunakan perintah `awk`, `toupper` fungsinya digabungkan dengan awk. Hasilnya kemudian diteruskan ke perintah echo menggunakan operator pipa:
+
+![App Screenshot](img/uppercase/5.png)
+
+Output:
+
+![App Screenshot](img/uppercase/6.png)
+
+**In bash 4.0 version bash 4.0 provides string inbuilt in manipulation utilities. Adding two circumflexes (^) to a string makes a string in the upper case string**
+
+![App Screenshot](img/uppercase/7.png)
+
+Output:
+
+![App Screenshot](img/uppercase/8.png)
+
+**Using Perl in the bash script**
+
+`print uc` perintah di Perl mengubah string menjadi huruf besar
+
+![App Screenshot](img/uppercase/9.png)
+
+Output:
+
+![App Screenshot](img/uppercase/10.png)
+
+**Use parameter expansion syntax Bash 4.0 provides built-in string manipulation utilities. Adding two circumflexes (^) to a string makes it an uppercase string, also called parameter expansion syntax**
+
+![App Screenshot](img/uppercase/11.png)
+
+Output:
+
+![App Screenshot](img/uppercase/12.png)
+
+## Bash - Substring
+
+### Using the Comparison Operator to Check for Substring exists or not
+
+- Tentukan variabel string yang berisi teks.
+- Gunakan pernyataan if untuk membandingkan string dengan substring yang diinginkan menggunakan operator kesetaraan ( ==) dan wildcard (*).
+- Terakhir, cetak string jika substring ditemukan.
+
+![App Screenshot](img/substring/1.png)
+
+Output:
+
+![App Screenshot](img/substring/2.png)
+
+### Use Regular Expressions to Find a Substring
+
+Operator `=~` memfasilitasi pencarian substring dalam string tertentu, digunakan dalam blok if.
+
+![App Screenshot](img/substring/3.png)
+
+Output:
+
+![App Screenshot](img/substring/4.png)
+
+### Use the grep command
+
+Perintah grep digunakan untuk mencari string tertentu, disalurkan ke string utama untuk perbandingan.
+
+![App Screenshot](img/substring/5.png)
+
+Output:
+
+![App Screenshot](img/substring/6.png)
+
+## Bash - Variable Set
+
+### How to check if a variable is set in a bash script?
+
+![App Screenshot](img/variable-set/1.png)
+
+Output:
+
+![App Screenshot](img/variable-set/2.png)
+
+Cara lain untuk memeriksa suatu variabel adalah dengan menyetel menggunakan -v opsi
+
+![App Screenshot](img/variable-set/3.png)
+
+Output:
+
+![App Screenshot](img/variable-set/4.png)
+
+### How to check if the variable is unset in the bash script?  
+
+Misalnya variabelnya tidak disetel artinya
+
+- Itu tidak ada dan tidak diumumkan.
+
+Dalam contoh di bawah ini,
+
+- variable1 dideklarasikan tetapi kosong
+- variable2 tidak dideklarasikan dan tidak disetel.
+
+![App Screenshot](img/variable-set/5.png)
+
+Output:
+
+![App Screenshot](img/variable-set/6.png)
+
+### How to check variable is empty or non-empty
+
+Tutorial ini memeriksa pemeriksaan variabel dibandingkan dengan spasi dan membungkus ekspresi ini di dalam [[]].
+
+![App Screenshot](img/variable-set/7.png)
+
+Output:
+
+![App Screenshot](img/variable-set/8.png)
+
+Hal yang sama juga dapat ditulis menggunakan variabel dalam tanda kutip ganda yang dibungkus dalam tanda kurung tunggal [].
+
+![App Screenshot](img/variable-set/9.png)
+
+Output:
+
+![App Screenshot](img/variable-set/10.png)
+
+Berikut adalah kode untuk `example checks if a variable is non-empty`.
+
+![App Screenshot](img/variable-set/11.png)
+
+Output:
+
+![App Screenshot](img/variable-set/12.png)
+
+Cara lain:
+
+![App Screenshot](img/variable-set/13.png)
+
+Output
+
+![App Screenshot](img/variable-set/14.png)
+
+Opsi penggunaan -z lainnya untuk memeriksa variabel disetel dan kosong atau tidak kosong menggunakan kode di bawah ini
+
+![App Screenshot](img/variable-set/15.png)
+
+Output:
+
+![App Screenshot](img/variable-set/16.png)
+
+## Bash - Iterate Nos
+
+### Generate a range of numbers in the bash script
+
+**using seq seq tool generates a sequence of numbers**
+
+![App Screenshot](img/iterate-nos/1.png)
+
+Output:
+
+![App Screenshot](img/iterate-nos/2.png)
+
+**using for loop**
+
+![App Screenshot](img/iterate-nos/3.png)
+
+Output:
+
+![App Screenshot](img/iterate-nos/4.png)
+
+**while loop**
+
+![App Screenshot](img/iterate-nos/5.png)
+
+Output:
+
+![App Screenshot](img/iterate-nos/6.png)  
