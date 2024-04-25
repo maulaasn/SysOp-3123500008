@@ -59,6 +59,30 @@ Dengan mode boot UEFI, Anda dimungkinkan melakukan pengontrolan antarmuka menggu
 | Dukungan multi boot | Kurang mumpuni | Bagus, dengan entri boot loader dalam partisi terpisah. |
 </div>
 
+## Perbedaan dalam Proses
+
+Proses booting pada UEFI (Unified Extensible Firmware Interface) melibatkan beberapa langkah yang berbeda dibandingkan dengan Legacy BIOS. Berikut adalah langkah-langkah umum dalam proses booting UEFI:
+1. **Power On Self Test (POST)**: Proses booting dimulai dengan POST, di mana firmware UEFI melakukan pemeriksaan awal terhadap perangkat keras untuk memastikan semuanya berfungsi dengan baik.
+2. **UEFI Firmware Initialization**: Setelah POST selesai, firmware UEFI diinisialisasi. Ini termasuk mengidentifikasi dan menginisialisasi perangkat keras, seperti CPU, RAM, dan perangkat penyimpanan.
+3. **UEFI Boot Manager**: Setelah firmware diinisialisasi, UEFI Boot Manager dimuat. Boot Manager adalah program yang bertanggung jawab untuk memilih perangkat booting yang tepat. Boot Manager dapat memuat beberapa file konfigurasi, seperti NVRAM (Non-Volatile Random Access Memory) atau file konfigurasi di partisi EFI System.
+4. **Boot Option Menu**: Jika ada lebih dari satu perangkat booting yang tersedia, Boot Manager akan menampilkan menu opsi booting, di mana pengguna dapat memilih perangkat booting yang diinginkan.
+5. **Loading Boot Loader**: Setelah perangkat booting dipilih, Boot Manager akan memuat boot loader yang sesuai. Boot loader adalah program yang bertanggung jawab untuk memuat sistem operasi ke dalam memori dan memulai eksekusi.
+6. **Loading Kernel**: Boot loader kemudian memuat kernel sistem operasi ke dalam memori dan memulai eksekusi. Kernel adalah bagian utama dari sistem operasi yang bertanggung jawab untuk mengelola sumber daya perangkat keras dan menjalankan aplikasi.
+7. **Init Process**: Setelah kernel dimuat, init process (biasanya systemd pada distribusi Linux modern) dimulai. Init process adalah proses pertama yang dijalankan setelah kernel, dan bertanggung jawab untuk memulai proses lain dan mengelola sistem.
+8. **User Space**: Setelah init process selesai, sistem operasi memasuki user space, di mana pengguna dapat mulai menjalankan aplikasi.
+
+Proses booting pada UEFI memiliki beberapa keuntungan, termasuk kemampuan untuk boot dari partisi GPT yang lebih besar, dukungan untuk booting jaringan (PXE boot), dan fitur keamanan seperti Secure Boot.
+
+Proses booting pada Legacy BIOS (Basic Input/Output System) melibatkan beberapa langkah yang berbeda dibandingkan dengan UEFI. Berikut adalah langkah-langkah umum dalam proses booting Legacy BIOS:
+1. **Power On Self Test (POST)**: Proses booting dimulai dengan POST, di mana firmware BIOS melakukan pemeriksaan awal terhadap perangkat keras untuk memastikan semuanya berfungsi dengan baik.
+2. **BIOS Initialization**: Setelah POST selesai, BIOS diinisialisasi. Ini termasuk mengidentifikasi dan menginisialisasi perangkat keras, seperti CPU, RAM, dan perangkat penyimpanan.
+Master Boot Record (MBR) Loading: Setelah BIOS diinisialisasi, BIOS akan mencari MBR di perangkat booting yang ditentukan. MBR adalah bagian pertama dari disk yang berisi kode boot loader.
+4. **Boot Loader Loading**: Setelah MBR ditemukan, BIOS akan memuat boot loader yang sesuai. Boot loader adalah program yang bertanggung jawab untuk memuat sistem operasi ke dalam memori dan memulai eksekusi.
+5. **Loading Kernel**: Boot loader kemudian memuat kernel sistem operasi ke dalam memori dan memulai eksekusi. Kernel adalah bagian utama dari sistem operasi yang bertanggung jawab untuk mengelola sumber daya perangkat keras dan menjalankan aplikasi.
+6. **Init Process**: Setelah kernel dimuat, init process (biasanya systemd pada distribusi Linux modern) dimulai. Init process adalah proses pertama yang dijalankan setelah kernel, dan bertanggung jawab untuk memulai proses lain dan mengelola sistem.
+7. **User Space: Setelah init process selesai, sistem operasi memasuki user space, di mana pengguna dapat mulai menjalankan aplikasi.
+Proses booting pada Legacy BIOS memiliki beberapa kelemahan, termasuk keterbatasan dalam ukuran partisi booting (hingga 2TB) dan jumlah partisi primer (hingga 4), serta tidak adanya fitur keamanan seperti Secure Boot.
+
 ## Referensi
 
 - [BIOS](https://www.acerid.com/berita-teknologi/fungsi-bios-pada-sistem-komputasi)
