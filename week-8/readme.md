@@ -31,7 +31,6 @@ Ada 2 tipe dari mode bash
 Shell, alias Bourne Shell, adalah command-line interpreter untuk OS Unix dan Linux. Bash, alias Bourne Again Shell, adalah versi yang disempurnakan.
 
 ### Kegunaan Skrip Bash 
-
 Skrip Bash memiliki banyak kasus penggunaan, termasuk:
 - Menulis skrip untuk mengotomatiskan tugas pemrograman
 - Menyinkronkan tugas untuk menyalin file
@@ -48,6 +47,7 @@ Untuk menulis kode dalam skrip Bash, ikuti langkah-langkah berikut:
 ### Apakah bash termasuk bahasa pengkodean?
 Bash menjalankan perintah dari terminal atau file. Ini adalah bahasa pemrograman yang beroperasi pada sistem operasi kernel Unix/Linux, berisi semua fitur untuk menulis kode lengkap.
 Bash adalah tipe shell khusus yang menerima masukan dari perintah, menjalankan kode, dan memproses masukan, serta mengembalikan hasilnya.
+
 ### Jenis Shell
 Ada berbagai jenis shell di OS Unix.
 <table>
@@ -127,7 +127,7 @@ keyword `readonly` mencegah variable untuk diperbarui, secara efektif mengubahny
 
 ![App Screenshot](img/variables/7.png)
 
-### Bash unset variable
+### Bash Unset Variable
 
 Keyword `unset` membantu menghilangkan nilai dari variable yang ditentukan. Variable tetap dapat diakses tetapi mencetak nilai kosong.
 
@@ -136,6 +136,18 @@ Keyword `unset` membantu menghilangkan nilai dari variable yang ditentukan. Vari
 Output:
 
 ![App Screenshot](img/variables/9.png)
+
+### Variables Scope
+
+Setiap variabel yang dideklarasikan harus memiliki ruang lingkup, yang menentukan di mana variabel tersebut dapat digunakan dalam program.
+
+Misalnya, jika suatu variabel dideklarasikan di dalam suatu fungsi, maka variabel tersebut hanya tersedia di dalam fungsi tersebut dan tidak dapat diakses di luar fungsi tersebut.
+
+Cakupan variabel di Bash dapat didefinisikan dengan dua cara
+
+- Variabel global
+- Variabel lokal
+
 
 ### Bash Global Variables
 
@@ -147,11 +159,69 @@ Output:
 
 ### Bash Local variables
 
+Variabel lokal dideklarasikan di dalam blok kode atau fungsi. Cakupan variabel-variabel ini hanya terlihat di dalam blok tempat variabel-variabel tersebut dideklarasikan.
+
+![App Screenshot](img/variables/12.png)
+
+Dalam sintaks ini, variabel dideklarasikan dan ditetapkan dengan kata kunci `local` .
+
 ![App Screenshot](img/variables/13.png)
 
 Output:
 
 ![App Screenshot](img/variables/14.png)
+
+### Variables Typing
+
+Skrip Bash bukan bahasa yang diketik, namun Anda dapat mendeklarasikan variabel dengan tipe data menggunakan perintah mendeklarasikan Berdasarkan tipe variabel, ini memungkinkan tipe data.
+variabel dideklarasikan dan diberi nilai.
+
+Opsi berisi opsi untuk membuat tipe variabel
+
+Array: Untuk membuat variabel array
+
+mendeklarasikan -a variabel=
+
+| Variable Type    | Syntax                | Description                                                      |
+| ---------------- | --------------------- | ---------------------------------------------------------------- |
+| Array            | `declare -a variable` | Declare an indexed array variable that stores strings            |
+| Associated Array | `declare -A variable` | Declare an Associated Array                                      |
+| Integer          | `declare -i variable` | Declare a numeric value to store in the variable                 |
+| Readonly         | `declare -r variable` | Declare a readonly variable, cannot be changed or unset          |
+| Export           | `declare -x variable` | Export the variable and make it available to all child processes |
+
+### Display Environment Variables in Bash
+
+Di Bash, ada dua jenis perintah untuk mencetak variabel lingkungan.
+
+- Perintah `printenv`​
+- Perintah `env`​
+
+Kedua perintah ini mencantumkan semua variabel lingkungan terminal.
+
+### Variable nameing convention
+
+- Variabel dibaca dengan mengawali simbol $.
+- Nama variabel terdiri dari huruf, angka, atau garis bawah.
+- Variabel peka huruf besar-kecil; misalnya, test dan Test dianggap sebagai dua variabel berbeda dalam skrip.
+- Meskipun nama variabel biasanya ditulis dalam HURUF BESAR, Anda dapat membuatnya menggunakan huruf UPPER atau LOWER jika diperlukan. Dan variabel Lingkungan dan Shell keduanya dalam huruf besar.
+- Nama variabel tidak boleh mengandung spasi
+- Nama-nama biasanya harus camelCase. Contoh `firstName`
+
+### Shell Variables
+
+Variabel shell adalah variabel yang diatur oleh shell, bukan oleh pengguna. Ini diperlukan oleh shell agar dapat bekerja dengan lancar
+
+| Variable     | Description                                                                        |
+| ------------ | ---------------------------------------------------------------------------------- |
+| PWD          | Current working directory                                                          |
+| Set-Location | Change the working directory to new directory                                      |
+| Rename-Item  | Rename a file                                                                      |
+| IFS          | Internal Field Separator, by default is space, set by Shell, Used for string split |
+| PATH         | Contains semicolon separated path of commands, Configured to lookup for commands   |
+| UID          | Prints the User Identification number                                              |
+| Home         | Home directory of the current user                                                 |
+
 
 ## Bash - Loop File
 
@@ -169,7 +239,33 @@ Output diatas merupakan isi dari file `filename.txt`
 
 ## Bash - Comments
 
+`Comments` adalah pernyataan kode yang berisi teks yang dapat dibaca pengguna yang dilewati shell selama eksekusi. Setiap bahasa pemrograman menyertakan fitur komentar, yang memberikan deskripsi baris kode atau pernyataan.
+
+Komentar sebaris dalam kode membantu pengembang dalam mengedit dan memahami kode dengan lebih baik.
+
+Bahasa script bash memungkinkan untuk menggunakan jenis komentar berikut.
+
+- **Single comments**
+- **Multi-line comments**
+
 ### Single line Comment in bash shell
+
+Komentar satu baris dalam skrip shell dilambangkan dengan `#` simbol di awal setiap baris.
+
+Komentar ini mencakup string yang memberikan informasi tentang baris kode terkait dalam skrip shell.
+
+Penting untuk menempatkan komentar satu baris pada baris terpisah untuk kejelasan.
+
+Untuk komentar sebaris, gunakan simbol `#` di awal komentar. Komentar satu baris selalu dimulai dengan simbol `#` .
+
+**Syntax:**
+
+```
+# Single-line comments
+```
+
+Spasi kosong setelah simbol `#`  tidak diperlukan. Berikut ini adalah contoh komentar satu baris dalam skrip shell.
+
 ![App Screenshot](img/comments/1.png)
 
 Output:
@@ -177,6 +273,27 @@ Output:
 ![App Screenshot](img/comments/2.png)
 
 ### Multi-Line comments in a shell script
+
+Komentar multi-baris melibatkan penggunaan lebih dari satu baris untuk komentar.
+
+Cara pertama untuk membuat komentar multi-baris adalah dengan memanfaatkan komentar satu baris yang setiap barisnya dimulai dengan simbol komentar satu baris.
+
+**Syntax:** 
+
+```
+# Line1 comments
+# Line1 comments
+# Line1 comments
+```
+
+Cara kedua untuk membuat komentar multi-baris adalah dengan mengapit beberapa baris di dalam (`:`) dan (`'`).
+
+Sintaks ini melibatkan:
+
+- Komentar dimulai dengan titik dua (`:`) diikuti dengan `'`.
+- Ini diikuti oleh beberapa baris komentar.
+- Komentar diakhiri dengan `'`. Berikut sintaksnya:
+
 ![App Screenshot](img/comments/3.png)
 
 Output:
@@ -185,23 +302,49 @@ Output:
 
 ## Bash - Arrays
 
+Array di shells adalah variable untuk menyimpan lebih dari satu nilai/data.
+Misal ketika memiliki data daftar bilangan integer 1-100, dan ingin menyimpan bilangan-bilangan ini di shell script, tanpa array kita harus mendeklarasikannya satu persatu / baris per baris menggunakan `let number1=1` dst. Jadi, anda bisa menggunakan array yang merujuk ke satu variabel dan menyimpannya.
+
 ### How to declare and create an array?
 
 - Declare an array
 
+  Untuk membuat array, kita perlu mendeklarasikan array.
+
   ![App Screenshot](img/arrays/2.png)
 
+  Sebuah array dideklarasikan dengan kata kunci declare dengan opsi `-a` atau `A` .
+
+  **contoh array yang diindeks** Dalam hal ini, nilai Array disimpan dengan indeks=0 dan seterusnya. ini dibuat dengan opsi `declare` dan `-a`.
+
+  Array ini adalah penyimpanan dengan indeks=0, ditambah 1 sebagai berikut.
+
   ![App Screenshot](img/arrays/3.png)
+
+  **contoh array asosiatif** Dalam hal ini, nilai Array disimpan dengan kunci. ini dibuat dengan opsi `declare` dan `-A` .
+
+  Dalam array ini terdapat penyimpanan dengan indeks=0, ditambah 1 sebagai berikut.
 
   ![App Screenshot](img/arrays/4.png)
 
 - Assign the values without declaring an array
+
   ![App Screenshot](img/arrays/5.png)
 
+  Artinya, `arrayvariable` indeks array dideklarasikan dan diberi nilai.
+
+Array diindeks nol berdasarkan nol pada panjang array -1 indeks=0 - mengembalikan elemen pertama indeks=-1 mengembalikan elemen terakhir.
+
 ### Access the array values
+
+Array berisi indeks untuk mendapatkan elemen. Elemen array dapat diakses menggunakan sintaks di bawah ini.
+
 ![App Screenshot](img/arrays/6.png)
 
 ### Declare an Array of numbers and loop through
+
+Array dapat berisi angka. Contoh ini berisi array angka dan loop for untuk dicetak.
+
 ![App Screenshot](img/arrays/7.jpeg)
 
 Output:
@@ -209,6 +352,9 @@ Output:
 ![App Screenshot](img/arrays/8.png)
 
 ### Declare an Array of strings and loop through
+
+Array dapat berisi teks. Contoh ini berisi array angka dan loop for untuk dicetak.
+
 ![App Screenshot](img/arrays/9.png)
 
 Output:
@@ -216,6 +362,9 @@ Output:
 ![App Screenshot](img/arrays/10.png)
 
 ### Access the first elements of an array
+
+Dalam elemen Array, indeks elemen Pertama adalah nol, dan array[0] mengembalikan elemen pertama.
+
 ![App Screenshot](img/arrays/11.png)
 
 Output:
@@ -223,6 +372,7 @@ Output:
 ![App Screenshot](img/arrays/12.png)
 
 ### Get the last element of an array
+
 Dalam skrip bash, dapat menggunakan indeks=-1 untuk mendapatkan elemen array terakhir.
 
 ![App Screenshot](img/arrays/13.png)
@@ -236,6 +386,7 @@ Output:
 ![App Screenshot](img/arrays/14.png)
 
 ### Iterate or loop array elements
+
 For loop digunakan untuk mengulangi elemen.
 
 Berikut adalah contoh contoh loop array untuk mencetak semua elemen
@@ -255,6 +406,7 @@ Output:
 ![App Screenshot](img/arrays/20.png)
 
 ### Print all array elements
+
 Gunakan [@] atau [*] untuk mencetak semua elemen array.
 
 ![App Screenshot](img/arrays/21.png)
@@ -264,6 +416,7 @@ Output:
 ![App Screenshot](img/arrays/22.png)
 
 ### Remove an element from an array
+
 Menghapus elemen dari array menggunakan `unset` indeks tertentu.
 
 ![App Screenshot](img/arrays/23.png)
@@ -273,6 +426,13 @@ Output:
 ![App Screenshot](img/arrays/24.png)
 
 ### Adding an element to an array
+
+Menambahkan elemen di posisi indeks mana pun menggunakan sintaks di bawah ini.
+
+```
+array[index]=value
+```
+
 Contoh penambahan elemen awal dan akhir serta tengah
 
 ![App Screenshot](img/arrays/25.png)
@@ -282,13 +442,115 @@ Output:
 ![App Screenshot](img/arrays/26.png)
 
 ### Length of an array
+
+Dalam hal ini, bisa digunakan untuk menemukan jumlah semua elemen dalam array.
+
+Skrip shell menyediakan `#`
+
 ![App Screenshot](img/arrays/27.png)
 
 Output:
 
 ![App Screenshot](img/arrays/28.png)
 
+### Array cheat sheet examples
+
+<table>
+<thead>
+<tr>
+  <th style="background-color: blue; color: white">Example</th>
+  <th style="background-color: blue; color: white">Description</th>
+<tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Sdeclare -a array	</td>
+        <td>Declare an Indexed array</td>
+    </tr>
+    <tr>
+        <td>declare -A array	</td>
+        <td>Declare an Associative array</td>
+    </tr>
+    <tr>
+        <td>declare -a array=()	</td>
+        <td>Declare an indexed array with empty array</td>
+    </tr>
+    <tr>
+        <td>array=()</td>
+        <td>create an empty array with declaring is valid</td>
+    </tr>
+    <tr>
+        <td>array=(1 6 3)</td>
+        <td>Initialize array with numbers</td>
+    </tr>
+    <tr>
+        <td>array=(one two three)</td>
+        <td>Initialize the array with string</td>
+    </tr>
+    <tr>
+        <td>array=(one two 1)</td>
+        <td>Initialize the array with mixed data</td>
+    </tr>
+    <tr>
+        <td>${array[0]}</td>
+        <td>Get first element</td>
+    </tr>
+    <tr>
+        <td>${array[1]}</td>
+        <td>Get second element</td>
+    </tr>
+    <tr>
+        <td>${array[-1]}</td>
+        <td>Get last element</td>
+    </tr>
+    <tr>
+        <td>${array[@]}</td>
+        <td>Get All element</td>
+    </tr>
+    <tr>
+        <td>${array[*]}</td>
+        <td>Get All element</td>
+    </tr>
+    <tr>
+        <td>${!array[!]}</td>
+        <td>Get All indexes</td>
+    </tr>
+    <tr>
+        <td>${#array[!]}</td>
+        <td>Array length</td>
+    </tr>
+    <tr>
+        <td>array[0]=12</td>
+        <td>Add element to array at first position.i.e index=0</td>
+    </tr>
+    <tr>
+        <td>array[-1]=22</td>
+        <td>Add element to array at last position.</td>
+    </tr>
+    <tr>
+        <td>array+=(11)</td>
+        <td>Append value to an array</td>
+    </tr>
+    <tr>
+        <td>${array[@]:k:i}</td>
+        <td>Get index=1 element starting from index=k</td>
+    </tr>
+</tbody>
+</table>
+
 ## Bash - Expansion
+
+Menjelaskan cara menulis skrip batch dalam skrip shell dan menjalankannya.
+
+Perintah dimasukkan ke OS untuk membuat panggilan sistem dan melakukan tindakan. perintah masukan user di terminal untuk melakukan operasi seperti ls, cd, mkdir dll.
+
+Cara menulis skrip shell di bash
+
+- Pilih Editor atau editor teks
+- Buat file dengan ekstensi .sh atau .bash
+- Tulis perintah dalam file
+- Simpan file sebagai `expansion.sh`
+
 ![App Screenshot](img/expansion/1.png)
 
 Output:
@@ -296,7 +558,8 @@ Output:
 ![App Screenshot](img/expansion/2.png)
 
 ## Bash - Conditional Expression
-Ekspresi kondisional dievaluasi pada waktu eksekusi skrip, berdasarkan hasil, Ia mengeksekusi blok perintah tertentu.
+
+Ekspresi kondisional dievaluasi pada waktu eksekusi script, berdasarkan hasil, mengeksekusi blok perintah tertentu.
 
 Ada berbagai jenis ekspresi kondisional di Bash
 
@@ -306,17 +569,88 @@ Ada berbagai jenis ekspresi kondisional di Bash
 - Operator Logis
 
 ### Operator File
-Bash menyediakan operator logika pada FIle dan direktori untuk menguji ekspresi kondisional. Ini memungkinkan Anda untuk memeriksa berbagai operasi seperti keberadaan, dan izin, ukuran. Ini digunakan ekspresi kondisional dalam pernyataan kondisional seperti if else dan case.
+Bash menyediakan operator logika pada File dan direktori untuk menguji ekspresi kondisional. Ini memungkinkan untuk memeriksa berbagai operasi seperti keberadaan, izin dan ukuran. Ini digunakan ekspresi kondisional dalam pernyataan kondisional seperti if else dan case.
 
-Syntax:
+**Syntax:**
 
 ![App Screenshot](img/condional-expression/1.png)
+
+conditional_expressions berisi options dan filepath, yang selalu mengembalikan nilai benar atau salah.
+
+berikut adalah opsi yang disediakan
+
+<table>
+<thead>
+<tr>
+  <th style="background-color: blue; color: white">Example</th>
+  <th style="background-color: blue; color: white">Description</th>
+<tr>
+</thead>
+<tbody>
+    <tr>
+        <td>-e file</td>
+        <td>Returns true if given file exists, file can be normal file or directory</td>
+    </tr>
+    <tr>
+        <td>-f file</td>
+        <td>Returns true if given file exists and a file(not directory)<td>
+    </tr>
+    <tr>
+        <td>-d file</td>
+        <td>Returns true if file is an directory</td>
+    </tr>
+    <tr>
+        <td>-r file</td>
+        <td>Returns true if file exists and has readable permission</td>
+    </tr>
+    <tr>
+        <td>-w file</td>
+        <td>Returns true if given file exists, file can be normal file or directory</td>
+    </tr>
+    <tr>
+        <td>-x file</td>
+        <td>Returns true if file exists and has writable permission</td>
+    </tr>
+    <tr>
+        <td>-s file</td>
+        <td>Returns true if file exists and size is not empty</td>
+    </tr>
+    <tr>
+        <td>-G file</td>
+        <td>Returns true if file exists and isowned by a Group ID that matches</td>
+    </tr>
+    <tr>
+        <td>-O file</td>
+        <td>Returns true if file exists and owned by a user ID that matches</td>
+    </tr>
+    <tr>
+        <td>-N file</td>
+        <td>Returns true if file exists and modified by last read date</td>
+    </tr>
+    <tr>
+        <td>-L file</td>
+        <td>Returns true if file exists and and is an symbolic Link</td>
+    </tr>
+    <tr>
+        <td>file1 -ot file2</td>
+        <td>Returns true if file1 is older than file2 or file2 exists, file1 does not exist</td>
+    </tr>
+    <tr>
+        <td>file1 -ne file2</td>
+        <td>Returns true if file1 is newer than file2,file1 exists, file2 does not exists</td>
+    </tr>
+    <tr>
+        <td>file1 -ef file2</td>
+        <td>Returns true if file1 and file2 pointed to same device and inode</td>
+    </tr>
+</tbody>
+</table>
 
 ## Bash - Case Statements
 Pernyataan case mirip dengan switch case dalam bahasa pemrograman lain.
 Ini digunakan untuk membandingkan masukan yang diberikan dengan beberapa pola, dan perintah di dalam pola yang cocok dijalankan.
 
-Syntax:
+**Syntax:**
 
 ![App Screenshot](img/case-statements/1.png)
 
@@ -430,11 +764,28 @@ Output:
 - Pernyataan `else` digunakan untuk mengeksekusi kode jika suatu kondisi salah, mengikuti sintaksis `if then else fi`.
 - Pernyataan `if..elif..else` berguna ketika Anda perlu mengeksekusi kode jika tidak ada kondisi sebelumnya yang benar.
 
+Catatan:
+
+- Kondisi adalah ekspresi yang mengevaluasi `true` atau `false` dalam skrip shell.
+- Spasi diperlukan sebelum dan sesudah [ dan ].
+- Diperlukan titik koma sebelum itu.
+- `if`, `else`, `then`, `elif`, `fi` adalah kata-kata khusus di Bash.
+- Kondisi adalah ekspresi dengan perintah.
+    - Perintah yang berisi sintaks tanda kurung tunggal, contoh sintaksis `[expression]` dan digunakan untuk operasi string file.
+    - Sintaks tanda kurung ganda, contohnya adalah `[[expression]]`, yang digunakan untuk menggabungkan beberapa kondisi dan menangani pola regex.
+    - Tanda kurung ganda, contoh sintaksnya adalah `((expression))`, digunakan untuk operasi aritmatika
+
 ### If Conditional Statements
 
 Pernyataan `if` di Bash digunakan untuk mengeksekusi blok kode ketika kondisi tertentu adalah `true`.
 
 ![App Screenshot](img/if-elif-else/2.png)
+
+Dalam sintaks di atas:
+
+- Ganti `[ condition ]` dengan ekspresi kondisional.
+- Blok kode dalam pernyataan `if` dieksekusi hanya jika kondisi yang ditentukan bernilai benar.
+- Setiap pernyataan `if` harus diakhiri dengan `fi`.
 
 Contoh:
 
@@ -450,6 +801,13 @@ Pernyataan `if-else` kondisional di Bash memungkinkan Anda untuk mengeksekusi bl
 
 ![App Screenshot](img/if-elif-else/5.png)
 
+Dalam sintaks di atas:
+
+- Ganti `[ condition ]` dengan ekspresi yang akan diuji.
+- Blok kode dalam pernyataan `if` dijalankan jika kondisi yang ditentukan adalah `true`.
+- Blok kode dalam pernyataan `else` dijalankan jika kondisinya adalah `false`.
+- Setiap pernyataan `if-else` harus diakhiri dengan `fi`.
+
 Contoh:
 
 ![App Screenshot](img/if-elif-else/6.png)
@@ -464,6 +822,11 @@ Gunakan `if..elif..else` pernyataan kondisional di Bash untuk mengeksekusi blok 
 
 ![App Screenshot](img/if-elif-else/8.png)
 
+- Blok kode dalam  pernyataan `if` pertama dijalankan jika `condition1` adalah `true`.
+- Blok kode dalam pernyataan `elif` pertama dijalankan jika `condition1` adalah `false` dan `condition2` adalah `benar`.
+- Blok `else` dijalankan jika keduanya `condition1` dan `condition2` salah.
+- Setiap `if..elif..else` pernyataan harus diakhiri dengan `fi`.
+
 Contoh:
 
 ![App Screenshot](img/if-elif-else/9.png)
@@ -473,6 +836,15 @@ Output:
 ![App Screenshot](img/if-elif-else/10.png)
 
 ## Bash - Loops
+
+Loop digunakan untuk mengeksekusi blok kode beberapa kali.
+
+Bash Script menyediakan berbagai jenis loop
+
+- for loop
+- for index loop
+- while loop
+- until loop
 
 ### For loop
 For loop digunakan untuk mengeksekusi kode beberapa kali.
@@ -535,6 +907,9 @@ Dalam contoh ini, blok kode dijalankan selama `[[ i -eq 100 ]]` bernilai salah. 
 ## Bash - Append String
 
 ### Bash Athematic expressions
+
+Di bash, Expressions dibuat menggunakan `(())` tanda kurung dengan operan dan operator sebagai argumen. `((a ))` adalah ekspresi bash. Expressions adalah operasi matematika, dapat berisi sub ekspresi yang dipisahkan dengan koma.
+
 ![App Screenshot](img/append-string/1.png)
 
 Output:
@@ -544,6 +919,8 @@ Output:
 Ekspresi artema dibuat menggunakan operator di bawah ini
 
 - Operator Artmatik
+- Operator Logis 
+- Operator Bersyarat
 - Operator Perbandingan
 
 Operator perbandingan digunakan untuk mengecek satu sama lain dengan membandingkan nilai Operator ( `<, <=, >, >=, ==, !=` )
@@ -556,21 +933,51 @@ Output:
 ### Bash Athematic Expansion
 `Expansion` sama dengan ekspresi, menghitung nilai ekspresi dan hasilnya diganti dengan nilai. Dan selalu diawali dengan tanda dolar.
 
+```
+$((expression))
+``` 
+
 ![App Screenshot](img/append-string/5.png)
 
 Output:
 
 ![App Screenshot](img/append-string/6.png)
 
+### When to Use arthematic expressions and expansions
+
+[[]] digunakan untuk menguji ekspresi, mengembalikan nilai boolean (1 atau 0). Ini akan digunakan dalam kasus berikut
+
+- Gunakan ekspresi artetik
+    - Untuk melakukan operasi matematika dan perbandingan
+- Gunakan ekspresi artetik [[]]
+    - Perbandingan string dan angka
+    - Periksa file atau direktori ada
+
 ### Bash - Functions
 
+Fungsi adalah kode yang dapat digunakan kembali dan dikelompokkan dalam satu nama.
+
 ### How to declare a Function and call it
+
 Definisi fungsi berisi beberapa baris kode yang akan dieksekusi.
 Fungsi berisi nama fungsi yang diapit `{}`.
 
-![App Screenshot](img/functions/1.png)
+```
+function function_name {
+# Commands or valid bash code
+# multiple lines
+}
+```
+
+```
+function function_name() {
+  # Commands or valid bash code
+  # multiple lines
+}
+```
 
 ### How to pass a parameters to an function
+
 ![App Screenshot](img/functions/2.png)
 
 Parameter dapat diakses menggunakan $1 $2 $3.. $n
@@ -593,7 +1000,7 @@ Output:
 ![App Screenshot](img/append-string-2/2.png)
 ![App Screenshot](img/append-string-2/4.png)
 
-Contoh lain melibatkan penggabungan string ke variabel yang sama dan mencetaknya ke konsol:
+Contoh lain melibatkan penggabungan string ke variabel yang sama:
 
 ![App Screenshot](img/append-string-2/5.png)
 
@@ -616,7 +1023,7 @@ Output:
 ![App Screenshot](img/append-string-2/8.png)
 
 ### Use printf command
-`printf` digunakan untuk memformat string dengan berbagai opsi pemformatan yang kompleks. Kita dapat menggunakan `printf` perintah untuk menggabungkan string. Formatnya adalah `%s%s` , menambahkan dua variabel string.
+`printf` digunakan untuk memformat string dengan berbagai opsi pemformatan yang kompleks. Dapat menggunakan `printf` perintah untuk menggabungkan string. Formatnya adalah `%s%s` , menambahkan dua variabel string.
 
 ![App Screenshot](img/append-string-2/9.png)
 
@@ -627,6 +1034,11 @@ Output:
 ### Using here string
 `Here strings` adalah sintaks khusus untuk meneruskan string ke perintah dalam skrip bash. Digunakan untuk meneruskan string input tanpa menggunakan sumber lain, seperti file. Ini memungkinkan meneruskan string ke perintah bash apapun dari file atau baris perintah.
 
+**Syntax:**
+
+```
+command <<< string
+```
 command: valid command `<<<` : is a `here string operator`
 
 ![App Screenshot](img/append-string-2/11.png)
@@ -636,6 +1048,20 @@ Output:
 ![App Screenshot](img/append-string-2/12.png)
 
 ## Bash - Operators
+
+Operator adalah simbol dalam pemrograman yang melakukan operasi pada operan
+
+**Syntax:**
+
+```
+operand1 operator operand2
+```
+
+Ada dua jenis operator.
+
+- Operator Biner: Beroperasi pada dua operan seperti penjumlahan, pengurangan, perkalian, pembagian, dan modulus
+- Operator Unary: Beroperasi pada operan tunggal seperti increment and decrement
+
 
 ### Bash Arithmetic Operators
 
@@ -681,6 +1107,27 @@ misalnya, p adalah 20
 | XOR                   | ^      | XOR bitwise dari dua operan                        | $op1 ^ $op2 adalah 7             |
 | XOR Setara            | ^=     | Bitwise XOR Sama dengan dua operan                | $op1 ^ $op2 adalah 7             |
 
+### Logical Operators
+
+Operator ini digunakan untuk melakukan operasi logika pada variabel/ekspresi/data.
+
+| Operasi       | Simbol | Keterangan                                                           | Hasil                         |
+|---------------|--------|----------------------------------------------------------------------|-------------------------------|
+| Logis DAN     | &&     | Kembalikan nilai benar (status keluar = 0) jika kedua operan benar, jika tidak, kembalikan salah (status keluar bukan nol) | $op1 &&& $op2 adalah 0        |
+| Logis ATAU    | \|\|   | Logis OR dari dua operan                                            | $op1 & $op2 adalah 0          |
+| Logis TIDAK   | \!     | Balikkan nilai bersyarat.                                           | $op1 s 7                      |
+
+### String Comparision Operator
+
+| Operasi    | Keterangan                                                         |
+|------------|--------------------------------------------------------------------|
+| -z Tali    | Kembalikan nilai benar jika string kosong, jika tidak salah.       |
+| -n Tali    | KEMBALI benar, Jika string tidak kosong.                          |
+| str1=str2  | kembalikan nilai true, jika str1 dan str2 sama.                    |
+| str1!=str2 | mengembalikan nilai true, jika str1 dan str2 tidak sama.           |
+| str1>str2  | kembali benar, jika str1 mengurutkan sebelum str2.                |
+| str1<str2  | kembali benar, jika str1 mengurutkan setelah str2.                |
+
 ### Numerical Comparision Operator
 
 Berikut ini adalah operator Perbandingan.
@@ -710,6 +1157,14 @@ Output
 
 ![App Screenshot](img/operators/4.png)
 
+### Other Operators
+
+| Operasi | Deskripsi                                                         |
+|---------|-------------------------------------------------------------------|
+| -v      | Mengembalikan nilai benar jika sebuah variabel ditetapkan nilai, artinya nilai telah diassign |
+| -o      | Mengembalikan nilai benar jika sebuah opsi shell (optname) diaktifkan |
+| -R      | Mengembalikan nilai benar jika sebuah variabel ditetapkan nilai, dan itu adalah referensi bernama |
+
 ## Bash - Number Comparison
 
 ### How to Check if two numbers are equal or not in Bash
@@ -724,7 +1179,7 @@ Beberapa skrip shell tidak mendukung (()), gunakan [[]] dengan operator Perbandi
 
 Berikut ini adalah operator Perbandingan.
 
-- `-eq`: setara
+- `-eq`: sama
     - Periksa apakah dua variabel sama
 
 - `-ne`: Tidak sama
@@ -810,7 +1265,7 @@ Output:
 **Check directory exists and is writable and executable**
 
 - foldernya ada atau tidak
-- jika ada, Folder tersebut memiliki izin untuk menulis dan dieksekusi.
+- jika ada, Folder tersebut memiliki izin untuk menulis dan dieksekusi
 - Terakhir, Cetak pesan string
 
 ![App Screenshot](img/check-directory/10.png)
@@ -832,6 +1287,12 @@ Output:
 ## Bash - File Name
 
 ### Extract file name with extension
+
+Untuk mendapatkan nama file beserta ekstensinya, perintah `basename` dapat digunakan untuk menghapus direktori dan hanya mengembalikan nama `filename` untuk path tertentu, baik itu `variable` atau string.
+
+Misalnya, jika pathnya adalah `/home/john/run.sh`, filename yang dikembalikan adalah `run.sh` . Proses ini melibatkan pengambilan full path dan mengekstraksi hanya menghapus `filename` dengan path. Hasilnya `filename` kemudian disimpan dalam variabel dan dicetak ke konsol.
+ 
+basename digunakan untuk menghapus direktori dan mengembalikan filename untuk jalur yang diberikan. Path adalah variabel atau string. Misalnya, pathnya adalah `/home/john/run.sh`, dan filename yang dikembalikan adalah `run.sh` Dalam hal ini, path lengkap diberikan dan mengembalikan filename dengan menghapus pathnya.
 
 ![App Screenshot](img/file-name/1.png)
 
@@ -869,6 +1330,12 @@ Output
 
 ## Bash - Split String
 
+Ini membahas tiga metode
+
+- Pisahkan string menggunakan perintah awk
+- Gunakan variabel IFS
+- Ekspansi Parameter dengan for loop
+
 ### Split a string using the awk command in a bash shell script
 
 Perintah `awk` , sebuah utilitas Linux yang kompatibel dengan semua distribusi bash dan shell, digunakan untuk membagi string berdasarkan `delimiter` .
@@ -883,6 +1350,10 @@ Output:
 
 ### Split using IFS variable
 
+String masukan terdiri dari elemen yang dipisahkan oleh `hyphens` . Variabel shell `IFS` (Pemisah Bidang Internal) diatur ke tanda hubung, dan string diiterasi menggunakan perulangan for.
+
+Setiap elemen dicetak setelah tanda hubung dihilangkan.
+
 ![App Screenshot](img/split-string/3.png)
 
 Output:
@@ -891,7 +1362,7 @@ Output:
 
 ### Use Parameter expansion and loop
 
-Perluasan parameter digunakan untuk mengubah nilai variabel berdasarkan opsi yang ditentukan. Dalam hal ini, variabel string diubah menjadi array. Array kemudian diiterasi menggunakan sintaks for loop, mencetak setiap elemen ke konsol:
+Parameter expansion digunakan untuk mengubah nilai variabel berdasarkan opsi yang ditentukan. Dalam hal ini, variabel string diubah menjadi array. Array kemudian diiterasi menggunakan sintaks for loop, mencetak setiap elemen ke konsol:
 
 ![App Screenshot](img/split-string/5.png)
 
@@ -951,7 +1422,7 @@ Output:
 
 Dalam hal ini, `echo -n "$variable"` keluaran string tanpa baris baru, dan keluaran disalurkan `awk` menggunakan simbol pipa( `|`). Perintah `awk '{print length}'` menghitung dan mencetak panjang baris input.
 
-## Bash - bashrc
+## Bash - Bashrc
 
 File .bashrc adalah file skrip bash yang dijalankan dalam kasus berikut
 
@@ -985,9 +1456,19 @@ Bagaimana cara memuat ulang konfigurasi .bashrc tanpa login lagi? Jalankan perin
 
 ## Bash - Ternary Operator
 
+Pemrograman Bash tidak memiliki dukungan untuk sintaks operator ternary.
+
+Operator ternary ditulis dalam bahasa Java
+
+```
+expression?value1:value2
+```
+
+Sintaksnya mirip dengan ekspresi kondisional if dan else. jika ekspresi benar, nilai1 dikembalikan, jika tidak, nilai2 dikembalikan.
+
 ### How to use ternary Operator in Bash
 
-Cara pertama, gunakan if-else dengan expression syntax.
+Cara pertama, menggunakan if-else dengan expression syntax.
 
 ![App Screenshot](img/ternary-operator/1.png)
 
@@ -995,7 +1476,9 @@ Output:
 
 ![App Screenshot](img/ternary-operator/2.png)
 
-Cara kedua, gunakan arithmetic expression menggunakan && dan || Syntaxnya adalah
+Cara kedua, menggunakan arithmetic expression menggunakan && dan ||
+
+jika ekspresi1 benar, Ekspresi2 dievaluasi, jika tidak, Ekspresi3 dievaluasi
 
 ![App Screenshot](img/ternary-operator/3.png)
 
@@ -1017,7 +1500,13 @@ Output
 
 Perintah tr, kependekan dari translator, adalah perintah Unix yang digunakan untuk mengonversi karakter dari satu format ke format lainnya.
 
-Contoh:
+**Syntax:**
+
+```
+tr input_format output_format
+```
+
+Berikut skrip bash shell yang digunakan `tr` untuk mengonversi string menjadi huruf kecil:
 
 ![App Screenshot](img/lowercase/1.png)
 
@@ -1047,7 +1536,11 @@ Output:
 
 ![App Screenshot](img/lowercase/6.png)
 
+Metode ini paling baik untuk karakter ASCII dan UTF.
+
 **Use Perl in Bash Script Printing lc with Perl converts a string to lowercase**
+
+lc adalah alias untuk huruf kecil.
 
 ![App Screenshot](img/lowercase/7.png)
 
@@ -1056,6 +1549,8 @@ Output:
 ![App Screenshot](img/lowercase/8.png)
 
 **Use Parameter expansion Bash 4.0**
+
+Sintaksnya adalah `${variable[options]}` .
 
 ![App Screenshot](img/lowercase/9.png)
 
@@ -1079,7 +1574,13 @@ Di sini, `${msg,,}` menggunakan `,,` opsi untuk mengonversi variabel menjadi hur
 
 Perintah tr, kependekan dari translator, adalah perintah Unix yang digunakan untuk mengonversi karakter dari satu format ke format lainnya.
 
-Contoh:
+**Syntax:**
+
+```
+tr input_format output_format
+```
+
+Berikut skrip shell untuk mengonversi ke huruf besar.
 
 ![App Screenshot](img/uppercase/1.png)
 
@@ -1087,13 +1588,15 @@ Output:
 
 ![App Screenshot](img/uppercase/2.png)
 
-bisa juga menggunakan:
+Cara lain untuk mengganti kode di atas
 
 ![App Screenshot](img/uppercase/3.png)
 
 Output:
 
 ![App Screenshot](img/uppercase/4.png)
+
+Catatan: `tr` berfungsi dengan `ASCII` dan tidak mendukung `UTF` karakter.
 
 **Using the awk command**
 
@@ -1125,6 +1628,8 @@ Output:
 
 **Use parameter expansion syntax Bash 4.0 provides built-in string manipulation utilities. Adding two circumflexes (^) to a string makes it an uppercase string, also called parameter expansion syntax**
 
+Sintaksnya adalah `${variable[options]}`
+
 ![App Screenshot](img/uppercase/11.png)
 
 Output:
@@ -1136,7 +1641,7 @@ Output:
 ### Using the Comparison Operator to Check for Substring exists or not
 
 - Tentukan variabel string yang berisi teks.
-- Gunakan pernyataan if untuk membandingkan string dengan substring yang diinginkan menggunakan operator kesetaraan ( ==) dan wildcard (*).
+- Gunakan pernyataan if untuk membandingkan string dengan substring yang diinginkan menggunakan operator kesetaraan ( `==` ) dan wildcard ( `*` ).
 - Terakhir, cetak string jika substring ditemukan.
 
 ![App Screenshot](img/substring/1.png)
@@ -1167,7 +1672,34 @@ Output:
 
 ## Bash - Variable Set
 
+Tutorial ini tentang memeriksa variabel dalam pemrograman skrip bash shell
+
+- Periksa variabel disetel atau tidak
+- variabel kosong atau tidak kosong
+- Periksa variabel apakah string kosong atau tidak
+
+Berikut beberapa contoh penggunaan variabel untuk variabel `price`
+
+Berikut adalah tabel untuk deklarasi variabel beserta keterangannya:
+
+| Deklarasi variabel  | Keterangan                                                            |
+|----------------------|-----------------------------------------------------------------------|
+| price;               | Variabel tidak dideklarasikan dan tidak disetel                        |
+| price=;              | Variabel dideklarasikan dan tidak disetel                              |
+| price=3000;          | Variabel dideklarasikan, ditetapkan, dan tidak disetel                 |
+| price=(3000);        | Variabel dideklarasikan, ditetapkan, dan tidak disetel                 |
+| price tidak ditetapkan; | Variabel tidak dideklarasikan dan tidak disetel                       |
+
 ### How to check if a variable is set in a bash script?
+
+Misalnya variabelnya diset artinya,
+
+- Itu dideklarasikan dan ditetapkan dengan kosong atau tidak kosong.
+
+  Dalam contoh di bawah ini,
+
+- `variable1` dideklarasikan tetapi kosong
+- `variable2` tidak dideklarasikan dan tidak disetel.
 
 ![App Screenshot](img/variable-set/1.png)
 
@@ -1175,7 +1707,7 @@ Output:
 
 ![App Screenshot](img/variable-set/2.png)
 
-Cara lain untuk memeriksa suatu variabel adalah dengan menyetel menggunakan -v opsi
+Cara lain untuk memeriksa suatu variabel adalah dengan menyetel menggunakan `-v` opsi
 
 ![App Screenshot](img/variable-set/3.png)
 
@@ -1189,10 +1721,10 @@ Misalnya variabelnya tidak disetel artinya
 
 - Itu tidak ada dan tidak diumumkan.
 
-Dalam contoh di bawah ini,
+  Dalam contoh di bawah ini,
 
-- variable1 dideklarasikan tetapi kosong
-- variable2 tidak dideklarasikan dan tidak disetel.
+- `variable1` dideklarasikan tetapi kosong
+- `variable2` tidak dideklarasikan dan tidak disetel.
 
 ![App Screenshot](img/variable-set/5.png)
 
@@ -1202,7 +1734,7 @@ Output:
 
 ### How to check variable is empty or non-empty
 
-Tutorial ini memeriksa pemeriksaan variabel dibandingkan dengan spasi dan membungkus ekspresi ini di dalam [[]].
+Tutorial ini memeriksa pemeriksaan variabel dibandingkan dengan spasi dan membungkus ekspresi ini di dalam `[[]]` .
 
 ![App Screenshot](img/variable-set/7.png)
 
@@ -1210,7 +1742,7 @@ Output:
 
 ![App Screenshot](img/variable-set/8.png)
 
-Hal yang sama juga dapat ditulis menggunakan variabel dalam tanda kutip ganda yang dibungkus dalam tanda kurung tunggal [].
+Hal yang sama juga dapat ditulis menggunakan variabel dalam tanda kutip ganda yang dibungkus dalam tanda kurung tunggal `[]` .
 
 ![App Screenshot](img/variable-set/9.png)
 
@@ -1269,3 +1801,7 @@ Output:
 Output:
 
 ![App Screenshot](img/iterate-nos/6.png)  
+
+### Kesimpulan
+
+`seq` lebih baik dibandingkan dengan loop for dan while
