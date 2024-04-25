@@ -46,6 +46,8 @@ Dengan mode boot UEFI, Anda dimungkinkan melakukan pengontrolan antarmuka menggu
 
 ![App Screenshot](img/perbedaan%20legacy%20uefi.jpg)
 
+![App Screenshot](img/flowchart-legacy-uefi.png)
+
 | <p align="center">Spesifikasi</p>   | <p align="center">Legacy</p>  | <p align="center">UEFI</p>  |
 | ----------- | ---------- | --------- |
 | Skema Pemeriksaan Partisi | Master Boot Record (MBR) | GUID Partition Table (GPT) |
