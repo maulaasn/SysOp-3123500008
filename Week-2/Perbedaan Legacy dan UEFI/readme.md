@@ -82,7 +82,7 @@ Master Boot Record (MBR) Loading: Setelah BIOS diinisialisasi, BIOS akan mencari
 4. **Boot Loader Loading**: Setelah MBR ditemukan, BIOS akan memuat boot loader yang sesuai. Boot loader adalah program yang bertanggung jawab untuk memuat sistem operasi ke dalam memori dan memulai eksekusi.
 5. **Loading Kernel**: Boot loader kemudian memuat kernel sistem operasi ke dalam memori dan memulai eksekusi. Kernel adalah bagian utama dari sistem operasi yang bertanggung jawab untuk mengelola sumber daya perangkat keras dan menjalankan aplikasi.
 6. **Init Process**: Setelah kernel dimuat, init process (biasanya systemd pada distribusi Linux modern) dimulai. Init process adalah proses pertama yang dijalankan setelah kernel, dan bertanggung jawab untuk memulai proses lain dan mengelola sistem.
-7. **User Space: Setelah init process selesai, sistem operasi memasuki user space, di mana pengguna dapat mulai menjalankan aplikasi.
+7. **User Space**: Setelah init process selesai, sistem operasi memasuki user space, di mana pengguna dapat mulai menjalankan aplikasi.
 Proses booting pada Legacy BIOS memiliki beberapa kelemahan, termasuk keterbatasan dalam ukuran partisi booting (hingga 2TB) dan jumlah partisi primer (hingga 4), serta tidak adanya fitur keamanan seperti Secure Boot.
 
 ## Referensi
