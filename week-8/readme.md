@@ -230,6 +230,7 @@ Dalam skrip bash, dapat menggunakan indeks=-1 untuk mendapatkan elemen array ter
 Dengan versi bash 4.0 terbaru, dapat menggunakan sintaks di bawah ini untuk membaca elemen terakhir.
 
 ![App Screenshot](img/arrays/15.png)
+
 Output:
 
 ![App Screenshot](img/arrays/14.png)
@@ -257,6 +258,7 @@ Output:
 Gunakan [@] atau [*] untuk mencetak semua elemen array.
 
 ![App Screenshot](img/arrays/21.png)
+
 Output:
 
 ![App Screenshot](img/arrays/22.png)
