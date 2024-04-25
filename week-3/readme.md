@@ -110,7 +110,9 @@
 
 ## Kesimpulan
 
-<p>Kesimpulannya, IOPS dan FLOPS adalah dua metrik yang berbeda untuk mengukur kinerja komputer dalam konteks yang berbeda pula. IOPS penting untuk memahami seberapa cepat sistem dapat mengakses dan memanipulasi data, sementara FLOPS penting untuk memahami kemampuan komputer dalam menyelesaikan tugas komputasi numerik. Kedua metrik ini memiliki peran yang penting dalam menilai kinerja dan efisiensi sistem komputer sesuai dengan kebutuhan aplikasi yang beragam.</p>
+<p>FLOPS mengukur jumlah operasi floating-point yang dapat dilakukan oleh unit pemrosesan pusat (CPU) dalam satu detik. Operasi floating-point adalah perhitungan yang melibatkan angka dengan titik desimal. IOPS mengukur jumlah operasi bilangan bulat(integer) yang dapat dilakukan CPU dalam satu detik. Operasi bilangan bulat adalah perhitungan yang melibatkan bilangan bulat.
+
+Kesimpulannya, FLOPS dan IOPS merupakan metrik penting untuk mengukur kinerja CPU. FLOPS penting untuk tugas-tugas yang melibatkan banyak perhitungan floating-point. IOPS penting untuk tugas-tugas yang melibatkan banyak operasi integer.</p>
 
 ## Referensi
 
