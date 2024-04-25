@@ -230,7 +230,6 @@ Dalam skrip bash, dapat menggunakan indeks=-1 untuk mendapatkan elemen array ter
 Dengan versi bash 4.0 terbaru, dapat menggunakan sintaks di bawah ini untuk membaca elemen terakhir.
 
 ![App Screenshot](img/arrays/15.png)
-
 Output:
 
 ![App Screenshot](img/arrays/14.png)
@@ -258,7 +257,6 @@ Output:
 Gunakan [@] atau [*] untuk mencetak semua elemen array.
 
 ![App Screenshot](img/arrays/21.png)
-
 Output:
 
 ![App Screenshot](img/arrays/22.png)
@@ -335,6 +333,7 @@ Output:
 ![App Screenshot](img/case-statements/3.png)
 
 ## Bash - Special Characters
+
 ### Blankspace(" “):
 ![App Screenshot](img/special-characters/1.png)
 
@@ -343,10 +342,37 @@ Output:
 ![App Screenshot](img/special-characters/2.png)
 
 ### Expansion($)
+
+Simbol tanda dolar digunakan untuk berbagai jenis perluasan parameter perluasan, ( `$variable, ${variable}` ) Substitusi ( `$(expression)`) expressions ( `$((expression))` )
+
 ### Ambersand (&)
-### Pipe (|)
+
+Menambahkan `&` di akhir perintah memungkinkan untuk menjalankan perintah di background.
+
+![App Screenshot](img/special-characters/3.png)
+
+Misalnya, Untuk menjalankan server redis di latar belakang, gunakan perintah di bawah ini
+
+![App Screenshot](img/special-characters/4.png)
+
+### Pipe ( `|` )
+
+Ini digunakan untuk meneruskan keluaran dari satu perintah ke masukan ke perintah lain dari kiri ke kanan. Hal ini memungkinkan untuk membentuk rantai perintah
+
+Sintaksnya adalah `command1 | command2`
+
+Contoh : `echo "hello" | wc` mengembalikan jumlah karakter.
+
 ### Semicolon(;)
+
+Ini digunakan untuk memisahkan beberapa perintah menggunakan `;` satu baris. `;` adalah pemisah perintah untuk mendefinisikan beberapa perintah dalam satu baris Sintaks: `command1; command2;command3`
+
+Contoh: `cd /app/;ls;`
+
 ### Single quotes
+
+Tanda kutip tunggal ( ') digunakan untuk mendefinisikan suatu string tanpa arti khusus. Artinya semua variabel dan ekspansi tidak diinterpretasikan dan mencetak string literal yang sama.
+
 ![App Screenshot](img/special-characters/5.png)
 
 Output:
@@ -364,6 +390,9 @@ Output:
 Contoh berisi ``` adalah karakter kutipan tunggal di dalam kutipan tunggal
 
 ### Double quotes
+
+Tanda kutip ganda ( `"` ) digunakan untuk mendefinisikan string literal dengan arti khusus.
+
 ![App Screenshot](img/special-characters/9.png)
 
 Output:
@@ -371,6 +400,9 @@ Output:
 ![App Screenshot](img/special-characters/10.png)
 
 ### Backslash Character (\\)
+
+Karakter garis miring terbalik digunakan untuk keluar dari karakter dalam string. ini digunakan dalam string yang dikutip ganda.
+
 ![App Screenshot](img/special-characters/11.png)
 
 Output:
@@ -378,6 +410,9 @@ Output:
 ![App Screenshot](img/special-characters/12.png)
 
 ### Comment (#)
+
+Simbol komentar digunakan untuk mengomentari sebaris kode. Baris komentar selalu dimulai dengan `#` .
+
 ![App Screenshot](img/special-characters/13.png)
 
 Output:
@@ -387,12 +422,14 @@ Output:
 ## Bash - if elif else
 
 ### Bash Shell Conditional Statements
+
 ![App Screenshot](img/if-elif-else/1.png)
 - Pernyataan tersebut `if` digunakan untuk mengeksekusi blok kode jika suatu kondisi benar, dengan sintaksis `if then fi`.
 - Pernyataan `else` digunakan untuk mengeksekusi kode jika suatu kondisi salah, mengikuti sintaksis `if then else fi`.
 - Pernyataan `if..elif..else` berguna ketika Anda perlu mengeksekusi kode jika tidak ada kondisi sebelumnya yang benar.
 
 ### If Conditional Statements
+
 Pernyataan `if` di Bash digunakan untuk mengeksekusi blok kode ketika kondisi tertentu adalah `true`.
 
 ![App Screenshot](img/if-elif-else/2.png)
@@ -406,6 +443,7 @@ Output:
 ![App Screenshot](img/if-elif-else/4.png)
 
 ### If-Else Conditional Statements
+
 Pernyataan `if-else` kondisional di Bash memungkinkan Anda untuk mengeksekusi blok kode yang berbeda tergantung pada apakah suatu kondisi `true`` atau `false`.
 
 ![App Screenshot](img/if-elif-else/5.png)
@@ -419,6 +457,7 @@ Output:
 ![App Screenshot](img/if-elif-else/7.png)
 
 ### If..Elif..Else Statements
+
 Gunakan `if..elif..else` pernyataan kondisional di Bash untuk mengeksekusi blok kode berbeda berdasarkan beberapa kondisi.
 
 ![App Screenshot](img/if-elif-else/8.png)
@@ -487,7 +526,7 @@ Contoh:
 
 Output:
 
-![App Screenshot](img/loops/12.png)
+![App Screenshot](img/loops/9.png)
 
 Dalam contoh ini, blok kode dijalankan selama `[[ i -eq 100 ]]` bernilai salah. Ini menambah nilai sebesar 1 dan mencetak nilainya. Output mencetak angka dari 0 hingga 99 angka.
 
@@ -516,6 +555,7 @@ Output:
 `Expansion` sama dengan ekspresi, menghitung nilai ekspresi dan hasilnya diganti dengan nilai. Dan selalu diawali dengan tanda dolar.
 
 ![App Screenshot](img/append-string/5.png)
+
 Output:
 
 ![App Screenshot](img/append-string/6.png)
