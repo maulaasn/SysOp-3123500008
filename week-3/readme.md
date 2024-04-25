@@ -35,11 +35,11 @@
 
 <h3>IOPS</h3>
 
-<p>Input/output operations per second(IOPS) adalah pengukuran kinerja input/output yang digunakan untuk mengkarakterisasi perangkat penyimpanan komputer seperti hard disk drive (HDD), solid state drive (SSD), dan jaringan area penyimpanan (SAN). Seperti tolak ukur, angka IOPS yang diterbitkan oleh produsen perangkat penyimpanan tidak secara langsung berhubungan dengan kinerja aplikasi dunia nyata.</p>
+<p>Integer Operations Per Second (IOPS) mengacu pada jumlah operasi matematika integer yang dapat dieksekusi oleh CPU dalam satu detik. IOPS digunakan untuk mengukur kinerja CPU dalam menjalankan tugas-tugas yang membutuhkan operasi matematika integer.</p>
 
 <h3>FLOPS</h3>
 
-<p>Dalam komputasi, floating point operations per second (FLOPS, flops or flop/s) adalah ukuran kinerja komputer, berguna dalam bidang perhitungan ilmiah yang memerlukan perhitungan floating-point. Untuk kasus seperti itu, ini adalah ukuran yang lebih akurat daripada mengukur instruksi per detik.</p>
+<p>Floating-point Operations Per Second (FLOPS) mengacu pada jumlah operasi matematika floating-point yang dapat dieksekusi oleh CPU dalam satu detik. FLOPS digunakan untuk mengukur kinerja CPU dalam tugas-tugas yang memerlukan komputasi numerik yang intensif.</p>
 </br>
 
 ## Melakukan Benchmarking pada PC
