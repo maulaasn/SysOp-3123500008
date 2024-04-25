@@ -127,7 +127,7 @@ keyword `readonly` mencegah variable untuk diperbarui, secara efektif mengubahny
 
 ![App Screenshot](img/variables/7.png)
 
-#### Bash unset variable
+### Bash unset variable
 
 Keyword `unset` membantu menghilangkan nilai dari variable yang ditentukan. Variable tetap dapat diakses tetapi mencetak nilai kosong.
 
@@ -155,7 +155,7 @@ Output:
 
 ## Bash - Loop File
 
-### Perulangan while
+### Using while loop
 
 ![App Screenshot](img/loop-file/1.png)
 
