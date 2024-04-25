@@ -103,14 +103,14 @@
 
 ## Analisa
 
-<p>Program yang dijalankan merupakan program benchmark untuk mengukur IOPS (Input Output Operations per Second) dan FLOPS (Floating-point Operations Per Second) pada CPU. Program dijalankan lima kali. Hasilnya menunjukkan bahwa CPU memiliki peringkat IOPS FLOPS yang lebih tinggi.</p>
+<p>Program yang dijalankan merupakan program benchmark untuk mengukur IOPS (Integer Operations per Second) dan FLOPS (Floating-point Operations Per Second) pada CPU. Program dijalankan lima kali. Hasilnya menunjukkan bahwa CPU memiliki peringkat IOPS FLOPS yang lebih tinggi.</p>
 
 <p>Secara keseluruhan, program benchmark menunjukkan bahwa peringkat IOPS FLOPS CPU meningkat seiring dengan meningkatnya jumlah inti CPU yang digunakan. Hal ini karena program ini mampu mendistribusikan beban kerja ke beberapa inti, sehingga memungkinkannya melakukan lebih banyak operasi secara bersamaan.
 </p>
 
 ## Kesimpulan
 
-<p>FLOPS mengukur jumlah operasi floating-point yang dapat dilakukan oleh unit pemrosesan pusat (CPU) dalam satu detik. Operasi floating-point adalah perhitungan yang melibatkan angka dengan titik desimal. IOPS mengukur jumlah operasi bilangan bulat(integer) yang dapat dilakukan CPU dalam satu detik. Operasi bilangan bulat adalah perhitungan yang melibatkan bilangan bulat.
+<p>FLOPS mengukur jumlah operasi floating-point yang dapat dilakukan oleh unit pemrosesan pusat (CPU) dalam satu detik. Operasi floating-point adalah perhitungan yang melibatkan angka dengan titik desimal. IOPS mengukur jumlah operasi bilangan bulat (integer) yang dapat dilakukan CPU dalam satu detik. Operasi bilangan bulat adalah perhitungan yang melibatkan bilangan bulat.
 
 Kesimpulannya, FLOPS dan IOPS merupakan metrik penting untuk mengukur kinerja CPU. FLOPS penting untuk tugas-tugas yang melibatkan banyak perhitungan floating-point. IOPS penting untuk tugas-tugas yang melibatkan banyak operasi integer.</p>
 
