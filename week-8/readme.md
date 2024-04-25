@@ -157,7 +157,7 @@ Output:
 
 ![App Screenshot](img/variables/11.png)
 
-### Bash Local variables
+### Bash Local Variables
 
 Variabel lokal dideklarasikan di dalam blok kode atau fungsi. Cakupan variabel-variabel ini hanya terlihat di dalam blok tempat variabel-variabel tersebut dideklarasikan.
 
@@ -579,72 +579,22 @@ conditional_expressions berisi options dan filepath, yang selalu mengembalikan n
 
 berikut adalah opsi yang disediakan
 
-<table>
-<thead>
-<tr>
-  <th style="background-color: blue; color: white">Example</th>
-  <th style="background-color: blue; color: white">Description</th>
-<tr>
-</thead>
-<tbody>
-    <tr>
-        <td>-e file</td>
-        <td>Returns true if given file exists, file can be normal file or directory</td>
-    </tr>
-    <tr>
-        <td>-f file</td>
-        <td>Returns true if given file exists and a file(not directory)<td>
-    </tr>
-    <tr>
-        <td>-d file</td>
-        <td>Returns true if file is an directory</td>
-    </tr>
-    <tr>
-        <td>-r file</td>
-        <td>Returns true if file exists and has readable permission</td>
-    </tr>
-    <tr>
-        <td>-w file</td>
-        <td>Returns true if given file exists, file can be normal file or directory</td>
-    </tr>
-    <tr>
-        <td>-x file</td>
-        <td>Returns true if file exists and has writable permission</td>
-    </tr>
-    <tr>
-        <td>-s file</td>
-        <td>Returns true if file exists and size is not empty</td>
-    </tr>
-    <tr>
-        <td>-G file</td>
-        <td>Returns true if file exists and isowned by a Group ID that matches</td>
-    </tr>
-    <tr>
-        <td>-O file</td>
-        <td>Returns true if file exists and owned by a user ID that matches</td>
-    </tr>
-    <tr>
-        <td>-N file</td>
-        <td>Returns true if file exists and modified by last read date</td>
-    </tr>
-    <tr>
-        <td>-L file</td>
-        <td>Returns true if file exists and and is an symbolic Link</td>
-    </tr>
-    <tr>
-        <td>file1 -ot file2</td>
-        <td>Returns true if file1 is older than file2 or file2 exists, file1 does not exist</td>
-    </tr>
-    <tr>
-        <td>file1 -ne file2</td>
-        <td>Returns true if file1 is newer than file2,file1 exists, file2 does not exists</td>
-    </tr>
-    <tr>
-        <td>file1 -ef file2</td>
-        <td>Returns true if file1 and file2 pointed to same device and inode</td>
-    </tr>
-</tbody>
-</table>
+| Operator        | Deskripsi                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------- |
+| -e file         | Mengembalikan nilai true jika file yang diberikan ada, di mana file bisa berupa file biasa atau direktori |
+| -f file         | Mengembalikan nilai true jika file yang diberikan ada dan merupakan sebuah file (bukan direktori)         |
+| -d file         | Mengembalikan nilai true jika file adalah sebuah direktori                                                |
+| -r file         | Mengembalikan nilai true jika file ada dan memiliki izin baca                                             |
+| -w file         | Mengembalikan nilai true jika file ada dan memiliki izin tulis                                            |
+| -x file         | Mengembalikan nilai true jika file ada dan memiliki izin eksekusi                                         |
+| -s file         | Mengembalikan nilai true jika file ada dan ukurannya tidak kosong                                         |
+| -G file         | Mengembalikan nilai true jika file ada dan dimiliki oleh sebuah ID Grup yang cocok                        |
+| -O file         | Mengembalikan nilai true jika file ada dan dimiliki oleh sebuah ID Pengguna yang cocok                    |
+| -N file         | Mengembalikan nilai true jika file ada dan telah dimodifikasi sejak baca terakhir                         |
+| -L file         | Mengembalikan nilai true jika file ada dan merupakan sebuah tautan simbolik                               |
+| file1 -ot file2 | Mengembalikan nilai true jika file1 lebih tua dari file2, atau jika file2 ada dan file1 tidak ada         |
+| file1 -ne file2 | Mengembalikan nilai true jika file1 lebih baru dari file2, file1 ada, dan file2 tidak ada                 |
+| file1 -ef file2 | Mengembalikan nilai true jika file1 dan file2 menunjuk ke perangkat dan inode yang sama                   |
 
 ## Bash - Case Statements
 Pernyataan case mirip dengan switch case dalam bahasa pemrograman lain.
@@ -1373,10 +1323,6 @@ Output:
 ## Bash - String Length
 
 Panjang string ditentukan oleh jumlah karakter yang dikandungnya, dan umumnya mudah untuk memastikan panjangnya untuk teks normal.
-
-Postingan kali ini akan membahas berbagai metode untuk menghitung jumlah karakter dalam sebuah string dengan pengkodean UTF.
-
-Menggunakan Sintaks ${#variable}
 
 Metode pertama melibatkan penggunaan `${#variable}` sintaksis untuk mendapatkan panjang variabel string.
 
