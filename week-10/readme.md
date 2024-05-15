@@ -16,6 +16,17 @@
   <hr><hr>
 </div>
 
+## Daftar Isi
+- [Esai Threads](#threads)
+    - [Multithreading Models](#MultithreadingModels)
+    - [Multicore Programming](#Multicoreprogramming)
+    - [Thread Libraries](#Threadlibraries)
+    - [Implicit Threading](#Implicittreading)
+    - [Threading Issues](#Threadingissues)
+    - [Operating System Examples](#Threadingissues)
+- [Soal dan Jawaban Seputar Materi Threads](#soaldanjawaban)
+- [Referensi](#referensi)
+
 ## Esai Threads
 
 ### Multithread Server Architecture 
@@ -537,7 +548,7 @@ Thread Local Storage (TLS) adalah metode di mana setiap thread dalam proses mult
 
     • **Livelock**: Livelock adalah situasi di mana dua atau lebih thread terus menerus bertukar sumber daya, tetapi tidak ada yang dapat menyelesaikan tugasnya
 
-### Referensi
+## Referensi
 
 - https://www.geeksforgeeks.org/benefits-of-multithreading-in-operating-system/
 - https://www.geeksforgeeks.org/difference-between-concurrency-and-parallelism/
