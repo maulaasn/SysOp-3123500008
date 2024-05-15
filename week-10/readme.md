@@ -124,8 +124,8 @@ Contoh - hampir semua sistem operasi tujuan umum, termasuk:
 | 9. | Sistem Operasi | Setiap sistem operasi dapat mendukung thread tingkat pengguna. | Thread tingkat kernel spesifik sistem operasi. |
 | 10. | Manajemen Thread | Library thread berisi kode untuk pembuatan thread, pengiriman pesan, penjadwalan thread, transfer data, dan penghancuran thread. | Kode aplikasi tidak mengandung kode manajemen thread. Ini hanyalah API ke mode kernel. Sistem operasi Windows memanfaatkan fitur ini. |
 | 11. | Contoh | Contoh: Thread Java, thread POSIX. | Contoh: Window Solaris. |
-| 12. | Keuntungan | - Sederhana dan cepat untuk membuat. - Dapat berjalan di setiap sistem operasi. - Berkinerja lebih baik daripada thread kernel karena mereka tidak perlu melakukan panggilan sistem untuk membuat thread. - Pergantian antara thread tidak memerlukan hak istimewa mode kernel. | - Penjadwalan banyak thread yang termasuk dalam proses yang sama pada prosesor yang berbeda adalah mungkin. - Multithreading bisa ada di rutin kernel. - Ketika thread di tingkat kernel dihentikan, kernel dapat menjadwalkan thread lain untuk proses yang sama. |
-| 13. | Kerugian | - Aplikasi multithread pada thread tingkat pengguna tidak dapat mendapatkan manfaat dari multiprocessing. - Jika satu thread tingkat pengguna melakukan operasi blokir, seluruh proses dihentikan. - Mengalihkan kontrol dalam proses dari satu thread ke thread lain membutuhkan mode beralih ke mode kernel. - Thread tingkat kernel membutuhkan lebih banyak waktu untuk membuat dan mengelola daripada thread tingkat pengguna. | - Jika satu thread jatuh, tidak selalu mempengaruhi yang lain. |
+| 12. | Keuntungan | Sederhana dan cepat untuk membuat, Dapat berjalan di setiap sistem operasi, Berkinerja lebih baik daripada thread kernel karena mereka tidak perlu melakukan panggilan sistem untuk membuat thread, Pergantian antara thread tidak memerlukan hak istimewa mode kernel. | Penjadwalan banyak thread yang termasuk dalam proses yang sama pada prosesor yang berbeda adalah mungkin,  Multithreading bisa ada di rutin kernel, Ketika thread di tingkat kernel dihentikan, kernel dapat menjadwalkan thread lain untuk proses yang sama. |
+| 13. | Kerugian | Aplikasi multithread pada thread tingkat pengguna tidak dapat mendapatkan manfaat dari multiprocessing, Jika satu thread tingkat pengguna melakukan operasi blokir seluruh proses dihentikan, Mengalihkan kontrol dalam proses dari satu thread ke thread lain membutuhkan mode beralih ke mode kernel,  Thread tingkat kernel membutuhkan lebih banyak waktu untuk membuat dan mengelola daripada thread tingkat pengguna. | - Jika satu thread jatuh, tidak selalu mempengaruhi yang lain. |
 | 14. | Manajemen memori | Dalam thread tingkat pengguna, setiap thread memiliki stack sendiri, tetapi mereka berbagi ruang alamat yang sama. | Thread tingkat kernel memiliki stack mereka sendiri dan ruang alamat mereka sendiri, jadi mereka lebih terisolasi satu sama lain. |
 | 15. | Toleransi kesalahan | Thread tingkat pengguna kurang toleran terhadap kesalahan daripada thread tingkat kernel. Jika thread tingkat pengguna jatuh, itu bisa menjatuhkan seluruh proses. | Thread tingkat kernel dapat dikelola secara independen, jadi jika satu thread jatuh, itu tidak selalu mempengaruhi yang lain. |
 | 16. | Pemanfaatan sumber daya | Thread tingkat pengguna tidak memanfaatkan sepenuhnya sumber daya sistem, karena mereka tidak memiliki akses langsung ke fitur tingkat sistem seperti operasi I/O. | Thread tingkat kernel dapat mengakses fitur tingkat sistem seperti operasi I/O, jadi mereka dapat memanfaatkan sepenuhnya sumber daya sistem. |
@@ -225,7 +225,7 @@ Berikut adalah beberapa contoh fungsi POSIX Threads yang umum digunakan:
 
 POSIX Threads adalah alat yang ampuh untuk meningkatkan kinerja dan skalabilitas program. Namun, penting untuk menggunakannya dengan hati-hati untuk menghindari kondisi balapan dan masalah sinkronisasi lainnya.
 
-## Threads Java
+### Threads Java
 
 - Java thread dikelola oleh JVM
 - Biasanya diimplementasikan menggunakan model thread yang disediakan oleh OS yang mendasarinya
@@ -334,9 +334,9 @@ Karena exec() menggantikan proses, maka tidak perlu melakukan fork() dan menyali
 
 - Sinyal **signal** digunakan pada sistem UNIX untuk memberitahukan suatu proses bahwa suatu peristiwa tertentu telah terjadi.
 - Sebuah **penangan sinyal** digunakan untuk memproses sinyal
-    1. Sinyal dihasilkan oleh suatu peristiwa tertentu
-    2. Sinyal dikirimkan ke sebuah proses
-    3. Sinyal ditangani oleh salah satu dari dua penangan sinyal:
+    - Sinyal dihasilkan oleh suatu peristiwa tertentu
+    - Sinyal dikirimkan ke sebuah proses
+    - Sinyal ditangani oleh salah satu dari dua penangan sinyal:
         - Default
         - Ditentukan pengguna
 - Setiap sinyal memiliki **Pengendali default** yang dijalankan kernel saat menangani sinyal
