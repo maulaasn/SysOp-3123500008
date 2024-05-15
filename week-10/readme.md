@@ -136,7 +136,7 @@ Contoh - hampir semua sistem operasi tujuan umum, termasuk:
 | 10. | Manajemen Thread | Library thread berisi kode untuk pembuatan thread, pengiriman pesan, penjadwalan thread, transfer data, dan penghancuran thread. | Kode aplikasi tidak mengandung kode manajemen thread. Ini hanyalah API ke mode kernel. Sistem operasi Windows memanfaatkan fitur ini. |
 | 11. | Contoh | Contoh: Thread Java, thread POSIX. | Contoh: Window Solaris. |
 | 12. | Keuntungan | Sederhana dan cepat untuk membuat, Dapat berjalan di setiap sistem operasi, Berkinerja lebih baik daripada thread kernel karena mereka tidak perlu melakukan panggilan sistem untuk membuat thread, Pergantian antara thread tidak memerlukan hak istimewa mode kernel. | Penjadwalan banyak thread yang termasuk dalam proses yang sama pada prosesor yang berbeda adalah mungkin,  Multithreading bisa ada di rutin kernel, Ketika thread di tingkat kernel dihentikan, kernel dapat menjadwalkan thread lain untuk proses yang sama. |
-| 13. | Kerugian | Aplikasi multithread pada thread tingkat pengguna tidak dapat mendapatkan manfaat dari multiprocessing, Jika satu thread tingkat pengguna melakukan operasi blokir seluruh proses dihentikan, Mengalihkan kontrol dalam proses dari satu thread ke thread lain membutuhkan mode beralih ke mode kernel,  Thread tingkat kernel membutuhkan lebih banyak waktu untuk membuat dan mengelola daripada thread tingkat pengguna. | - Jika satu thread jatuh, tidak selalu mempengaruhi yang lain. |
+| 13. | Kerugian | Aplikasi multithread pada thread tingkat pengguna tidak dapat mendapatkan manfaat dari multiprocessing, Jika satu thread tingkat pengguna melakukan operasi blokir seluruh proses dihentikan, Mengalihkan kontrol dalam proses dari satu thread ke thread lain membutuhkan mode beralih ke mode kernel,  Thread tingkat kernel membutuhkan lebih banyak waktu untuk membuat dan mengelola daripada thread tingkat pengguna. | Jika satu thread jatuh, tidak selalu mempengaruhi yang lain. |
 | 14. | Manajemen memori | Dalam thread tingkat pengguna, setiap thread memiliki stack sendiri, tetapi mereka berbagi ruang alamat yang sama. | Thread tingkat kernel memiliki stack mereka sendiri dan ruang alamat mereka sendiri, jadi mereka lebih terisolasi satu sama lain. |
 | 15. | Toleransi kesalahan | Thread tingkat pengguna kurang toleran terhadap kesalahan daripada thread tingkat kernel. Jika thread tingkat pengguna jatuh, itu bisa menjatuhkan seluruh proses. | Thread tingkat kernel dapat dikelola secara independen, jadi jika satu thread jatuh, itu tidak selalu mempengaruhi yang lain. |
 | 16. | Pemanfaatan sumber daya | Thread tingkat pengguna tidak memanfaatkan sepenuhnya sumber daya sistem, karena mereka tidak memiliki akses langsung ke fitur tingkat sistem seperti operasi I/O. | Thread tingkat kernel dapat mengakses fitur tingkat sistem seperti operasi I/O, jadi mereka dapat memanfaatkan sepenuhnya sumber daya sistem. |
@@ -367,8 +367,10 @@ Ada dua jenis sinyal:
 
 - Synchronous: Dikirim ke thread yang menyebabkannya (seperti kesalahan program).
 - Asynchronous: Dapat datang secara tidak terduga dari luar program (seperti sinyal penghentian).
-- Sinyal Asynchronous merupakan tantangan dalam multithreading karena tidak jelas thread mana yang harus menerimanya. Pada sistem Unix, thread dapat menentukan sinyal mana yang mereka inginkan, tetapi OS pada akhirnya memutuskan pengirimannya.
-- Windows menggunakan Panggilan Prosedur Asinkron (APC) sebagai pengganti sinyal. Tidak seperti Unix di mana sebuah thread memilih sinyalnya, semua thread dalam proses Windows dapat menerima APC.
+
+Sinyal Asynchronous merupakan tantangan dalam multithreading karena tidak jelas thread mana yang harus menerimanya. Pada sistem Unix, thread dapat menentukan sinyal mana yang mereka inginkan, tetapi OS pada akhirnya memutuskan pengirimannya.
+
+Windows menggunakan Panggilan Prosedur Asinkron (APC) sebagai pengganti sinyal. Tidak seperti Unix di mana sebuah thread memilih sinyalnya, semua thread dalam proses Windows dapat menerima APC.
 
 ### Thread Cancellation
 
@@ -379,7 +381,8 @@ Dua pendekatan umum:
 
 - **Pembatalan asynchronous** mengakhiri thread target dengan segera
 - **Deffered cancellation** memungkinkan thread target untuk memeriksa secara berkala apakah harus dibatalkan
-- Kode Pthread untuk membuat dan membatalkan thread:
+
+    Kode Pthread untuk membuat dan membatalkan thread:
 
     ```
     pthread_t tid;
