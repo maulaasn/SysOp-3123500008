@@ -1,27 +1,28 @@
 <div align="center">
-  <h1 style="text-align: center;font-weight: bold">Praktikum 10<br>Praktek Sistem Operasi</h1>
-  <h4 style="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
+  <h1 class="text-align: center;font-weight: bold">Praktikum 10<br>Sistem Operasi</h1>
+  <h3 class="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h3>
 </div>
 <br />
 <div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/id/4/44/Logo_PENS.png" alt="Logo PENS">
-  <h3 style="text-align: center;">Disusun Oleh : </h3>
+  <h3 style="text-align: center;">Disusun Oleh : <br>Kelompok 4</h3>
   <p style="text-align: center;">
-    <strong>Fauzan Abderrasheed (3123500020) </strong><br>
-    <strong>Muhammad Rafi Dhiyaulhaq (3123500004) </strong><br>
-    <strong>Arva Zaki Fanadzan (3123500014)</strong>
+    <strong>Muhammad Yafi Rifdah Zayyan (3123500001)</strong><br>
+    <strong>Muhammad Daffa Erfiansyah (3123500006)</strong><br>
+    <strong>Maula Shahihah Nur Sa'adah (3123500008)</strong>
   </p>
+
 <h3 style="text-align: center;line-height: 1.5">Politeknik Elektronika Negeri Surabaya<br>Departemen Teknik Informatika Dan Komputer<br>Program Studi Teknik Informatika<br>2023/2024</h3>
   <hr><hr>
 </div>
 
-# Threads
+## Esai Threads
 
-## Multithread Server Architecture 
+### Multithread Server Architecture 
 
 ![App Screenshot](img/1.png)
 
-### Benefits
+#### Benefits
 
 - Responsiveness
     - dapat memungkinkan eksekusi berlanjut jika sebagian proses diblokir, sangat penting untuk antarmuka pengguna
@@ -35,39 +36,37 @@
 - Economy
     - lebih murah daripada pembuatan proses, pergantian thread lebih rendah overhead daripada context switch
     - mengalokasikan memory dan resources untuk pembuatan proses itu adalah pekerjaan yang mahal dalam segi waktu dan ruang, sehingga lebih murah dan ekonomis untuk membuat dan context switch threads.
-- Scalabilit
+- Scalability
     - proses dapat memanfaatkan arsitektur multiprosesor
     - Proses single threaded hanya dapat berjalan pada satu prosesor terlepas dari berapa banyak prosesor yang tersedia. Multi-threading pada multiple CPU meningkatkan paralelisme.
 
-### References
-
-- https://www.geeksforgeeks.org/thread-in-operating-system/
-- https://www.geeksforgeeks.org/multithreading-in-operating-system/?ref=lbp
-- https://www.geeksforgeeks.org/benefits-of-multithreading-in-operating-system/
-
------
-
-## Multicore Programming
+### Multicore Programming
 
 **Multicore** atau sistem **multiprocessor** memberikan tekanan pada pemrogram, tantangannya meliputi:
 
 - **Dividing activities**
-    - Tantangannya adalah untuk memeriksa tugas dengan benar untuk menemukan area yang dapat dibagi menjadi sub-tugas terpisah, yang dapat dijalankan secara paralel pada setiap prosesor untuk menggunakan sepenuhnya beberapa inti komputasi.
-- **Balance**
-    - Dalam pemrograman sistem multicore, tugas harus dibagi menjadi sub-tugas dengan jumlah pekerjaan yang sama untuk meningkatkan kinerja. Distribusi pekerjaan yang tidak merata di antara sub-tugas mungkin tidak akan meningkatkan kinerja dibandingkan dengan sistem single-core.
-- **Data splitting**
-    - Sama seperti tugas dibagi menjadi sub-tugas yang lebih kecil, data yang diakses dan dimanipulasi oleh tugas tersebut juga harus dibagi untuk dijalankan pada inti yang berbeda sehingga data dapat dengan mudah diakses oleh setiap sub-tugas.
-- **Data dependency**
-    - Karena berbagai sub-tugas kecil berjalan di berbagai inti, mungkin saja satu sub-tugas bergantung pada data dari sub-tugas lainnya. Jadi data perlu diperiksa dengan baik sehingga eksekusi tugas keseluruhan disinkronkan.
-- **Testing and debugging**
-    - Ketika berbagai sub-tugas yang lebih kecil sedang dieksekusi secara paralel, maka pengujian dan debugging pada tugas-tugas konkuren seperti itu lebih sulit daripada pengujian dan debugging aplikasi berbasis single threaded.
 
-***Parallelism*** implies a system can perform more than one task simultaneously
+    Tantangannya adalah untuk memeriksa tugas dengan benar untuk menemukan area yang dapat dibagi menjadi sub-tugas terpisah, yang dapat dijalankan secara paralel pada setiap prosesor untuk menggunakan sepenuhnya beberapa inti komputasi.
+- **Balance**
+
+    Dalam pemrograman sistem multicore, tugas harus dibagi menjadi sub-tugas dengan jumlah pekerjaan yang sama untuk meningkatkan kinerja. Distribusi pekerjaan yang tidak merata di antara sub-tugas mungkin tidak akan meningkatkan kinerja dibandingkan dengan sistem single-core.
+- **Data splitting**
+
+    Sama seperti tugas dibagi menjadi sub-tugas yang lebih kecil, data yang diakses dan dimanipulasi oleh tugas tersebut juga harus dibagi untuk dijalankan pada inti yang berbeda sehingga data dapat dengan mudah diakses oleh setiap sub-tugas.
+- **Data dependency**
+
+    Karena berbagai sub-tugas kecil berjalan di berbagai inti, mungkin saja satu sub-tugas bergantung pada data dari sub-tugas lainnya. Jadi data perlu diperiksa dengan baik sehingga eksekusi tugas keseluruhan disinkronkan.
+- **Testing and debugging**
+
+    Ketika berbagai sub-tugas yang lebih kecil sedang dieksekusi secara paralel, maka pengujian dan debugging pada tugas-tugas konkuren seperti itu lebih sulit daripada pengujian dan debugging aplikasi berbasis single threaded.
+
+***Parallelism*** menyiratkan suatu sistem dapat melakukan lebih dari satu tugas secara bersamaan
 
 - Paralelisme dalam aplikasi melibatkan pembagian tugas menjadi sub-tugas yang lebih kecil yang diproses seolah-olah secara bersamaan untuk meningkatkan throughput dan kecepatan komputasi. Ini memungkinkan CPU sekuensial tunggal untuk melakukan beberapa tugas "seolah-olah" pada saat yang sama.
 - Paralelisme dan konkurensi dalam pengolahan tugas yang tumpang tindih untuk meningkatkan kecepatan, dengan paralelisme berfokus pada tumpang tindih tugas CPU dan input-output dalam dan antara proses, dan konkurensi meningkatkan kecepatan dengan menumpang tindihkan aktivitas input-output dari satu proses dengan proses CPU dari yang lainnya.
 
-***Concurrency*** supports more than one task making progress Single processor / core, scheduler providing concurrency
+***Concurrency*** mendukung lebih dari satu kemajuan pembuatan tugas.
+Prosesor / inti tunggal, penjadwalan menyediakan konkurensi.
 
 - Concurrency merujuk pada suatu aplikasi yang memproses beberapa tugas secara bersamaan, menggunakan satu unit pemrosesan untuk mengurangi waktu respons sistem. Ini menciptakan ilusi paralelisme, karena tugas-tugas tidak diproses secara paralel, tetapi beberapa tugas diproses dalam aplikasi pada saat yang sama.
 - Concurrency dicapai melalui operasi interleave proses pada Central Processing Unit (CPU) atau dengan kata lain dengan context switching. itulah alasan mengapa ini seperti pemrosesan paralel. Ini meningkatkan jumlah pekerjaan yang selesai pada suatu waktu.
@@ -82,14 +81,7 @@ Seiring bertambahnya jumlah thread, dukungan arsitektur untuk threading juga ber
 - CPU memiliki inti serta ***hardware thread***
 - Pertimbangkan Oracle SPARC T4 dengan 8 inti, dan 8 thread perangkat keras per inti
 
-### References
-
-- https://www.geeksforgeeks.org/difference-between-concurrency-and-parallelism/
-- https://www.geeksforgeeks.org/challanges-in-programming-for-multicore-system/
-
----
-
-## Amdahl Law
+### Amdahl Law
 
 Hukum Amdahl adalah rumus yang digunakan untuk menghitung peningkatan kecepatan maksimum yang dapat dicapai sistem dengan meningkatkan bagian tertentu. Peningkatan kinerja suatu sistem akan dibatasi oleh bagian sistem yang tidak ditingkatkan. Misalnya, peningkatan kinerja keseluruhan komputer dengan prosesor yang lebih cepat akan dibatasi oleh kecepatan RAM. Rumus Hukum Amdahl adalah: Peningkatan Kecepatan = 1 - (Waktu yang Tidak Dapat Ditingkatkan / Waktu Total).
 
@@ -97,15 +89,29 @@ Dalam rumus ini, "Waktu yang Tidak Dapat Ditingkatkan" adalah waktu yang dibutuh
 
 Hukum Amdahl adalah alat yang berharga untuk memahami batasan kinerja sistem. Hal ini dapat digunakan untuk membuat keputusan tentang cara terbaik untuk meningkatkan kinerja sistem.
 
-### References
+![App Screenshot](img/2.png)
 
-https://www.geeksforgeeks.org/computer-organization-amdahls-law-and-its-proof/
+### User Threads dan Kernel Threads
 
----
+**User threads** - manajemen dilakukan oleh library thread tingkat pengguna
 
-## User Threads dan Kernel Threads
+Tiga library thread utama:
 
-| S. No. | Parameter | Thread Tingkat Pengguna | Thread Tingkat Kernel |
+- POSIX **Pthreads**
+- Windows threads
+- Java threads
+
+**Kernel threads** - Didukung oleh Kernel
+
+Contoh - hampir semua sistem operasi tujuan umum, termasuk:
+
+- Windows
+- Solaris
+- Linux
+- Tru64 UNIX
+- Mac OS X
+
+| No. | Parameter | Thread Tingkat Pengguna | Thread Tingkat Kernel |
 | --- | --- | --- | --- |
 | 1. | Diterapkan oleh | Thread pengguna diterapkan oleh pengguna. | Thread kernel diterapkan oleh Sistem Operasi (OS). |
 | 2. | Mengenali | Sistem operasi tidak mengenali thread tingkat pengguna. | Thread kernel diakui oleh Sistem Operasi. |
@@ -125,86 +131,77 @@ https://www.geeksforgeeks.org/computer-organization-amdahls-law-and-its-proof/
 | 16. | Pemanfaatan sumber daya | Thread tingkat pengguna tidak memanfaatkan sepenuhnya sumber daya sistem, karena mereka tidak memiliki akses langsung ke fitur tingkat sistem seperti operasi I/O. | Thread tingkat kernel dapat mengakses fitur tingkat sistem seperti operasi I/O, jadi mereka dapat memanfaatkan sepenuhnya sumber daya sistem. |
 | 17. | Portabilitas | Thread tingkat pengguna lebih portabel daripada thread tingkat kernel. | Thread tingkat kernel kurang portabel daripada thread tingkat pengguna. |
 
-**User threads** - manajemen dilakukan oleh perpustakaan thread tingkat pengguna
+### Multithreading Models
 
-Tiga perpustakaan thread utama:
+1. Many-to-One
+2. One-to-One
+3. Many-to-Many
 
-- POSIX **Pthreads**
-- Windows threads
-- Java threads
+#### Many-to-One
 
-**Kernel threads** - Didukung oleh Kernel
+Dalam model ini, kami memiliki beberapa thread pengguna yang dipetakan ke satu thread kernel. Dalam model ini ketika thread pengguna membuat panggilan sistem pemblokiran seluruh blok proses. Karena kami hanya memiliki satu thread kernel dan hanya satu thread pengguna yang dapat mengakses kernel pada satu waktu, maka beberapa thread tidak dapat mengakses multiprosesor secara bersamaan. 
 
-Contoh - hampir semua sistem operasi tujuan umum, termasuk:
+- Banyak thread tingkat pengguna yang dipetakan ke thread kernel tunggal
+- Satu pemblokiran thread menyebabkan semua diblokir 
+- Beberapa thread mungkin tidak berjalan secara paralel pada sistem muticore karena hanya satu yang mungkin berada di kernel pada suatu waktu
+- Beberapa sistem saat ini menggunakan model ini 
 
-- Windows
-- Solaris
-- Linux
-- Tru64 UNIX
-- Mac OS X
+Contoh : 
+1. **Solaris Green Threads**
+2. **GNU Portable Threads**
 
-### References
+![App Screenshot](img/3.png)
 
-- https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/
+#### One-to-One
 
----
+Dalam model ini, hubungan satu lawan satu antara kernel dan thread pengguna. Dalam model ini, beberapa thread dapat berjalan pada banyak prosesor. Masalah dengan model ini adalah pembuatan thread pengguna memerlukan thread kernel yang sesuai. 
 
-## Multithreading Models
+Karena setiap thread pengguna terhubung ke kernel yang berbeda, jika ada thread pengguna yang melakukan panggilan sistem pemblokiran, thread pengguna lainnya tidak akan diblokir.
 
-### Many to Many
+- Setiap thread tingkat pengguna memetakan ke thread kernel
+- Membuat thread tingkat pengguna membuat thread kernel
+- Lebih banyak konkurensi daripada many-to-one
+- Jumlah thread per proses terkadang
+dibatasi karena overhead
 
-Dalam model ini, kami memiliki beberapa thread pengguna yang dimultiplex ke jumlah thread level kernel yang sama atau lebih sedikit. Jumlah thread level kernel spesifik untuk mesin, keuntungan dari model ini adalah jika thread pengguna diblokir, kami dapat menjadwalkan thread pengguna lain ke thread kernel lain. Jadi, Sistem tidak diblokir jika thread tertentu diblokir. ini adalah model multi threading terbaik
+Contoh : 
+1. Windows
+2. Linux
+3. Solaris 9 and later
 
-### Many to One
+![App Screenshot](img/4.png)
 
-Dalam model ini, kita memiliki beberapa thread pengguna dipetakan ke satu thread kernel. Dalam model ini ketika sebuah thread pengguna membuat panggilan sistem yang memblokir seluruh proses blok. Karena kita hanya memiliki satu thread kernel dan hanya satu thread pengguna yang dapat mengakses kernel pada satu waktu, jadi beberapa thread tidak dapat mengakses multiprosesor secara bersamaan. Manajemen thread dilakukan pada level pengguna sehingga lebih efisien.
+#### Many-to-Many
 
-### One to One
+Dalam model ini, kami memiliki beberapa thread pengguna yang multipleks ke jumlah thread tingkat kernel yang sama atau lebih sedikit. Jumlah thread tingkat kernel khusus untuk mesin, keuntungan dari model ini adalah jika thread pengguna diblokir kita dapat menjadwalkan thread pengguna lain ke thread kernel lain. Dengan demikian, Sistem tidak memblokir jika thread tertentu diblokir. 
 
-Dalam model ini, ada hubungan satu-satu antara kernel dan thread pengguna. Dalam model ini, beberapa thread dapat berjalan pada beberapa prosesor. Masalah dengan model ini adalah bahwa membuat thread pengguna memerlukan thread kernel yang sesuai.
+- Memungkinkan banyak thread tingkat pengguna dipetakan ke banyak thread kernel
+- Memungkinkan sistem operasi untuk membuat thread kernel dalam jumlah yang cukup
+- Solaris sebelum versi 9
+- Windows dengan paket ThreadFiber 
 
-Karena setiap thread pengguna terhubung ke kernel yang berbeda, jika ada thread pengguna yang membuat panggilan sistem yang memblokir, thread pengguna lainnya tidak akan diblokir.
+![App Screenshot](img/5.png)
 
-### Two-Level
-
-Ada juga model hibrida yang menggabungkan elemen dari thread tingkat pengguna dan thread tingkat kernel. Sebagai contoh, beberapa sistem operasi menggunakan model hibrida yang disebut "model dua tingkat", di mana setiap proses memiliki satu atau lebih thread tingkat pengguna, yang dipetakan ke thread tingkat kernel oleh sistem operasi.
-
-### References
-
-- https://www.geeksforgeeks.org/multi-threading-models-in-process-management/
-
-----
-
-## Threads Library
+### Threads Library
 
 **Thread LIbrary** menyediakan programmer dengan API untuk membuat dan mengelola thread
 
-Ada dua cara utama untuk implementasi:
+Dua cara utama untuk mengimplementasikan:
 
 - Library sepenuhnya di ruang pengguna
 - Library tingkat kernel yang didukung oleh OS
 
-Perpustakaan thread, yang membantu dalam membuat dan mengelola thread, dapat diimplementasikan dengan dua cara: sepenuhnya di ruang pengguna tanpa dukungan kernel, menghasilkan panggilan fungsi lokal, atau sebagai perpustakaan tingkat kernel yang didukung oleh sistem operasi, biasanya menghasilkan panggilan sistem ke kernel.
+Thread library, yang membantu dalam membuat dan mengelola thread, dapat diimplementasikan dengan dua cara: sepenuhnya di ruang pengguna tanpa dukungan kernel, menghasilkan panggilan fungsi lokal, atau sebagai perpustakaan tingkat kernel yang didukung oleh sistem operasi, biasanya menghasilkan panggilan sistem ke kernel.
 
-Tiga perpustakaan thread utama yang digunakan saat ini adalah: POSIX Pthreads, Windows, dan Java. Pthreads, ekstensi thread dari standar POSIX, mungkin disediakan sebagai perpustakaan tingkat pengguna atau perpustakaan tingkat kernel. Perpustakaan thread Windows adalah perpustakaan tingkat kernel yang tersedia di sistem Windows. API thread Java memungkinkan thread dibuat dan dikelola langsung di program Java.
+Tiga thread library utama yang digunakan saat ini adalah: POSIX Pthreads, Windows, dan Java. Pthreads, ekstensi thread dari standar POSIX, mungkin disediakan sebagai perpustakaan tingkat pengguna atau perpustakaan tingkat kernel. Perpustakaan thread Windows adalah perpustakaan tingkat kernel yang tersedia di sistem Windows. API thread Java memungkinkan thread dibuat dan dikelola langsung di program Java.
 
-### References
+### Pthreads
 
-- https://www.geeksforgeeks.org/multi-threading-models-in-process-management/
-
-----
-
-## Pthreads
-
-Dapat disediakan baik sebagai level pengguna atau level kernel
-
-Sebuah API standar POSIX (IEEE 1003.1c) untuk pembuatan dan sinkronisasi thread
-
-***Spesifikasi***, bukan ***implementasi***
-
-API menentukan perilaku dari library thread, implementasi tergantung pada pengembangan library
-
-Umum dalam sistem operasi UNIX (Solaris, Linux, Mac OS X)
+- Dapat disediakan baik sebagai level pengguna atau level kernel
+- Sebuah API standar POSIX (IEEE 1003.1c) untuk pembuatan dan sinkronisasi thread
+- ***Spesifikasi***, bukan ***implementasi***
+- API menentukan perilaku dari library thread, implementasi tergantung pada pengembangan library
+- Umum dalam sistem operasi UNIX (Solaris, Linux, Mac OS X)
 
 POSIX Threads adalah cara untuk membuat dan mengelola utas (threads) dalam sistem operasi yang sesuai dengan standar POSIX (Portable Operating System Interface). Utas adalah unit eksekusi independen yang dapat berjalan secara bersamaan dalam satu proses. Hal ini memungkinkan program untuk dibagi menjadi beberapa tugas yang dapat dijalankan secara bersamaan, sehingga meningkatkan kinerja pada sistem multiprosesor.
 
@@ -228,13 +225,18 @@ Berikut adalah beberapa contoh fungsi POSIX Threads yang umum digunakan:
 
 POSIX Threads adalah alat yang ampuh untuk meningkatkan kinerja dan skalabilitas program. Namun, penting untuk menggunakannya dengan hati-hati untuk menghindari kondisi balapan dan masalah sinkronisasi lainnya.
 
-### References
+## Threads Java
 
-- https://www.geeksforgeeks.org/posix-threads-in-os/
+- Java thread dikelola oleh JVM
+- Biasanya diimplementasikan menggunakan model thread yang disediakan oleh OS yang mendasarinya
+- Java thread dapat dibuat oleh:
 
-----
-
-## Java Threads
+    ```
+    public interface Runnable
+    {
+        public abstract void run();
+    }
+    ```
 
 Threads memungkinkan program beroperasi lebih efisien dengan melakukan banyak hal secara bersamaan.
 
@@ -256,80 +258,71 @@ Thread Java memiliki banyak manfaat, termasuk:
 
 Jika Anda ingin mempelajari lebih lanjut tentang thread Java, saya sarankan untuk membaca artikel lengkap di GeeksforGeeks. Artikel ini membahas berbagai topik terkait thread Java, termasuk cara membuat dan mengelola thread, mekanisme sinkronisasi, dan common pitfalls.
 
-### References
-
-- https://www.geeksforgeeks.org/java-threads/
-- https://www.w3schools.com/java/java_threads.asp
-
-----
-
-## Implicit Threading
+### Implicit Threading
 
 implicit threading pada dasarnya adalah penggunaan pustaka atau dukungan bahasa lain untuk menyembunyikan manajemen thread. Pustaka implicit threading yang paling umum adalah OpenMP, dalam konteks C.
 
-1. Semakin populer seiring bertambahnya jumlah thread, ketepatan program lebih sulit dengan thread eksplisit
-2. Pembuatan dan pengelolaan thread dilakukan oleh kompiler dan run-time libraries daripada programmer
-3. Tiga metode yang dieksplorasi
+- Semakin populer seiring bertambahnya jumlah thread, ketepatan program lebih sulit dengan thread eksplisit
+- Pembuatan dan pengelolaan thread dilakukan oleh kompiler dan run-time libraries daripada programmer
+- Tiga metode yang dieksplorasi
     - Thread Pools
     - OpenMP
     - Grand Central Dispatch
-4. Metode lain termasuk Microsoft Threading Building Blocks (TBB), paket **java.util.concurrent**
+- Metode lain termasuk Microsoft Threading Building Blocks (TBB), paket **java.util.concurrent**
 
 ### Thread Pools
 
 Kumpulan utas (thread pool) adalah sekelompok utas yang menunggu untuk ditugaskan tugas. Hal ini meningkatkan kinerja program dengan menggunakan kembali utas yang sudah ada alih-alih membuat utas baru untuk setiap tugas. Hal ini dapat mengurangi overhead dan meningkatkan stabilitas sistem. Jumlah utas dalam kumpulan dapat disesuaikan berdasarkan beban kerja.
 
-1. Buat sejumlah thread dalam sebuah pool di mana mereka menunggu untuk dikerjakan
-2. Keuntungan:
+- Buat sejumlah thread dalam sebuah pool di mana mereka menunggu untuk dikerjakan
+- Keuntungan:
     - Biasanya sedikit lebih cepat untuk melayani permintaan dengan thread yang sudah ada daripada membuat thread baru
     - Memungkinkan jumlah thread dalam aplikasi terikat dengan ukuran pool
     - Memisahkan tugas yang akan dilakukan dari mekanisme pembuatan tugas memungkinkan strategi yang berbeda untuk menjalankan tugas
         - yaitu Tugas dapat dijadwalkan untuk dijalankan secara berkala
-3. Windows API supports thread pools:
+- Secara berkala Windows API supports thread pools:
 
-    ![App Screenshot](img/2.png)
+    ```
+    DWORD WINAPI PoolFunction (AVOID Param) {
+        /* 
+        * this function runs as a separate thread.
+        */
+    }
+    ```
 
 ### OpenMP
 
 OpenMP adalah sekumpulan arahan kompiler serta API untuk program yang ditulis dalam bahasa C, C++, atau FORTRAN yang menyediakan dukungan untuk pemrograman paralel dalam lingkungan memori bersama. OpenMP mengidentifikasi wilayah paralel sebagai blok kode yang dapat berjalan secara paralel. Pengembang aplikasi memasukkan arahan kompiler ke dalam kode mereka di wilayah paralel, dan arahan ini menginstruksikan pustaka run-time OpenMP untuk mengeksekusi wilayah tersebut secara paralel.
 
-1. Set of compiler directives and an API for C, C++, FORTRAN
-2. Provides support for parallel programming in shared-memory environments
-3. Identifies **parallel regions** – blocks of code that can run in parallel
+- Set arahan compiler dan API untuk C, C ++, FORTRAN
+- Menyediakan dukungan untuk pemrograman paralel di lingkungan shared-memory 
+- Mengidentifikasi **wilayah paralel** – blok kode yang dapat berjalan secara paralel
 
-    ![App Screenshot](img/3.png)
+    ![App Screenshot](img/6.png)
 
-    ![App Screenshot](img/4.png)
+    ![App Screenshot](img/7.png)
 
 
 ### Grand Central Dispatch
 
-1. Teknologi Apple untuk sistem operasi Mac OS X dan iOS
-2. Ekstensi untuk bahasa C, C++, API, dan pustaka run-time
-3. Memungkinkan identifikasi bagian paralel
-4. Mengelola sebagian besar detail penguliran
-5. Blok berada dalam “^{ }” - **ˆ{ printf(“Saya adalah sebuah blok”); }**
-6. Blok ditempatkan dalam antrian pengiriman
-    - Ditugaskan ke thread yang tersedia di kumpulan thread ketika dihapus dari antrian
-7. Dua jenis antrian pengiriman:
-    - serial - blok dihapus dalam urutan FIFO, antrian per proses, disebut ** antrian utama**
-        - Programmer dapat membuat antrian serial tambahan di dalam program
-    - bersamaan - dihapus dalam urutan FIFO tetapi beberapa dapat dihapus pada satu waktu
+- Teknologi Apple untuk sistem operasi Mac OS X dan iOS
+- Ekstensi untuk bahasa C, C++, API, dan pustaka run-time
+- Memungkinkan identifikasi bagian paralel
+- Mengelola sebagian besar detail penguliran
+- Blok berada dalam “^{ }” - **ˆ{ printf(“Saya adalah sebuah blok”); }**
+- Blok ditempatkan dalam antrian pengiriman
+    - Ditetapkan ke thread yang tersedia di kumpulan thread saat dihapus dari antrian
+- Dua jenis antrian pengiriman:
+    - serial - blok dihapus dalam urutan FIFO, antrian per proses, disebut **antrian utama**
+        - Pemrogram dapat membuat antrian serial tambahan dalam program
+    - bersamaan - dihapus dalam urutan FIFO tetapi beberapa dapat dihapus sekaligus
         - Tiga antrian di seluruh sistem dengan prioritas rendah, default, tinggi
 
-        ![App Screenshot](img/5.png)
+            ![App Screenshot](img/8.png)
 
+### Threading Issues
 
-### References
-
-- https://www.tutorialspoint.com/implicit-threading-and-language-based-threads
-- https://en.wikipedia.org/wiki/Thread_pool
-
----
-
-## Threading Issues
-
-### Semantics of fork() and exec() system calls
+#### Semantics of fork() and exec() system calls
 
 fork() membuat sebuah proses baru yang merupakan salinan dari proses yang dipanggil. Ini termasuk menyalin semua thread dalam sebuah program multi-threaded pada beberapa sistem UNIX. Ada dua versi fork() yang mengontrol berapa banyak thread yang disalin. fork dapat menduplikasi semua thread dari proses induk ke proses anak atau hanya thread yang dipanggil oleh proses induk.
 
@@ -337,20 +330,16 @@ exec() menggantikan seluruh proses dengan program baru yang ditentukan dalam arg
 
 Karena exec() menggantikan proses, maka tidak perlu melakukan fork() dan menyalin semua thread jika exec() dipanggil setelahnya. Dalam kasus ini, versi fork() yang hanya menyalin thread yang dipanggil akan lebih efisien.
 
-### Signal Handling
+#### Signal Handling
 
-Sinyal **signal** digunakan pada sistem UNIX untuk memberitahukan suatu proses bahwa suatu peristiwa tertentu telah terjadi.
-
-Sebuah **pengelola sinyal** digunakan untuk memproses sinyal
-
-- Sinyal dihasilkan oleh suatu peristiwa tertentu
-- Sinyal dikirimkan ke sebuah proses
-- Sinyal ditangani oleh salah satu dari dua penangan sinyal:
-    - default
-    - ditentukan pengguna
-
-Setiap sinyal memiliki **penanganan default** yang dijalankan kernel saat menangani sinyal
-
+- Sinyal **signal** digunakan pada sistem UNIX untuk memberitahukan suatu proses bahwa suatu peristiwa tertentu telah terjadi.
+- Sebuah **penangan sinyal** digunakan untuk memproses sinyal
+    1. Sinyal dihasilkan oleh suatu peristiwa tertentu
+    2. Sinyal dikirimkan ke sebuah proses
+    3. Sinyal ditangani oleh salah satu dari dua penangan sinyal:
+        - Default
+        - Ditentukan pengguna
+- Setiap sinyal memiliki **Pengendali default** yang dijalankan kernel saat menangani sinyal
 - **Penanganan sinyal yang ditentukan pengguna** dapat menggantikan default
 - Untuk single-threaded, sinyal dikirim ke proses
 
@@ -372,192 +361,189 @@ Ada dua jenis sinyal:
 
 ### Thread Cancellation
 
-Menghentikan thread sebelum selesai dikerjakan
-Thread yang akan dibatalkan adalah thread target
+- Menghentikan thread sebelum selesai dikerjakan
+- Thread yang akan dibatalkan adalah **thread target**
+
 Dua pendekatan umum:
 
-- Pembatalan asynchronous menghentikan thread target dengan segera
-- Deffered cancellation memungkinkan thread target untuk secara berkala memeriksa apakah harus dibatalkan
+- **Pembatalan asynchronous** mengakhiri thread target dengan segera
+- **Deffered cancellation** memungkinkan thread target untuk memeriksa secara berkala apakah harus dibatalkan
+- Kode Pthread untuk membuat dan membatalkan thread:
 
-![App Screenshot](img/6.png)
+    ```
+    pthread_t tid;
 
+    /* create the thread */
+    pthread_create (&tid, 0, worker, NULL);
 
-Pembatalan utas memungkinkan Anda menghentikan thread sebelum menyelesaikan tugasnya. Ada dua jenis utama:
+    ...
 
-- Asynchronous cancellation: Pembatalan secara tiba-tiba menghentikan thread target tanpa memperhatikan statusnya, yang dapat menyebabkan masalah seperti kebocoran sumber daya atau data yang rusak jika thread tersebut memperbarui informasi bersama.
-- Deffered cancellation: **Ini memberikan kesempatan kepada thread target untuk membersihkan diri dan keluar dengan tenang. Thread memeriksa bendera pembatalan secara berkala untuk melihat apakah thread tersebut harus berhenti. Titik pembatalan adalah saat-saat tertentu dalam kode thread di mana pembatalan aman karena thread tidak berada di tengah-tengah operasi yang kritis.
+    /* cancel the thread */
+    pthread_cancel (tid);
+    ```
+
+- Meminta pembatalan permintaan pembatalan thread, tetapi pembatalan sebenarnya tergantung pada status thread
+
+    ![App Screenshot](img/9.png)
+
+- Jika thread menonaktifkan pembatalan, pembatalan tetap tertunda hingga thread mengaktifkannya
+- Jenis default ditangguhkan
+    - Pembatalan hanya terjadi ketika thread mencapai pembatalan
+    ujung
+        - Yaitu pthread_testcancel()
+        - Kemudian penangan pembersihan dipanggil
+- Pada sistem Linux, pembatalan thread ditangani melalui sinyal
 
 ### Thread-Local Storage
 
 Thread Local Storage (TLS) adalah metode di mana setiap thread dalam proses multithreaded dapat mengalokasikan lokasi untuk menyimpan data spesifik thread. Data spesifik thread yang terikat secara dinamis (run-time) didukung melalui API TLS (TlsAlloc). 
 
-- **thread-local storage** (**TLS**) memungkinkan setiap thread memiliki salinan datanya sendiri
-- Berguna ketika Anda tidak memiliki kendali atas proses pembuatan thread (misalnya, ketika menggunakan kumpulan thread)
+- **Penyimpanan thread-local (TLS)** memungkinkan setiap thread memiliki salinan datanya sendiri
+- Berguna ketika tidak memiliki kendali atas proses pembuatan thread (misalnya, ketika menggunakan kumpulan thread)
 - Berbeda dengan variabel lokal
     - Variabel lokal hanya terlihat selama pemanggilan fungsi tunggal
     - TLS terlihat di seluruh pemanggilan fungsi
-- Mirip dengan data **statis**
+    - Mirip dengan data **statis**
     - TLS bersifat unik untuk setiap thread
 
 ### Scheduler Activations
 
-Baik model M:M dan two-level model memerlukan komunikasi untuk mempertahankan jumlah thread kernel yang sesuai yang dialokasikan ke aplikasi
+- Baik model M:M dan Two-level model memerlukan komunikasi untuk mempertahankan jumlah thread kernel yang sesuai yang dialokasikan ke aplikasi
+- Biasanya menggunakan struktur data perantara antara thread pengguna dan kernel - **proses ringan (LWP)**
+    - Tampak sebagai prosesor virtual di mana proses dapat menjadwalkan thread pengguna untuk dijalankan
+    - Setiap LWP dilampirkan ke thread kernel
+    - Berapa banyak LWP yang harus dibuat?
+- Aktivasi penjadwal menyediakan **upcalls** - mekanisme komunikasi dari kernel ke **upcall handler** di thread library
+- Komunikasi ini memungkinkan aplikasi untuk mempertahankan jumlah thread kernel yang benar
 
-Biasanya menggunakan struktur data perantara antara thread pengguna dan kernel - **lightweight process** (**LWP**)
+### Windows Threads
 
-- Tampak sebagai prosesor virtual di mana proses dapat menjadwalkan thread pengguna untuk dijalankan
-- Setiap LWP dilampirkan ke thread kernel
-- Berapa banyak LWP yang harus dibuat?
-
-Aktivasi penjadwal menyediakan **upcalls** - mekanisme komunikasi dari kernel ke **upcall handler** di pustaka thread
-
-Komunikasi ini memungkinkan aplikasi untuk mempertahankan jumlah thread kernel yang benar
-
-![App Screenshot](img/7.png)
-
-
-### References 
-
-- https://www.geeksforgeeks.org/threading-issues/
-- https://en.wikipedia.org/wiki/Thread-local_storage 
-- https://learn.microsoft.com/en-us/cpp/parallel/thread-local-storage-tls?view=msvc-170
-
----
-
-## Windows Threads
-
-1. Windows mengimplementasikan API Windows - primary API untuk Win 98, Win NT, Win 2000, Win XP, dan Win 7
-2. Mengimplementasikan one-to-one mapping, tingkat kernel
-3. Setiap threads berisi
+- Windows mengimplementasikan API Windows - primary API untuk Win 98, Win NT, Win 2000, Win XP, dan Win 7
+- Mengimplementasikan one-to-one mapping, tingkat kernel
+- Setiap threads berisi
     - Sebuah id thread
     - Set register yang mewakili status processor
     - Tumpukan pengguna dan kernel yang terpisah ketika thread berjalan dalam mode pengguna atau mode kernel
     - Area penyimpanan data pribadi yang digunakan oleh pustaka run-time dan pustaka tautan dinamis (DLL)
-4. Kumpulan register, tumpukan, dan area penyimpanan pribadi dikenal sebagai **konteks** dari thread
-5. Struktur data utama dari sebuah thread meliputi:
+- Kumpulan register, tumpukan, dan area penyimpanan pribadi dikenal sebagai **konteks** dari thread
+- Struktur data utama dari sebuah thread meliputi:
     - ETHREAD (blok thread eksekutif) - termasuk pointer ke proses yang mana thread tersebut berada dan ke KTHREAD, di ruang kernel
     - KTHREAD (blok thread kernel) - scheduling dan synchronization info, tumpukan kernel-mode, pointer ke TEB, dalam ruang kernel
     - TEB (blok lingkungan thread) - id thread, tumpukan mode-pengguna, penyimpanan thread-lokal, di ruang pengguna
 
----
+**Windows Threads Data Structures**
 
-## No 1
+![App Screenshot](img/10.png)
 
-Berikan tiga contoh pemrograman di mana multithreading memberikan kinerja yang lebih baik daripada solusi single-threaded.
+### Linux Threads
 
-**Jawaban:**
+- Linux menyebutnya sebagai **tasks** daripada **threads**
+- Pembuatan thread dilakukan melalui panggilan sistem clone() 
+- clone() memungkinkan child task untuk berbagi address space ke parent task (process)
+    - Flags control behavior
 
-- Sebuah server Web yang melayani setiap permintaan dalam thread yang berbeda.
-- Aplikasi yang diparalelkan seperti perkalian matriks di mana bagian-bagian yang berbeda dari matriks dapat dikerjakan secara paralel.
-- Sebuah program GUI interaktif seperti debugger di mana sebuah thread digunakan untuk memantau masukan pengguna, thread lain mewakili aplikasi yang berjalan, dan thread ketiga memantau kinerja.
+        ![App Screenshot](img/11.png)
+- **struct task_struct** poin untuk memproses struktur data (shared or unique)
 
-### Penjelasan
+## Soal dan Jawaban Seputar Materi Threads
 
-a. **Web Server**: 
+1. Jelaskan perbedaan antara thread blocking dan non-blocking!
 
-Dalam kasus web server, masing-masing permintaan dari klien (seperti mengambil halaman web atau data dari server) dapat dianggap sebagai tugas yang independen. Dengan menggunakan multithreading, server dapat menangani beberapa permintaan secara bersamaan. Sebagai contoh, ketika satu thread sedang menunggu respon dari database, thread lainnya dapat melayani permintaan dari klien lainnya. Ini dapat mengoptimalkan penggunaan sumber daya server dan meningkatkan responsivitas secara keseluruhan.
+    **Jawab**:
 
-b. **Parallelized Application (Aplikasi Paralel)**: 
+    • **Thread blocking**: Thread blocking adalah thread yang dihentikan sementara karena menunggu suatu peristiwa terjadi, seperti I/O selesai atau sumber daya yang dibutuhkan tersedia. Ketika thread blocking, thread tersebut tidak dapat menggunakan CPU dan sumber daya lainnya.
 
-Dalam kasus seperti perkalian matriks, ada banyak operasi yang dapat dijalankan secara independen. Dengan menggunakan multithreading, bagian-bagian dari matriks dapat dikalikan secara bersamaan oleh thread yang berbeda. Ini memungkinkan untuk meningkatkan throughput secara signifikan karena beberapa operasi dapat dilakukan secara paralel tanpa harus menunggu selesainya operasi sebelumnya.
+    • **Thread non-blocking**: Thread non-blocking adalah thread yang dapat terus berjalan meskipun sedang menunggu suatu peristiwa terjadi. Thread non-blocking biasanya menggunakan teknik polling atau callback untuk memeriksa status peristiwa secara berkala.
 
-c. **Interactive GUI Program (Program Antarmuka Pengguna Grafis yang Interaktif)**: 
+2. Apa saja keuntungan dan kekurangan menggunakan thread blocking dan thread non-blocking?
 
-Dalam aplikasi seperti debugger, kita mungkin memiliki tugas-tugas yang berjalan secara bersamaan. Satu thread mungkin bertanggung jawab untuk menerima input dari pengguna, yang lain untuk menjalankan aplikasi yang sedang di-debug, dan yang lainnya mungkin untuk memantau kinerja aplikasi. Dengan menggunakan multithreading, aplikasi dapat tetap responsif terhadap input pengguna sementara masih dapat menjalankan tugas-tugas lain secara bersamaan tanpa mengganggu pengalaman pengguna. Ini memungkinkan debugger untuk tetap aktif sambil melakukan pemantauan kinerja dan menjalankan kode yang sedang di-debug secara bersamaan.
+    **Jawab**:
 
-### References
+    **Thread blocking**
 
-- [https://rdr11.it.student.pens.ac.id/Semester2/Sistem Operasi/Teori/TeoriOS7rev1_1D4TIB_2110191044.pdf](https://rdr11.it.student.pens.ac.id/Semester2/Sistem%20Operasi/Teori/TeoriOS7rev1_1D4TIB_2110191044.pdf)
+    **Keuntungan**:
 
----
+    • Lebih mudah untuk diprogram karena programmer tidak perlu khawatir tentang sinkronisasi antar thread
 
-## No 2
+    • Dapat membantu meningkatkan kinerja program dengan memungkinkan beberapa tugas dijalankan secara simultan
 
-Apa dua perbedaan antara thread tingkat pengguna dan thread tingkat kernel? Dalam keadaan apa satu jenis lebih baik daripada yang lain?
+    **Kekurangan**:
 
-**Jawaban:**
+    • Dapat menyebabkan deadlock jika dua atau lebih thread saling menunggu satu sama lain untuk menyelesaikan tugasnya
 
-- Thread tingkat pengguna tidak diketahui oleh kernel, sedangkan kernel mengetahui thread tingkat kernel.
-- Pada sistem yang menggunakan pemetaan M:1 atau M:N, thread pengguna diatur oleh pustaka thread dan kernel mengatur thread kernel.
-- Thread kernel tidak harus dikaitkan dengan proses sedangkan setiap thread pengguna milik proses. Thread kernel umumnya lebih mahal untuk dipertahankan daripada thread pengguna karena mereka harus diwakili dengan struktur data kernel.
+    • Dapat menyebabkan livelock jika dua atau lebih thread terus menerus bertukar sumber daya, tetapi tidak ada yang dapat menyelesaikan tugasnya
 
-### Penjelasan
+    **Thread non-blocking**
 
-Perbedaan antara user-level threads dan kernel-level threads terletak pada tingkat di mana sistem operasi terlibat dan bagaimana proses penjadwalan dilakukan. User-level threads tidak dikenal oleh kernel, sementara kernel-level threads dikenal oleh kernel. Selain itu, pada sistem dengan pemetaan M:1 atau M:N, user-level threads dijadwalkan oleh perpustakaan thread, sedangkan kernel-level threads dijadwalkan oleh kernel.
+    **Keuntungan**:
 
-Pilihan antara kedua jenis ini tergantung pada kebutuhan aplikasi. User-level threads memiliki overhead yang lebih rendah karena mereka dikelola sepenuhnya oleh program pengguna tanpa intervensi kernel. Namun, kernel-level threads dapat memberikan kinerja yang lebih baik dan lebih stabil karena mereka dapat dijadwalkan langsung oleh kernel dan memiliki kemampuan untuk menggunakan multiple core. Sebagai aturan umum, user-level threads lebih cocok untuk aplikasi yang membutuhkan manajemen yang sangat ringan, sementara kernel-level threads lebih cocok untuk aplikasi yang memerlukan kinerja dan skalabilitas yang tinggi.
+    • Dapat membantu meningkatkan responsivitas program dengan memungkinkan pengguna untuk berinteraksi dengan program sambil tugas lain masih diproses
 
-### References
+    • Dapat membantu menghindari deadlock dan livelock
 
+    **Kekurangan**:
+
+    • Lebih sulit untuk diprogram karena programmer perlu mempertimbangkan sinkronisasi antar thread
+
+    • Dapat menyebabkan overhead performa yang lebih tinggi karena thread non-blocking perlu memeriksa status peristiwa secara berkala
+
+3. Jelaskan bagaimana sistem operasi menjadwalkan thread!
+
+    **Jawab**:
+
+    Sistem operasi menjadwalkan thread dengan menggunakan algoritma penjadwalan. Algoritma penjadwalan menentukan thread mana yang akan dijalankan pada CPU pada waktu tertentu. Ada banyak algoritma penjadwalan yang berbeda, seperti:
+
+    • **Penjadwalan round-robin**: Algoritma round-robin menjadwalkan thread dalam urutan melingkar, memberikan setiap thread jumlah waktu CPU yang sama
+
+    • **Penjadwalan prioritas**: Algoritma prioritas menjadwalkan thread berdasarkan prioritasnya, dengan thread yang memiliki prioritas lebih tinggi dijalankan terlebih dahulu
+
+    • **Penjadwalan multilevel feedback**: Algoritma multilevel feedback membagi thread ke dalam beberapa kelas prioritas dan menjadwalkan thread dalam setiap kelas dengan menggunakan algoritma penjadwalan yang berbeda
+
+4. Apa saja faktor yang dapat memengaruhi kinerja program multi-threaded?
+
+    **Jawab**:
+
+    Ada banyak faktor yang dapat memengaruhi kinerja program multi-threaded, seperti:
+
+    • **Jumlah thread**: Semakin banyak thread yang digunakan, semakin tinggi overhead performa program
+
+    • **Sinkronisasi**: Mekanisme sinkronisasi dapat menyebabkan overhead performa, terutama jika thread sering mengakses sumber daya yang sama
+
+    • **Penjadwalan**: Algoritma penjadwalan yang digunakan dapat memengaruhi kinerja program
+
+    • **Beban kerja**: Jenis tugas yang dijalankan oleh thread dapat memengaruhi kinerja program
+
+5. Apa saja mekanisme sinkronisasi yang digunakan dalam thread?
+
+    **Jawab**:
+
+    Mekanisme sinkronisasi digunakan untuk memastikan bahwa thread yang berbeda mengakses data dan sumber daya secara aman dan terkoordinasi. Beberapa mekanisme sinkronisasi yang umum digunakan adalah:
+
+    • **Mutex**: Mutex (mutual exclusion) adalah kunci yang hanya dapat dimiliki oleh satu thread pada satu waktu
+
+    • **Semaphore**: Semaphore adalah variabel yang nilainya dapat digunakan untuk membatasi jumlah thread yang dapat mengakses sumber daya tertentu
+
+    • **Condition variable**: Condition variable adalah variabel yang dapat digunakan untuk mensinkronisasi thread yang menunggu peristiwa tertentu terjadi
+
+6. Apa saja masalah yang dapat terjadi dalam pemrograman multi-thread?
+
+    **Jawab**:
+
+    Beberapa masalah yang dapat terjadi dalam pemrograman multi-thread adalah:
+
+    • **Deadlock**: Deadlock adalah situasi di mana dua atau lebih thread saling menunggu satu sama lain untuk menyelesaikan tugasnya, sehingga tidak ada thread yang dapat melanjutkan
+
+    • **Race condition**: Race condition adalah situasi di mana hasil suatu program bergantung pada urutan eksekusi thread
+
+    • **Livelock**: Livelock adalah situasi di mana dua atau lebih thread terus menerus bertukar sumber daya, tetapi tidak ada yang dapat menyelesaikan tugasnya
+
+### Referensi
+
+- https://www.geeksforgeeks.org/benefits-of-multithreading-in-operating-system/
+- https://www.geeksforgeeks.org/difference-between-concurrency-and-parallelism/
+- https://www.geeksforgeeks.org/challanges-in-programming-for-multicore-system/
 - https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/
-- https://www.geeksforgeeks.org/thread-in-operating-system/
-
----
-
-## No 3
-
-Jelaskan tindakan yang diambil oleh kernel untuk context switch antara kernel level threads.
-
-**Jawaban:**
-
-Peralihan konteks antara benang kernel biasanya memerlukan penyimpanan nilai dari register CPU dari thread yang sedang dipindahkan dan mengembalikan register CPU dari thread baru yang sedang dijadwalkan.
-
-### Penjelasan
-
-Saat melakukan context-switch antara thread-thread di level kernel, kernel perlu menyimpan nilai-nilai register CPU dari thread yang akan diganti dan mengembalikan nilai-nilai register CPU dari thread baru yang akan dijadwalkan.
-
-### Apa itu Context Swicth
-
-Context-switch adalah proses di mana CPU beralih dari eksekusi satu proses atau thread ke proses atau thread lainnya. Saat melakukan context-switch, sistem operasi menyimpan status (atau konteks) dari proses atau thread yang sedang berjalan saat ini, termasuk nilai-nilai register CPU, pointer instruksi, dan informasi lain yang diperlukan untuk melanjutkan eksekusi nanti. Kemudian, sistem operasi memuat konteks dari proses atau thread baru yang akan dieksekusi sehingga CPU dapat melanjutkan eksekusi dari titik terakhir di mana proses atau thread sebelumnya dihentikan. Context-switch memungkinkan sistem operasi untuk memberikan kesan bahwa banyak proses atau thread sedang berjalan secara bersamaan, meskipun CPU sebenarnya melakukan eksekusi secara bergantian di antara mereka.
-
-### References
-
-- https://www.geeksforgeeks.org/context-switch-in-operating-system/
-
----
-
-## No 4
-
-Sumber daya apa saja yang digunakan ketika thread dibuat? Bagaimana perbedaannya dengan yang digunakan ketika proses dibuat?
-
-**Jawaban:**
-
-Karena thread lebih kecil daripada proses, pembuatan thread biasanya menggunakan sumber daya yang lebih sedikit dibandingkan dengan pembuatan proses. Membuat proses membutuhkan alokasi blok kontrol proses (PCB), struktur data yang cukup besar. PCB mencakup peta memori, daftar file yang dibuka, dan variabel lingkungan. Mengalokasikan dan mengelola peta memori biasanya merupakan aktivitas yang paling memakan waktu. Membuat thread pengguna atau kernel melibatkan alokasi struktur data kecil untuk menampung set register, tumpukan, dan prioritas.
-
-### Penjelasan
-
-Ketika membuat sebuah thread, digunakan lebih sedikit sumber daya dibandingkan dengan membuat sebuah proses. Proses memerlukan alokasi blok kontrol proses (PCB), struktur data yang cukup besar, yang mencakup peta memori, daftar file terbuka, dan variabel lingkungan. Pembuatan PCB dan pengelolaan peta memori biasanya memakan waktu paling lama. Sedangkan, pembuatan sebuah thread melibatkan alokasi struktur data kecil untuk menampung set register, tumpukan, dan prioritas.
-
-### References
-
-- https://www.guru99.com/difference-between-process-and-thread.html?gpp&gpp_sid
-
----
-
-## No 5
-
-Asumsikan bahwa sistem operasi memetakan thread tingkat pengguna ke kernel menggunakan model many-to-many dan bahwa pemetaan dilakukan melalui LWPs. Selain itu, sistem memungkinkan pengembang untuk membuat thread real-time untuk digunakan dalam sistem real-time. Apakah perlu mengikat thread real-time ke LWP? Jelaskan.
-
-**Jawaban:**
-
-Ya. Waktu sangat krusial untuk aplikasi real-time. Jika thread ditandai sebagai real-time tetapi tidak terikat ke LWP, thread mungkin harus menunggu untuk dihubungkan ke LWP sebelum berjalan. Pertimbangkan jika thread real-time sedang berjalan (terhubung ke LWP) dan kemudian melanjutkan untuk memblokir (mis. harus melakukan I/O, telah dipraemptif oleh thread real-time prioritas lebih tinggi, sedang menunggu kunci penguncian mutual, dll.) Sementara thread real-time diblokir, LWP yang sebelumnya terhubung telah ditugaskan ke thread lain. Ketika thread real-time telah dijadwalkan untuk berjalan lagi, ia harus menunggu untuk dihubungkan ke LWP. Dengan mengikat LWP ke thread real-time, Anda memastikan thread akan dapat berjalan dengan penundaan minimal setelah dijadwalkan.
-
-### Penjelasan
-
-Tentu! Saat menggunakan thread real-time dalam sistem, penting untuk mengikatnya ke dalam unit pemrosesan yang disebut LWP. Tanpa ikatan ini, thread real-time mungkin harus menunggu sebelum bisa berjalan. Ini bisa menyebabkan penundaan yang tidak diinginkan dalam kinerja aplikasi yang membutuhkan waktu respons cepat. Dengan mengikat thread real-time ke LWP, kita memastikan bahwa thread tersebut bisa langsung berjalan begitu dijadwalkan tanpa penundaan tambahan.
-
-### Apa itu LWP?
-
-LWP singkatan dari "Lightweight Process" atau Proses Ringan. Ini adalah unit pemrosesan kecil yang dikelola oleh sistem operasi untuk mengeksekusi thread. Dalam sistem operasi yang menggunakan model many-to-many untuk memetakan thread pengguna ke kernel, seperti Solaris dan beberapa versi UNIX lainnya, LWP berfungsi sebagai perantara antara thread pengguna dan kernel. Mereka membantu dalam penjadwalan dan pengelolaan sumber daya untuk thread, memungkinkan sistem operasi untuk mengelola thread secara efisien. Dalam konteks ini, mengikat thread real-time ke LWP berarti menghubungkan thread tersebut ke unit pemrosesan yang akan mengeksekusinya.
-
-### References
-
-- https://www.geeksforgeeks.org/thread-scheduling/
-
----
-
-## References
-
-- https://socs.binus.ac.id/2020/12/13/thread-unit-pemanfaatan-cpu/
-- [https://rdr11.it.student.pens.ac.id/Semester2/Sistem Operasi/Teori/TeoriOS7rev1_1D4TIB_2110191044.pdf](https://rdr11.it.student.pens.ac.id/Semester2/Sistem%20Operasi/Teori/TeoriOS7rev1_1D4TIB_2110191044.pdf)
-- https://www.geeksforgeeks.org/context-switch-in-operating-system/
+- https://www.geeksforgeeks.org/multi-threading-models-in-process-management/
+- https://www.geeksforgeeks.org/posix-threads-in-os/
+- https://www.geeksforgeeks.org/java-threads/
+- https://www.geeksforgeeks.org/threading-issues/
