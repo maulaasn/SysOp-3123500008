@@ -49,7 +49,7 @@ First-Come First-Serve (FCFS) Scheduling adalah seperti sistem antrian linier, d
 
 #### Flowchart SJF
 
-![App Screenshot](img/flowchart-sjf.png)
+![App Screenshot](img/flowhart-sjf.png)
 
 #### Analisis
 Shortest Job First (SJF) Scheduling adalah algoritma penjadwalan yang efektif untuk meminimalkan waktu tunggu rata-rata dan meningkatkan kinerja sistem, terutama ketika terdapat proses dengan burst time yang tidak merata. Proses ini berjalan dengan memprioritaskan jumlah burst time yang paling sedikit dan melihat arrival time nya. Proses berjalannya adalah proses yang pertama kali datang akan di execute sampai selesai dahulu, lalu proses yang ada di ready queue akan dibandingkan manakah yang memiliki burst time yang paling sedikit, akan di-execute. Jika ada kondisi dimana suatu proses memiliki burst time yang sama, maka yang didahulukan adalah proses yang arrival timenya lebih kecil (yang datang lebih dulu).
