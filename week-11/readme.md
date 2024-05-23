@@ -68,7 +68,7 @@ Shortest Job First (SJF) Scheduling adalah algoritma penjadwalan yang efektif un
 
 #### Flowchart Round Robin
 
-![App Screenshot](img/flowchart-roundrobin.png)
+![App Screenshot](img/flowchart-rr.png)
 
 #### Analisis
 Round-Robin (RR) Scheduling merupakan salah satu algoritma scheduling pada CPU dimana semua proses yang dijalankan oleh algoritma ini akan dieksekusi secara Cyclic. Dengan kata lain, algoritma ini akan menjalankan suatu proses dalam batas waktu tertentu dan apabila proses tersebut telah berjalan melewati batas waktu yang ditentukan, maka proses ini akan otomatis diberhentikan sementara dan dimasukkan ke dalam antrian proses (queue) yang paling belakang (kemudian algoritma ini akan lanjut menjalankan proses lain dari queue yang paling depan). Dari percobaan diatas, detail output dari queue bagaimana proses berjalan yaitu dimulai dari P1 -> P2 -> P1 -> P3 -> P2.
