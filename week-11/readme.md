@@ -16,52 +16,52 @@
   <hr><hr>
 </div>
 
-## Scheduling Algorithm
+## Scheduling Algorithms
 
-### First-Come First-Serve Algorithm
+### First-Come First-Serve Algorithm (FCFS)
 
-#### Contoh Perhitungan Proses secara Teori
+#### Contoh perhitungan proses secara teori
 
-![App Screenshot](img/FCFS-Teori.png)
+![App Screenshot](img/teori-fcfs.png)
 
 #### Hasil percobaan running program
 
 ![App Screenshot](img/fcfs.png)
 
-#### Flowchart dari First-Come First-Serve Algorithm
+#### Flowchart FCFS
 
 ![App Screenshot](img/flowchart-fcfs.png)
 
-#### Analisa
+#### Analisis
 
-### Shortest Job First Algorithm
+### Shortest Job First (SJF)
 
-#### Contoh Perhitungan Proses secara Teori
+#### Contoh perhitungan proses secara teori
 
-![App Screenshot](img/SJF-Teori.png)
+![App Screenshot](img/teori-sjf.png)
 
 #### Hasil percobaan running program
 
 ![App Screenshot](img/sjf.png)
 
-#### Flowchart dari Shortest Job First Algorithm
+#### Flowchart SJF
 
 ![App Screenshot](img/flowchart-sjf.png)
 
-#### Analisa
+#### Analisis
 
-### Round Robin Algorithm
+### Round Robin (RR)
 
-#### Contoh Perhitungan Proses secara Teori
+#### Contoh perhitungan proses secara teori
 
-![App Screenshot](img/Round-Robin-Teori.png)
+![App Screenshot](img/teori-roundrobin.png)
 
 #### Hasil percobaan running program
 
 ![App Screenshot](img/round-robin.png)
 
-#### Flowchart dari Round Robin Algorithm
+#### Flowchart Round Robin
 
 ![App Screenshot](img/flowchart-roundrobin.png)
 
-#### Analisa
+#### Analisis
