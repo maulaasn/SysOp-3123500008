@@ -33,7 +33,7 @@
 ![App Screenshot](img/flowchart-fcfs.png)
 
 #### Analisis
-First-Come First-Serve (FCFS) Scheduling adalah seperti sistem antrian linier, dimana proses yang pertama datang (arrival time paling awal) akan dijalankan atau dilayani terlebih dahulu, sehingga proses berjalan berurutan.
+First-Come First-Serve (FCFS) Scheduling adalah seperti sistem antrian linier, dimana proses yang pertama datang (arrival time paling awal) akan dijalankan atau dilayani terlebih dahulu, sehingga proses berjalan berurutan. Namun, jika antriannya panjang dan proses yang dilayani memiliki durasi yang tidak merata, maka FCFS bisa menjadi kurang efisien.
 
 --- 
 
