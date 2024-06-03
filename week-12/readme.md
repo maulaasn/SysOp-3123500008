@@ -183,10 +183,10 @@ shared_counter. Dimana ketika sebuah thread mau mengakses atau memodifikasi shar
 program tersebut harus mengunci mutex terlebih dahulu dengan menggunakan pthread_mutex_lock(). 
 Setelah selesai, thread tersebut akan melepaskan kunci mutex dari pthread_mutex_unlock(). Dengan 
 menggunakan mutex, hanya ada satu thread yang biasa mengakses atau memodifikasi shared_counter 
-pada satu waktu, sehingga bisa memastikan konsistensi nilai tersebut
+pada satu waktu, sehingga bisa memastikan konsistensi nilai tersebut.
 
 ### Kesimpulan
 
 Jadi, penggunaan mutex pada program yang kedua dapat memberikan perlindungan terhadap race 
 condition dan juga memastikan bahwa operasi penambahan shared_counter tersebut bisa dilakukan 
-secara atomik, sehingga hasilnya akan menjaga konsistensi nya
+secara atomik, sehingga hasilnya akan menjaga konsistensi nya.
