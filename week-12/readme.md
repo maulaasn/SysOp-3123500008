@@ -178,6 +178,8 @@ shared_counter secara bersamaan, sehingga dapat menghasilkan nilai yang tidak ko
 
 ![App Screenshot](img/mutex.png)
 
+Analisis
+
 Pada program kedua menggunakan mutex. Untuk terjadinya sinkronisasi akses ke variabel 
 shared_counter. Dimana ketika sebuah thread mau mengakses atau memodifikasi shared_counter, 
 program tersebut harus mengunci mutex terlebih dahulu dengan menggunakan pthread_mutex_lock(). 
